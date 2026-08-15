@@ -6,11 +6,8 @@
 
 <title>LUMORA Café & Restaurant</title>
 
-<meta name="description"
-content="Lumora Café & Restaurant – Fine Dining, Family Restaurant & Café in Dehradun.">
-
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600&display=swap');
 
 *{
     margin:0;
@@ -21,248 +18,170 @@ content="Lumora Café & Restaurant – Fine Dining, Family Restaurant & Café in
 
 :root{
     --bg:#0b0907;
-    --bg2:#120e0a;
+    --panel:#15100c;
     --gold:#d9a441;
-    --gold2:#f0c46c;
-    --cream:#f5e5c3;
-    --muted:#bcae98;
-    --line:#6f4b20;
-    --red:#b82e22;
+    --gold2:#f1ca72;
+    --cream:#f4e6c9;
+    --muted:#b9aa92;
+    --line:#68491f;
 }
 
 body{
     background:
-    radial-gradient(circle at 50% 0%,#2a1a0d 0%,#0b0907 45%);
+    radial-gradient(circle at top,#2a1a0d 0,#0b0907 42%);
     color:var(--cream);
     font-family:'Montserrat',sans-serif;
 }
 
-/* ================= DECORATIONS ================= */
-
-body:before,
-body:after{
-    content:"";
-    position:fixed;
-    width:180px;
-    height:180px;
-    border:1px solid rgba(217,164,65,.18);
-    pointer-events:none;
-    z-index:-1;
-}
-
-body:before{
-    top:20px;
-    left:20px;
-    border-right:0;
-    border-bottom:0;
-}
-
-body:after{
-    bottom:20px;
-    right:20px;
-    border-left:0;
-    border-top:0;
-}
-
-/* ================= HEADER ================= */
+/* HERO */
 
 header{
-    min-height:100vh;
+    min-height:92vh;
     display:flex;
     align-items:center;
     justify-content:center;
     text-align:center;
-    padding:40px 20px;
-    position:relative;
-    overflow:hidden;
+    padding:30px 20px;
 }
 
-header:before{
-    content:"";
-    position:absolute;
-    width:650px;
-    height:650px;
-    border:1px solid rgba(217,164,65,.12);
-    border-radius:50%;
-}
-
-.hero{
-    position:relative;
-    z-index:2;
-}
-
-.logo{
-    font-family:'Cormorant Garamond',serif;
-    font-size:clamp(60px,12vw,120px);
-    letter-spacing:8px;
-    color:var(--gold2);
-    text-shadow:0 0 25px rgba(217,164,65,.18);
-    font-weight:600;
-}
-
-.logo-line{
-    width:250px;
-    height:1px;
-    background:linear-gradient(90deg,transparent,var(--gold),transparent);
-    margin:8px auto 15px;
+.hero-logo{
+    width:min(390px,82vw);
+    max-height:220px;
+    object-fit:contain;
+    filter:drop-shadow(0 0 20px rgba(217,164,65,.15));
+    margin-bottom:18px;
 }
 
 .subtitle{
     letter-spacing:5px;
-    font-size:14px;
     color:#e4c58c;
-    margin-bottom:8px;
+    font-size:13px;
 }
 
 .tagline{
     color:var(--muted);
+    font-size:10px;
     letter-spacing:3px;
-    font-size:11px;
+    margin-top:9px;
 }
 
 .hero-btn{
     display:inline-block;
-    margin-top:40px;
-    padding:14px 35px;
+    margin-top:32px;
     border:1px solid var(--gold);
     color:var(--gold2);
+    padding:14px 28px;
     text-decoration:none;
     letter-spacing:2px;
-    transition:.3s;
+    transition:.25s;
 }
 
 .hero-btn:hover{
     background:var(--gold);
-    color:#100c08;
+    color:#100b07;
 }
 
-/* ================= NAVBAR ================= */
+/* NAV */
 
 nav{
     position:sticky;
     top:0;
-    z-index:1000;
-    background:rgba(9,7,5,.94);
+    z-index:100;
+    background:rgba(9,7,5,.95);
     backdrop-filter:blur(10px);
-    border-bottom:1px solid rgba(217,164,65,.25);
+    border-bottom:1px solid #4e381b;
 }
 
 .nav-inner{
-    max-width:1200px;
-    margin:auto;
     display:flex;
     justify-content:center;
-    align-items:center;
-    gap:35px;
-    padding:17px 20px;
+    gap:25px;
     flex-wrap:wrap;
+    padding:15px;
 }
 
 nav a{
-    color:#e7c47e;
+    color:#e6c47f;
     text-decoration:none;
-    font-size:12px;
-    letter-spacing:2px;
-    transition:.3s;
+    font-size:11px;
+    letter-spacing:1.5px;
 }
 
-nav a:hover{
-    color:white;
-}
-
-/* ================= GENERAL ================= */
+/* SECTIONS */
 
 section{
     max-width:1250px;
     margin:auto;
-    padding:90px 25px;
+    padding:75px 18px;
 }
 
 .section-title{
     text-align:center;
-    margin-bottom:55px;
+    margin-bottom:40px;
 }
 
 .section-title h2{
-    font-family:'Cormorant Garamond',serif;
+    font:600 48px 'Cormorant Garamond',serif;
     color:var(--gold2);
-    font-size:48px;
     font-style:italic;
-    letter-spacing:3px;
 }
 
 .section-title p{
-    color:var(--muted);
-    font-size:12px;
+    font-size:10px;
     letter-spacing:3px;
-    margin-top:8px;
+    color:var(--muted);
 }
 
 .ornament{
     color:var(--gold);
-    font-size:22px;
-    margin:12px 0;
+    margin:10px;
 }
 
-/* ================= MENU BOX ================= */
+/* MENU */
 
 .menu-box{
     border:1px solid var(--line);
-    padding:40px;
-    background:
-    linear-gradient(rgba(15,11,8,.96),rgba(15,11,8,.96));
-    box-shadow:
-    0 0 0 5px rgba(217,164,65,.025),
-    0 20px 60px rgba(0,0,0,.4);
-    position:relative;
+    padding:35px;
+    background:rgba(15,11,8,.96);
+    box-shadow:0 20px 60px #0008;
 }
 
-.menu-box:before{
-    content:"";
-    position:absolute;
-    inset:10px;
-    border:1px solid rgba(217,164,65,.15);
-    pointer-events:none;
+.menu-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:45px;
 }
 
 .category{
-    margin-bottom:60px;
-    position:relative;
-}
-
-.category:last-child{
-    margin-bottom:0;
+    margin-bottom:45px;
 }
 
 .category h3{
-    font-family:'Cormorant Garamond',serif;
-    font-size:32px;
+    font:600 31px 'Cormorant Garamond',serif;
     color:var(--gold2);
     font-style:italic;
-    letter-spacing:2px;
-    margin-bottom:20px;
-    border-bottom:1px solid rgba(217,164,65,.2);
-    padding-bottom:10px;
+    border-bottom:1px solid #68491f;
+    padding-bottom:8px;
+    margin-bottom:16px;
 }
 
 .subcategory{
-    color:#d83a2c;
+    font-size:12px;
     font-weight:600;
-    font-size:13px;
-    margin:20px 0 8px;
+    color:#d94335;
+    margin:15px 0 8px;
 }
 
 .subcategory.veg{
-    color:#68a84f;
+    color:#72ae56;
 }
 
 .item{
     display:flex;
     align-items:baseline;
-    gap:8px;
+    gap:7px;
     margin:9px 0;
-    font-family:'Cormorant Garamond',serif;
-    font-size:18px;
+    font:500 18px 'Cormorant Garamond',serif;
 }
 
 .item-name{
@@ -272,196 +191,264 @@ section{
 .dots{
     flex:1;
     border-bottom:1px dotted #765d3b;
-    min-width:20px;
+    min-width:15px;
 }
 
 .price{
+    font:500 12px Montserrat;
     color:#f0d39a;
     white-space:nowrap;
-    font-family:'Montserrat',sans-serif;
-    font-size:13px;
 }
 
-/* ================= TWO COLUMNS ================= */
-
-.menu-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:55px;
+.add{
+    border:1px solid #765524;
+    background:#171009;
+    color:#e9c36d;
+    padding:5px 8px;
+    cursor:pointer;
+    font-size:10px;
 }
 
-/* ================= ABOUT ================= */
-
-.about{
-    text-align:center;
-    max-width:800px;
-    margin:auto;
+.add:hover{
+    background:var(--gold);
+    color:#100b07;
 }
 
-.about p{
-    color:var(--muted);
-    line-height:2;
-    font-size:14px;
-}
-
-/* ================= CONTACT ================= */
+/* CONTACT */
 
 .contact-card{
     max-width:700px;
     margin:auto;
     text-align:center;
     border:1px solid var(--line);
-    padding:55px 30px;
+    padding:45px 25px;
     background:#100c09;
 }
 
 .contact-card h3{
-    font-family:'Cormorant Garamond',serif;
+    font:600 44px 'Cormorant Garamond',serif;
     color:var(--gold2);
-    font-size:42px;
-}
-
-.contact-card p{
-    color:var(--muted);
-    margin:12px 0;
 }
 
 .phone{
     display:inline-block;
     margin-top:20px;
     color:var(--gold2);
-    font-size:24px;
+    font-size:23px;
     text-decoration:none;
-    letter-spacing:2px;
 }
 
 .location{
-    margin-top:15px;
+    margin-top:12px;
     color:#d6c5a5;
 }
 
-/* ================= FOOTER ================= */
+/* FOOTER */
 
 footer{
-    border-top:1px solid rgba(217,164,65,.3);
     text-align:center;
-    padding:35px 20px;
+    border-top:1px solid #4e381b;
+    padding:30px;
     background:#080604;
+    color:#8e806c;
+    font-size:10px;
 }
 
-footer .brand{
-    font-family:'Cormorant Garamond',serif;
+footer strong{
+    font:600 27px 'Cormorant Garamond',serif;
     color:var(--gold2);
-    font-size:28px;
+    display:block;
     letter-spacing:4px;
 }
 
-footer p{
-    color:#8e806c;
-    font-size:11px;
-    margin-top:8px;
-}
+/* CART BUTTON */
 
-.credit{
-    margin-top:18px;
-    color:#b9985c;
-    font-size:10px;
-    letter-spacing:1px;
-}
-
-/* ================= FLOATING CALL ================= */
-
-.call-btn{
+.cart-fab{
     position:fixed;
-    right:20px;
-    bottom:20px;
-    width:58px;
-    height:58px;
+    right:18px;
+    bottom:88px;
+    background:#171009;
+    border:1px solid var(--gold);
+    color:var(--gold2);
+    padding:11px 14px;
+    z-index:110;
+    cursor:pointer;
+    box-shadow:0 8px 30px #0008;
+}
+
+#cartCount{
+    background:#b82e22;
+    color:white;
+    border-radius:20px;
+    padding:2px 6px;
+    font-size:10px;
+}
+
+/* CALL */
+
+.call{
+    position:fixed;
+    right:18px;
+    bottom:18px;
+    width:56px;
+    height:56px;
     border-radius:50%;
     background:var(--gold);
-    color:#120d08;
+    color:#100b07;
     display:flex;
     align-items:center;
     justify-content:center;
     text-decoration:none;
     font-size:22px;
-    box-shadow:0 5px 25px rgba(217,164,65,.3);
-    z-index:999;
+    z-index:110;
 }
 
-/* ================= MOBILE ================= */
+/* CART DRAWER */
+
+.drawer{
+    position:fixed;
+    right:-430px;
+    top:0;
+    width:min(420px,94vw);
+    height:100vh;
+    background:#100c09;
+    border-left:1px solid var(--line);
+    z-index:200;
+    padding:24px;
+    transition:.3s;
+    overflow:auto;
+    box-shadow:-15px 0 50px #0009;
+}
+
+.drawer.open{
+    right:0;
+}
+
+.drawer h2{
+    font:600 38px 'Cormorant Garamond',serif;
+    color:var(--gold2);
+    margin-bottom:18px;
+}
+
+.close{
+    float:right;
+    background:none;
+    border:0;
+    color:var(--gold2);
+    font-size:27px;
+    cursor:pointer;
+}
+
+.cart-item{
+    border-bottom:1px solid #3e2c19;
+    padding:13px 0;
+}
+
+.cart-line{
+    display:flex;
+    justify-content:space-between;
+    gap:8px;
+}
+
+.qty{
+    display:flex;
+    align-items:center;
+    gap:9px;
+    margin-top:8px;
+}
+
+.qty button{
+    width:28px;
+    height:28px;
+    background:#1d140d;
+    color:var(--gold2);
+    border:1px solid #65481f;
+    cursor:pointer;
+}
+
+.total{
+    display:flex;
+    justify-content:space-between;
+    font-size:20px;
+    color:var(--gold2);
+    padding:20px 0;
+}
+
+.form input,
+.form textarea{
+    width:100%;
+    margin:7px 0;
+    padding:12px;
+    background:#171009;
+    border:1px solid #503919;
+    color:white;
+    outline:none;
+}
+
+.form textarea{
+    min-height:70px;
+    resize:vertical;
+}
+
+.checkout-btn{
+    width:100%;
+    margin-top:8px;
+    border:1px solid var(--gold);
+    background:transparent;
+    color:var(--gold2);
+    padding:14px;
+    cursor:pointer;
+    letter-spacing:1px;
+}
+
+.checkout-btn:hover{
+    background:var(--gold);
+    color:#100b07;
+}
+
+.empty{
+    color:#958873;
+    text-align:center;
+    padding:30px 0;
+}
+
+.note{
+    font-size:10px;
+    color:#8e806c;
+    line-height:1.6;
+    margin-top:12px;
+}
+
+/* MOBILE */
 
 @media(max-width:800px){
 
-    .logo{
-        font-size:62px;
-        letter-spacing:5px;
-    }
-
-    .nav-inner{
-        gap:18px;
-    }
-
-    nav a{
-        font-size:10px;
-        letter-spacing:1px;
-    }
-
-    section{
-        padding:65px 12px;
+    .menu-grid{
+        grid-template-columns:1fr;
     }
 
     .menu-box{
-        padding:25px 15px;
-    }
-
-    .menu-grid{
-        grid-template-columns:1fr;
-        gap:0;
-    }
-
-    .category{
-        margin-bottom:45px;
-    }
-
-    .category h3{
-        font-size:28px;
+        padding:20px 12px;
     }
 
     .item{
         font-size:16px;
     }
 
-    .price{
-        font-size:11px;
-    }
-
     .section-title h2{
         font-size:40px;
     }
-}
 
-@media(max-width:450px){
-
-    .logo{
-        font-size:50px;
+    .hero-logo{
+        width:min(330px,88vw);
     }
 
-    .subtitle{
-        font-size:11px;
-        letter-spacing:3px;
-    }
-
-    .tagline{
+    nav a{
         font-size:9px;
     }
 
-    .item{
-        font-size:15px;
-    }
-
-    .menu-box{
-        padding:22px 10px;
+    .drawer{
+        width:94vw;
     }
 }
 </style>
@@ -469,63 +456,68 @@ footer p{
 
 <body>
 
-<!-- ================= HERO ================= -->
+<!-- HERO -->
 
 <header id="home">
 
-    <div class="hero">
+<div>
 
-        <div class="logo">LUMORA</div>
+<img
+src="lumora-logo.png"
+class="hero-logo"
+alt="LUMORA Café & Restaurant Logo"
+>
 
-        <div class="logo-line"></div>
+<div class="subtitle">
+CAFÉ & RESTAURANT
+</div>
 
-        <div class="subtitle">
-            CAFÉ & RESTAURANT
-        </div>
+<div class="tagline">
+FINE DINING • FAMILY RESTAURANT • CAFÉ
+</div>
 
-        <div class="tagline">
-            FINE DINING • FAMILY RESTAURANT • CAFÉ
-        </div>
+<a href="#menu" class="hero-btn">
+EXPLORE MENU
+</a>
 
-        <a href="#menu" class="hero-btn">
-            EXPLORE MENU
-        </a>
-
-    </div>
+</div>
 
 </header>
 
 
-<!-- ================= NAVIGATION ================= -->
+<!-- NAV -->
 
 <nav>
 
 <div class="nav-inner">
 
-    <a href="#home">HOME</a>
-    <a href="#menu">MENU</a>
-    <a href="#indian">INDIAN</a>
-    <a href="#chinese">CHINESE</a>
-    <a href="#beverages">BEVERAGES</a>
-    <a href="#about">ABOUT</a>
-    <a href="#contact">CONTACT</a>
+<a href="#home">HOME</a>
+<a href="#menu">MENU</a>
+<a href="#indian">INDIAN</a>
+<a href="#chinese">CHINESE</a>
+<a href="#beverages">BEVERAGES</a>
+<a href="#contact">CONTACT</a>
 
 </div>
 
 </nav>
 
 
-<!-- ================= MENU ================= -->
+<!-- MENU -->
 
 <section id="menu">
 
 <div class="section-title">
 
-    <h2>Our Menu</h2>
+<h2>Our Menu</h2>
 
-    <div class="ornament">❧ ✦ ❧</div>
+<div class="ornament">
+❧ ✦ ❧
+</div>
 
-    <p>DELICIOUS MOMENTS • GREAT MEMORIES</p>
+<p>
+SELECT YOUR FAVOURITES & PLACE YOUR ORDER
+</p>
 
 </div>
 
@@ -535,7 +527,7 @@ footer p{
 <div class="menu-grid">
 
 
-<!-- ================= INDIAN ================= -->
+<!-- INDIAN -->
 
 <div>
 
@@ -543,316 +535,630 @@ footer p{
 
 <h3>Indian Main Course</h3>
 
-<div class="subcategory veg">Veg</div>
+<div class="subcategory veg">
+Veg
+</div>
 
-<div class="item"><span class="item-name">Yellow Dal Tadka</span><span class="dots"></span><span class="price">199</span></div>
-<div class="item"><span class="item-name">Dal Makhani</span><span class="dots"></span><span class="price">259</span></div>
-<div class="item"><span class="item-name">Mix Veg</span><span class="dots"></span><span class="price">249</span></div>
-<div class="item"><span class="item-name">Mix Veg Handi</span><span class="dots"></span><span class="price">249</span></div>
-<div class="item"><span class="item-name">Mutter Mushroom</span><span class="dots"></span><span class="price">299</span></div>
-<div class="item"><span class="item-name">Mushroom Matar Pyaza</span><span class="dots"></span><span class="price">289</span></div>
-<div class="item"><span class="item-name">Soya Chaap Masala</span><span class="dots"></span><span class="price">279</span></div>
-<div class="item"><span class="item-name">Malai Kofta</span><span class="dots"></span><span class="price">299</span></div>
-<div class="item"><span class="item-name">Kadai Paneer</span><span class="dots"></span><span class="price">299</span></div>
-<div class="item"><span class="item-name">Paneer Lababdar</span><span class="dots"></span><span class="price">299</span></div>
-<div class="item"><span class="item-name">Shahi Paneer</span><span class="dots"></span><span class="price">299</span></div>
-<div class="item"><span class="item-name">Paneer Tikka Masala</span><span class="dots"></span><span class="price">299</span></div>
+<div class="item">
+<span class="item-name">Yellow Dal Tadka</span>
+<span class="dots"></span>
+<span class="price">₹199</span>
+<button class="add" onclick="add('Yellow Dal Tadka',199)">ADD</button>
+</div>
 
-<div class="subcategory">Non-Veg</div>
+<div class="item">
+<span class="item-name">Dal Makhani</span>
+<span class="dots"></span>
+<span class="price">₹259</span>
+<button class="add" onclick="add('Dal Makhani',259)">ADD</button>
+</div>
 
-<div class="item"><span class="item-name">Home Style Chicken Curry (Half/Full)</span><span class="dots"></span><span class="price">299/499</span></div>
-<div class="item"><span class="item-name">Butter Chicken (Half/Full)</span><span class="dots"></span><span class="price">299/499</span></div>
-<div class="item"><span class="item-name">Kadai Chicken (Half/Full)</span><span class="dots"></span><span class="price">299/499</span></div>
-<div class="item"><span class="item-name">Chicken Handi (Half/Full)</span><span class="dots"></span><span class="price">299/499</span></div>
-<div class="item"><span class="item-name">Chicken Tikka Masala</span><span class="dots"></span><span class="price">349</span></div>
-<div class="item"><span class="item-name">Chicken Keema Masala</span><span class="dots"></span><span class="price">349</span></div>
-<div class="item"><span class="item-name">Patiala Chicken</span><span class="dots"></span><span class="price">349</span></div>
-<div class="item"><span class="item-name">Chicken Korma</span><span class="dots"></span><span class="price">349</span></div>
-<div class="item"><span class="item-name">Mutton Seekh Kebab Masala</span><span class="dots"></span><span class="price">449</span></div>
-<div class="item"><span class="item-name">Mutton Rogan Josh</span><span class="dots"></span><span class="price">449</span></div>
-<div class="item"><span class="item-name">Mutton Curry</span><span class="dots"></span><span class="price">449</span></div>
-<div class="item"><span class="item-name">Fish Curry</span><span class="dots"></span><span class="price">349</span></div>
+<div class="item">
+<span class="item-name">Mix Veg</span>
+<span class="dots"></span>
+<span class="price">₹249</span>
+<button class="add" onclick="add('Mix Veg',249)">ADD</button>
+</div>
+
+<div class="item">
+<span class="item-name">Mix Veg Handi</span>
+<span class="dots"></span>
+<span class="price">₹249</span>
+<button class="add" onclick="add('Mix Veg Handi',249)">ADD</button>
+</div>
+
+<div class="item">
+<span class="item-name">Mutter Mushroom</span>
+<span class="dots"></span>
+<span class="price">₹299</span>
+<button class="add" onclick="add('Mutter Mushroom',299)">ADD</button>
+</div>
+
+<div class="item">
+<span class="item-name">Soya Chaap Masala</span>
+<span class="dots"></span>
+<span class="price">₹279</span>
+<button class="add" onclick="add('Soya Chaap Masala',279)">ADD</button>
+</div>
+
+<div class="item">
+<span class="item-name">Malai Kofta</span>
+<span class="dots"></span>
+<span class="price">₹299</span>
+<button class="add" onclick="add('Malai Kofta',299)">ADD</button>
+</div>
+
+<div class="item">
+<span class="item-name">Kadai Paneer</span>
+<span class="dots"></span>
+<span class="price">₹299</span>
+<button class="add" onclick="add('Kadai Paneer',299)">ADD</button>
+</div>
+
+<div class="item">
+<span class="item-name">Paneer Lababdar</span>
+<span class="dots"></span>
+<span class="price">₹299</span>
+<button class="add" onclick="add('Paneer Lababdar',299)">ADD</button>
+</div>
+
+<div class="subcategory">
+Non-Veg
+</div>
+
+<div class="item">
+<span class="item-name">Butter Chicken</span>
+<span class="dots"></span>
+<span class="price">₹299</span>
+<button class="add" onclick="add('Butter Chicken',299)">ADD</button>
+</div>
+
+<div class="item">
+<span class="item-name">Kadai Chicken</span>
+<span class="dots"></span>
+<span class="price">₹299</span>
+<button class="add" onclick="add('Kadai Chicken',299)">ADD</button>
+</div>
+
+<div class="item">
+<span class="item-name">Chicken Tikka Masala</span>
+<span class="dots"></span>
+<span class="price">₹349</span>
+<button class="add" onclick="add('Chicken Tikka Masala',349)">ADD</button>
+</div>
+
+<div class="item">
+<span class="item-name">Chicken Korma</span>
+<span class="dots"></span>
+<span class="price">₹349</span>
+<button class="add" onclick="add('Chicken Korma',349)">ADD</button>
+</div>
+
+<div class="item">
+<span class="item-name">Mutton Rogan Josh</span>
+<span class="dots"></span>
+<span class="price">₹449</span>
+<button class="add" onclick="add('Mutton Rogan Josh',449)">ADD</button>
+</div>
 
 </div>
 
 
-<!-- ================= FRIED RICE ================= -->
+<!-- FRIED RICE -->
 
 <div class="category">
 
 <h3>Fried Rice</h3>
 
-<div class="item"><span class="item-name">Vegetable Fried Rice</span><span class="dots"></span><span class="price">159</span></div>
-<div class="item"><span class="item-name">Roasted Garlic & Spring Onion Fried Rice</span><span class="dots"></span><span class="price">169</span></div>
-<div class="item"><span class="item-name">Chilli Garlic Fried Rice</span><span class="dots"></span><span class="price">169</span></div>
-<div class="item"><span class="item-name">Egg & Spring Onion Fried Rice</span><span class="dots"></span><span class="price">189</span></div>
-<div class="item"><span class="item-name">Chicken Fried Rice</span><span class="dots"></span><span class="price">219</span></div>
-<div class="item"><span class="item-name">Chicken Schezwan Fried Rice</span><span class="dots"></span><span class="price">239</span></div>
-<div class="item"><span class="item-name">Seafood Fried Rice</span><span class="dots"></span><span class="price">349</span></div>
-<div class="item"><span class="item-name">Mix Meat Fried Rice</span><span class="dots"></span><span class="price">449</span></div>
+<div class="item">
+<span class="item-name">Vegetable Fried Rice</span>
+<span class="dots"></span>
+<span class="price">₹159</span>
+<button class="add" onclick="add('Vegetable Fried Rice',159)">ADD</button>
+</div>
+
+<div class="item">
+<span class="item-name">Chilli Garlic Fried Rice</span>
+<span class="dots"></span>
+<span class="price">₹169</span>
+<button class="add" onclick="add('Chilli Garlic Fried Rice',169)">ADD</button>
+</div>
+
+<div class="item">
+<span class="item-name">Egg Fried Rice</span>
+<span class="dots"></span>
+<span class="price">₹189</span>
+<button class="add" onclick="add('Egg Fried Rice',189)">ADD</button>
+</div>
+
+<div class="item">
+<span class="item-name">Chicken Fried Rice</span>
+<span class="dots"></span>
+<span class="price">₹219</span>
+<button class="add" onclick="add('Chicken Fried Rice',219)">ADD</button>
+</div>
+
+<div class="item">
+<span class="item-name">Chicken Schezwan Fried Rice</span>
+<span class="dots"></span>
+<span class="price">₹239</span>
+<button class="add" onclick="add('Chicken Schezwan Fried Rice',239)">ADD</button>
+</div>
 
 </div>
 
 
-<!-- ================= NOODLES ================= -->
+<!-- NOODLES -->
 
 <div class="category">
 
 <h3>Noodles</h3>
 
-<div class="subcategory veg">Veg</div>
+<div class="subcategory veg">
+Veg
+</div>
 
-<div class="item"><span class="item-name">Veg Hakka Noodles</span><span class="dots"></span><span class="price">149</span></div>
-<div class="item"><span class="item-name">Veg Schezwan Noodles</span><span class="dots"></span><span class="price">159</span></div>
-<div class="item"><span class="item-name">Veg Chilli Garlic Noodles</span><span class="dots"></span><span class="price">159</span></div>
+<div class="item">
+<span class="item-name">Veg Hakka Noodles</span>
+<span class="dots"></span>
+<span class="price">₹149</span>
+<button class="add" onclick="add('Veg Hakka Noodles',149)">ADD</button>
+</div>
 
-<div class="subcategory">Non-Veg</div>
+<div class="item">
+<span class="item-name">Veg Schezwan Noodles</span>
+<span class="dots"></span>
+<span class="price">₹159</span>
+<button class="add" onclick="add('Veg Schezwan Noodles',159)">ADD</button>
+</div>
 
-<div class="item"><span class="item-name">Egg Noodles</span><span class="dots"></span><span class="price">179</span></div>
-<div class="item"><span class="item-name">Chicken Hakka Noodles</span><span class="dots"></span><span class="price">199</span></div>
-<div class="item"><span class="item-name">Chicken Chilli Garlic Noodles</span><span class="dots"></span><span class="price">219</span></div>
-<div class="item"><span class="item-name">Roasted Garlic Chicken Noodles</span><span class="dots"></span><span class="price">219</span></div>
-<div class="item"><span class="item-name">Seafood Schezwan Noodles</span><span class="dots"></span><span class="price">349</span></div>
-<div class="item"><span class="item-name">Mix Meat Noodles</span><span class="dots"></span><span class="price">449</span></div>
+<div class="subcategory">
+Non-Veg
+</div>
+
+<div class="item">
+<span class="item-name">Egg Noodles</span>
+<span class="dots"></span>
+<span class="price">₹179</span>
+<button class="add" onclick="add('Egg Noodles',179)">ADD</button>
+</div>
+
+<div class="item">
+<span class="item-name">Chicken Hakka Noodles</span>
+<span class="dots"></span>
+<span class="price">₹199</span>
+<button class="add" onclick="add('Chicken Hakka Noodles',199)">ADD</button>
+</div>
+
+<div class="item">
+<span class="item-name">Chicken Chilli Garlic Noodles</span>
+<span class="dots"></span>
+<span class="price">₹219</span>
+<button class="add" onclick="add('Chicken Chilli Garlic Noodles',219)">ADD</button>
+</div>
 
 </div>
 
 
-<!-- ================= BIRYANI ================= -->
+<!-- BIRYANI -->
 
 <div class="category">
 
 <h3>Biryani & Rice</h3>
 
-<div class="item"><span class="item-name">Steamed Rice</span><span class="dots"></span><span class="price">139</span></div>
-<div class="item"><span class="item-name">Jeera Rice</span><span class="dots"></span><span class="price">149</span></div>
-<div class="item"><span class="item-name">Veg Pulao</span><span class="dots"></span><span class="price">169</span></div>
-<div class="item"><span class="item-name">Veg Dum Biryani</span><span class="dots"></span><span class="price">299</span></div>
-<div class="item"><span class="item-name">Chicken Dum Biryani</span><span class="dots"></span><span class="price">399</span></div>
-<div class="item"><span class="item-name">Mutton Biryani</span><span class="dots"></span><span class="price">449</span></div>
+<div class="item">
+<span class="item-name">Steamed Rice</span>
+<span class="dots"></span>
+<span class="price">₹139</span>
+<button class="add" onclick="add('Steamed Rice',139)">ADD</button>
+</div>
+
+<div class="item">
+<span class="item-name">Jeera Rice</span>
+<span class="dots"></span>
+<span class="price">₹149</span>
+<button class="add" onclick="add('Jeera Rice',149)">ADD</button>
+</div>
+
+<div class="item">
+<span class="item-name">Veg Pulao</span>
+<span class="dots"></span>
+<span class="price">₹169</span>
+<button class="add" onclick="add('Veg Pulao',169)">ADD</button>
+</div>
+
+<div class="item">
+<span class="item-name">Veg Dum Biryani</span>
+<span class="dots"></span>
+<span class="price">₹299</span>
+<button class="add" onclick="add('Veg Dum Biryani',299)">ADD</button>
+</div>
+
+<div class="item">
+<span class="item-name">Chicken Dum Biryani</span>
+<span class="dots"></span>
+<span class="price">₹399</span>
+<button class="add" onclick="add('Chicken Dum Biryani',399)">ADD</button>
+</div>
+
+<div class="item">
+<span class="item-name">Mutton Biryani</span>
+<span class="dots"></span>
+<span class="price">₹449</span>
+<button class="add" onclick="add('Mutton Biryani',449)">ADD</button>
+</div>
 
 </div>
 
 
-<!-- ================= BREAD ================= -->
+<!-- BREAD -->
 
 <div class="category">
 
 <h3>Bread Basket</h3>
 
-<div class="item"><span class="item-name">Plain Roti</span><span class="dots"></span><span class="price">18</span></div>
-<div class="item"><span class="item-name">Butter Roti</span><span class="dots"></span><span class="price">24</span></div>
-<div class="item"><span class="item-name">Lachha Paratha</span><span class="dots"></span><span class="price">50</span></div>
-<div class="item"><span class="item-name">Pudina Paratha</span><span class="dots"></span><span class="price">55</span></div>
-<div class="item"><span class="item-name">R/G Paratha</span><span class="dots"></span><span class="price">55</span></div>
-<div class="item"><span class="item-name">Stuffed Paratha</span><span class="dots"></span><span class="price">70</span></div>
-<div class="item"><span class="item-name">Plain Naan</span><span class="dots"></span><span class="price">40</span></div>
-<div class="item"><span class="item-name">Butter Naan</span><span class="dots"></span><span class="price">50</span></div>
-<div class="item"><span class="item-name">Garlic Naan</span><span class="dots"></span><span class="price">60</span></div>
-<div class="item"><span class="item-name">Cheese Naan</span><span class="dots"></span><span class="price">60</span></div>
-<div class="item"><span class="item-name">Kulcha (Aloo, Onion, Paneer, Mix)</span><span class="dots"></span><span class="price">60/80</span></div>
+<div class="item">
+<span class="item-name">Plain Roti</span>
+<span class="dots"></span>
+<span class="price">₹18</span>
+<button class="add" onclick="add('Plain Roti',18)">ADD</button>
+</div>
 
+<div class="item">
+<span class="item-name">Butter Roti</span>
+<span class="dots"></span>
+<span class="price">₹24</span>
+<button class="add" onclick="add('Butter Roti',24)">ADD</button>
+</div>
+
+<div class="item">
+<span class="item-name">Lachha Paratha</span>
+<span class="dots"></span>
+<span class="price">₹50</span>
+<button class="add" onclick="add('Lachha Paratha',50)">ADD</button>
+</div>
+
+<div class="item">
+<span class="item-name">Pudina Paratha</span>
+<span class="dots"></span>
+<span class="price">₹55</span>
+<button class="add" onclick="add('Pudina Paratha',55)">ADD</button>
+</div>
+
+<div class="item">
+<span class="item-name">Plain Naan</span>
+<span class="dots"></span>
+<span class="price">₹40</span>
+<button class="add" onclick="add('Plain Naan',40)">ADD</button>
+</div>
+
+<div class="item">
+<span class="item-name">Butter Naan</span>
+<span class="dots"></span>
+<span class="price">₹50</span>
+<button class="add" onclick="add('Butter Naan',50)">ADD</button>
+</div>
+
+<div class="item">
+<span class="item-name">Garlic Naan</span>
+<span class="dots"></span>
+<span class="price">₹60</span>
+<button class="add" onclick="add('Garlic Naan',60)">ADD</button>
 </div>
 
 </div>
 
+</div>
 
-<!-- ================= CHINESE ================= -->
+
+<!-- CHINESE -->
 
 <div id="chinese">
-
 
 <div class="category">
 
 <h3>Chinese Starters</h3>
 
-<div class="subcategory veg">Veg</div>
+<div class="subcategory veg">
+Veg
+</div>
 
-<div class="item"><span class="item-name">Veg Salt & Pepper</span><span class="dots"></span><span class="price">249</span></div>
-<div class="item"><span class="item-name">Honey Chilli Potato</span><span class="dots"></span><span class="price">179</span></div>
-<div class="item"><span class="item-name">Vegetable & Glass Noodles Spring Roll</span><span class="dots"></span><span class="price">199</span></div>
-<div class="item"><span class="item-name">Veg Manchurian</span><span class="dots"></span><span class="price">249</span></div>
-<div class="item"><span class="item-name">Chilli Dry Soya Chaap</span><span class="dots"></span><span class="price">249</span></div>
-<div class="item"><span class="item-name">Crispy Corn & Spinach</span><span class="dots"></span><span class="price">239</span></div>
-<div class="item"><span class="item-name">Chilli Paneer with Bell Pepper</span><span class="dots"></span><span class="price">289</span></div>
-<div class="item"><span class="item-name">Silken Tofu Chef's Special</span><span class="dots"></span><span class="price">289</span></div>
+<div class="item">
+<span class="item-name">Honey Chilli Potato</span>
+<span class="dots"></span>
+<span class="price">₹179</span>
+<button class="add" onclick="add('Honey Chilli Potato',179)">ADD</button>
+</div>
 
-<div class="subcategory">Non-Veg</div>
+<div class="item">
+<span class="item-name">Veg Manchurian</span>
+<span class="dots"></span>
+<span class="price">₹249</span>
+<button class="add" onclick="add('Veg Manchurian',249)">ADD</button>
+</div>
 
-<div class="item"><span class="item-name">Kung Pao Chicken with Peanuts</span><span class="dots"></span><span class="price">289</span></div>
-<div class="item"><span class="item-name">Dry Chilli Chicken with Bell Pepper</span><span class="dots"></span><span class="price">279</span></div>
-<div class="item"><span class="item-name">Crispy Chicken Salt & Five Spice</span><span class="dots"></span><span class="price">279</span></div>
-<div class="item"><span class="item-name">Chicken Manchurian</span><span class="dots"></span><span class="price">279</span></div>
-<div class="item"><span class="item-name">Schezwan Chicken Lollipop</span><span class="dots"></span><span class="price">299</span></div>
-<div class="item"><span class="item-name">Black Pepper Chicken Chef's Special</span><span class="dots"></span><span class="price">299</span></div>
-<div class="item"><span class="item-name">Schezwan Dry Chilli Fish</span><span class="dots"></span><span class="price">339</span></div>
-<div class="item"><span class="item-name">Cumin Lamb Chef's Special</span><span class="dots"></span><span class="price">339</span></div>
-<div class="item"><span class="item-name">Crispy Calamari with Roasted Garlic</span><span class="dots"></span><span class="price">339</span></div>
-<div class="item"><span class="item-name">Prawns Dry Chilli</span><span class="dots"></span><span class="price">449</span></div>
+<div class="item">
+<span class="item-name">Chilli Dry Soya Chaap</span>
+<span class="dots"></span>
+<span class="price">₹249</span>
+<button class="add" onclick="add('Chilli Dry Soya Chaap',249)">ADD</button>
+</div>
+
+<div class="item">
+<span class="item-name">Chilli Paneer</span>
+<span class="dots"></span>
+<span class="price">₹289</span>
+<button class="add" onclick="add('Chilli Paneer',289)">ADD</button>
+</div>
+
+<div class="subcategory">
+Non-Veg
+</div>
+
+<div class="item">
+<span class="item-name">Kung Pao Chicken</span>
+<span class="dots"></span>
+<span class="price">₹289</span>
+<button class="add" onclick="add('Kung Pao Chicken',289)">ADD</button>
+</div>
+
+<div class="item">
+<span class="item-name">Dry Chilli Chicken</span>
+<span class="dots"></span>
+<span class="price">₹279</span>
+<button class="add" onclick="add('Dry Chilli Chicken',279)">ADD</button>
+</div>
+
+<div class="item">
+<span class="item-name">Chicken Manchurian</span>
+<span class="dots"></span>
+<span class="price">₹279</span>
+<button class="add" onclick="add('Chicken Manchurian',279)">ADD</button>
+</div>
+
+<div class="item">
+<span class="item-name">Chicken Lollipop</span>
+<span class="dots"></span>
+<span class="price">₹299</span>
+<button class="add" onclick="add('Chicken Lollipop',299)">ADD</button>
+</div>
+
+<div class="item">
+<span class="item-name">Prawns Dry Chilli</span>
+<span class="dots"></span>
+<span class="price">₹449</span>
+<button class="add" onclick="add('Prawns Dry Chilli',449)">ADD</button>
+</div>
 
 </div>
 
 
-<!-- ================= SALADS ================= -->
-
-<div class="category">
-
-<h3>Salads</h3>
-
-<div class="item"><span class="item-name">Garden Green Salad</span><span class="dots"></span><span class="price">139</span></div>
-<div class="item"><span class="item-name">Russian Salad</span><span class="dots"></span><span class="price">229</span></div>
-<div class="item"><span class="item-name">Caesar Salad (Veg / Chicken)</span><span class="dots"></span><span class="price">249/299</span></div>
-<div class="item"><span class="item-name">Chicken Tikka Salad</span><span class="dots"></span><span class="price">299</span></div>
-
-</div>
-
-
-<!-- ================= SOUPS ================= -->
+<!-- SOUPS -->
 
 <div class="category">
 
 <h3>Soups</h3>
 
-<div class="item"><span class="item-name">Tomato Basil Soup</span><span class="dots"></span><span class="price">149</span></div>
-<div class="item"><span class="item-name">Cream Of Mushroom Soup</span><span class="dots"></span><span class="price">149</span></div>
-<div class="item"><span class="item-name">Sweet Corn Soup V/N</span><span class="dots"></span><span class="price">119/139</span></div>
-<div class="item"><span class="item-name">Manchow Soup V/N</span><span class="dots"></span><span class="price">119/139</span></div>
-<div class="item"><span class="item-name">Lemon Coriander Mushroom Soup V/N</span><span class="dots"></span><span class="price">119/139</span></div>
-<div class="item"><span class="item-name">Hot & Sour Soup Chef Special V/N</span><span class="dots"></span><span class="price">119/139</span></div>
-<div class="item"><span class="item-name">Noodles Soup Bowl With Dumplings V/N</span><span class="dots"></span><span class="price">299/349</span></div>
+<div class="item">
+<span class="item-name">Tomato Basil Soup</span>
+<span class="dots"></span>
+<span class="price">₹149</span>
+<button class="add" onclick="add('Tomato Basil Soup',149)">ADD</button>
+</div>
+
+<div class="item">
+<span class="item-name">Cream Of Mushroom Soup</span>
+<span class="dots"></span>
+<span class="price">₹149</span>
+<button class="add" onclick="add('Cream Of Mushroom Soup',149)">ADD</button>
+</div>
+
+<div class="item">
+<span class="item-name">Sweet Corn Soup</span>
+<span class="dots"></span>
+<span class="price">₹119</span>
+<button class="add" onclick="add('Sweet Corn Soup',119)">ADD</button>
+</div>
+
+<div class="item">
+<span class="item-name">Manchow Soup</span>
+<span class="dots"></span>
+<span class="price">₹119</span>
+<button class="add" onclick="add('Manchow Soup',119)">ADD</button>
+</div>
+
+<div class="item">
+<span class="item-name">Hot & Sour Soup</span>
+<span class="dots"></span>
+<span class="price">₹119</span>
+<button class="add" onclick="add('Hot & Sour Soup',119)">ADD</button>
+</div>
 
 </div>
 
 
-<!-- ================= DIM SUM ================= -->
+<!-- DIM SUM -->
 
 <div class="category">
 
 <h3>Dim Sum</h3>
 
-<div class="subcategory veg">Veg</div>
+<div class="subcategory veg">
+Veg
+</div>
 
-<div class="item"><span class="item-name">Spinach & Corn Dumplings</span><span class="dots"></span><span class="price">179</span></div>
-<div class="item"><span class="item-name">Mushroom & Veg Dumplings</span><span class="dots"></span><span class="price">179</span></div>
-<div class="item"><span class="item-name">Assorted Veg & Glass Noodles Dim Sum</span><span class="dots"></span><span class="price">179</span></div>
+<div class="item">
+<span class="item-name">Spinach & Corn Dumplings</span>
+<span class="dots"></span>
+<span class="price">₹179</span>
+<button class="add" onclick="add('Spinach & Corn Dumplings',179)">ADD</button>
+</div>
 
-<div class="subcategory">Non-Veg</div>
+<div class="item">
+<span class="item-name">Mushroom & Veg Dumplings</span>
+<span class="dots"></span>
+<span class="price">₹179</span>
+<button class="add" onclick="add('Mushroom & Veg Dumplings',179)">ADD</button>
+</div>
 
-<div class="item"><span class="item-name">Chicken & Spring Onion Steamed Dumplings</span><span class="dots"></span><span class="price">199</span></div>
-<div class="item"><span class="item-name">Pan-fried Chicken & Roasted Peanut Dim Sum</span><span class="dots"></span><span class="price">219</span></div>
-<div class="item"><span class="item-name">Lamb Black Pepper Dim Sum</span><span class="dots"></span><span class="price">299</span></div>
-<div class="item"><span class="item-name">Seafood Dim Sum</span><span class="dots"></span><span class="price">299</span></div>
+<div class="subcategory">
+Non-Veg
+</div>
+
+<div class="item">
+<span class="item-name">Chicken Dumplings</span>
+<span class="dots"></span>
+<span class="price">₹199</span>
+<button class="add" onclick="add('Chicken Dumplings',199)">ADD</button>
+</div>
+
+<div class="item">
+<span class="item-name">Pan Fried Chicken Dim Sum</span>
+<span class="dots"></span>
+<span class="price">₹219</span>
+<button class="add" onclick="add('Pan Fried Chicken Dim Sum',219)">ADD</button>
+</div>
 
 </div>
 
 
-<!-- ================= TANDOORI ================= -->
+<!-- MOMOS -->
 
 <div class="category">
 
 <h3>Tandoori Momos</h3>
 
-<div class="item"><span class="item-name">Tandoori Paneer Momos Malai / Spicy</span><span class="dots"></span><span class="price">249</span></div>
-<div class="item"><span class="item-name">Tandoori Chicken Momos Malai / Spicy</span><span class="dots"></span><span class="price">249</span></div>
-<div class="item"><span class="item-name">Crumb Fried Momos with Sweet Chilli</span><span class="dots"></span><span class="price">219/249</span></div>
+<div class="item">
+<span class="item-name">Tandoori Paneer Momos</span>
+<span class="dots"></span>
+<span class="price">₹249</span>
+<button class="add" onclick="add('Tandoori Paneer Momos',249)">ADD</button>
+</div>
+
+<div class="item">
+<span class="item-name">Tandoori Chicken Momos</span>
+<span class="dots"></span>
+<span class="price">₹249</span>
+<button class="add" onclick="add('Tandoori Chicken Momos',249)">ADD</button>
+</div>
 
 </div>
 
 
-<!-- ================= COLD COFFEE ================= -->
+<!-- BEVERAGES -->
 
-<div class="category">
+<div class="category" id="beverages">
 
 <h3>Cold Coffee / Smoothie</h3>
 
-<div class="item"><span class="item-name">Gold Coffee</span><span class="dots"></span><span class="price">139</span></div>
-<div class="item"><span class="item-name">Double Shot Iced Coffee</span><span class="dots"></span><span class="price">149</span></div>
-<div class="item"><span class="item-name">Cold Coffee with Icecream</span><span class="dots"></span><span class="price">159</span></div>
-<div class="item"><span class="item-name">Lassi Sweet/Sour</span><span class="dots"></span><span class="price">129</span></div>
-<div class="item"><span class="item-name">Banana Smoothie</span><span class="dots"></span><span class="price">179</span></div>
-<div class="item"><span class="item-name">Mango Smoothie</span><span class="dots"></span><span class="price">179</span></div>
-<div class="item"><span class="item-name">Mix Fruit Smoothie</span><span class="dots"></span><span class="price">179</span></div>
-<div class="item"><span class="item-name">Blueberry Smoothie</span><span class="dots"></span><span class="price">179</span></div>
+<div class="item">
+<span class="item-name">Gold Coffee</span>
+<span class="dots"></span>
+<span class="price">₹139</span>
+<button class="add" onclick="add('Gold Coffee',139)">ADD</button>
+</div>
+
+<div class="item">
+<span class="item-name">Double Shot Iced Coffee</span>
+<span class="dots"></span>
+<span class="price">₹149</span>
+<button class="add" onclick="add('Double Shot Iced Coffee',149)">ADD</button>
+</div>
+
+<div class="item">
+<span class="item-name">Cold Coffee with Icecream</span>
+<span class="dots"></span>
+<span class="price">₹159</span>
+<button class="add" onclick="add('Cold Coffee with Icecream',159)">ADD</button>
+</div>
+
+<div class="item">
+<span class="item-name">Lassi</span>
+<span class="dots"></span>
+<span class="price">₹129</span>
+<button class="add" onclick="add('Lassi',129)">ADD</button>
+</div>
+
+<div class="item">
+<span class="item-name">Mango Smoothie</span>
+<span class="dots"></span>
+<span class="price">₹179</span>
+<button class="add" onclick="add('Mango Smoothie',179)">ADD</button>
+</div>
+
+<div class="item">
+<span class="item-name">Mix Fruit Smoothie</span>
+<span class="dots"></span>
+<span class="price">₹179</span>
+<button class="add" onclick="add('Mix Fruit Smoothie',179)">ADD</button>
+</div>
 
 </div>
 
 
-<!-- ================= SHAKES ================= -->
+<!-- SHAKES -->
 
 <div class="category">
 
 <h3>Shakes</h3>
 
-<div class="item"><span class="item-name">Chocolate Shake</span><span class="dots"></span><span class="price">159</span></div>
-<div class="item"><span class="item-name">Mango Shake</span><span class="dots"></span><span class="price">159</span></div>
-<div class="item"><span class="item-name">Strawberry Shake</span><span class="dots"></span><span class="price">149</span></div>
-<div class="item"><span class="item-name">Banana Shake</span><span class="dots"></span><span class="price">149</span></div>
-<div class="item"><span class="item-name">Oreo Shake</span><span class="dots"></span><span class="price">159</span></div>
-<div class="item"><span class="item-name">Vanilla Shake</span><span class="dots"></span><span class="price">159</span></div>
-<div class="item"><span class="item-name">Kit Kat Shake</span><span class="dots"></span><span class="price">169</span></div>
+<div class="item">
+<span class="item-name">Chocolate Shake</span>
+<span class="dots"></span>
+<span class="price">₹159</span>
+<button class="add" onclick="add('Chocolate Shake',159)">ADD</button>
+</div>
+
+<div class="item">
+<span class="item-name">Mango Shake</span>
+<span class="dots"></span>
+<span class="price">₹159</span>
+<button class="add" onclick="add('Mango Shake',159)">ADD</button>
+</div>
+
+<div class="item">
+<span class="item-name">Strawberry Shake</span>
+<span class="dots"></span>
+<span class="price">₹149</span>
+<button class="add" onclick="add('Strawberry Shake',149)">ADD</button>
+</div>
+
+<div class="item">
+<span class="item-name">Oreo Shake</span>
+<span class="dots"></span>
+<span class="price">₹159</span>
+<button class="add" onclick="add('Oreo Shake',159)">ADD</button>
+</div>
+
+<div class="item">
+<span class="item-name">Kit Kat Shake</span>
+<span class="dots"></span>
+<span class="price">₹169</span>
+<button class="add" onclick="add('Kit Kat Shake',169)">ADD</button>
+</div>
 
 </div>
 
-
-<!-- ================= SOFT BEVERAGES ================= -->
-
-<div class="category" id="beverages">
-
-<h3>Soft Beverage</h3>
-
-<div class="item"><span class="item-name">Soft Drink</span><span class="dots"></span><span class="price">99</span></div>
-<div class="item"><span class="item-name">Fresh Lime Water</span><span class="dots"></span><span class="price">109</span></div>
-<div class="item"><span class="item-name">Red Bull</span><span class="dots"></span><span class="price">229</span></div>
-<div class="item"><span class="item-name">Ginger Ale</span><span class="dots"></span><span class="price">119</span></div>
-<div class="item"><span class="item-name">Lemon Ice Tea</span><span class="dots"></span><span class="price">129</span></div>
-<div class="item"><span class="item-name">Peach Ice Tea</span><span class="dots"></span><span class="price">129</span></div>
-<div class="item"><span class="item-name">Passion Fruit Ice Tea</span><span class="dots"></span><span class="price">129</span></div>
-<div class="item"><span class="item-name">Strawberry Ice Tea</span><span class="dots"></span><span class="price">129</span></div>
-<div class="item"><span class="item-name">The Coke</span><span class="dots"></span><span class="price">129</span></div>
-
 </div>
 
 </div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- ================= ABOUT ================= -->
-
-<section id="about">
-
-<div class="section-title">
-    <h2>About Lumora</h2>
-    <div class="ornament">❧ ✦ ❧</div>
-</div>
-
-<div class="about">
-
-<p>
-Welcome to <strong>LUMORA Café & Restaurant</strong> —
-a place where fine dining meets warm family moments.
-Enjoy carefully crafted Indian and Chinese favourites,
-comforting beverages and delicious desserts in an elegant atmosphere.
-</p>
 
 </div>
 
 </section>
 
 
-<!-- ================= CONTACT ================= -->
+<!-- CONTACT -->
 
 <section id="contact">
 
 <div class="section-title">
 
-    <h2>Contact Us</h2>
+<h2>Contact Us</h2>
 
-    <div class="ornament">❧ ✦ ❧</div>
+<div class="ornament">
+❧ ✦ ❧
+</div>
 
 </div>
 
@@ -865,50 +1171,408 @@ FINE DINING • FAMILY RESTAURANT • CAFÉ
 </p>
 
 <a class="phone" href="tel:+919520951715">
-    ☎ 9520951715
+☎ 9520951715
 </a>
 
 <div class="location">
-    📍 Raipur Chowk, Dehradun, Uttarakhand
+📍 Raipur Chowk, Dehradun, Uttarakhand
 </div>
-
-<p style="margin-top:25px;">
-We're here to serve you the best!
-</p>
 
 </div>
 
 </section>
 
 
-<!-- ================= FOOTER ================= -->
-
 <footer>
 
-<div class="brand">
-    LUMORA
-</div>
+<strong>LUMORA</strong>
 
-<p>
 CAFÉ & RESTAURANT
-</p>
 
-<p>
-FINE DINING • FAMILY RESTAURANT • CAFÉ
-</p>
+<br><br>
 
-<div class="credit">
-    © 2026 LUMORA CAFÉ & RESTAURANT • All Rights Reserved.
-</div>
+© 2026 LUMORA • All Rights Reserved.
 
 </footer>
 
 
-<!-- ================= CALL BUTTON ================= -->
+<!-- CART -->
 
-<a href="tel:+919520951715" class="call-btn">
-    ☎
+<button class="cart-fab" onclick="openCart()">
+
+🛒 CART
+
+<span id="cartCount">0</span>
+
+</button>
+
+
+<a class="call" href="tel:+919520951715">
+☎
 </a>
+
+
+<!-- CART DRAWER -->
+
+<div class="drawer" id="drawer">
+
+<button class="close" onclick="closeCart()">
+×
+</button>
+
+<h2>
+Your Order
+</h2>
+
+<div id="cartItems"></div>
+
+<div class="total">
+
+<span>
+Total
+</span>
+
+<strong>
+₹<span id="total">0</span>
+</strong>
+
+</div>
+
+
+<div class="form">
+
+<input
+id="customer"
+placeholder="Customer name"
+maxlength="50"
+>
+
+<input
+id="table"
+placeholder="Table number"
+maxlength="20"
+>
+
+<textarea
+id="notes"
+placeholder="Special instructions (optional)"
+></textarea>
+
+<button
+class="checkout-btn"
+onclick="placeOrder()"
+>
+PLACE ORDER ON WHATSAPP
+</button>
+
+<p class="note">
+
+Your selected order will open in WhatsApp.
+Review it and press Send.
+
+</p>
+
+</div>
+
+</div>
+
+
+<script>
+
+let cart=[];
+
+
+/* ADD ITEM */
+
+function add(name,price){
+
+    const found=cart.find(item=>item.name===name);
+
+    if(found){
+
+        found.qty++;
+
+    }else{
+
+        cart.push({
+            name:name,
+            price:price,
+            qty:1
+        });
+
+    }
+
+    updateCart();
+
+    openCart();
+}
+
+
+/* CHANGE QUANTITY */
+
+function changeQty(index,change){
+
+    cart[index].qty += change;
+
+    if(cart[index].qty <= 0){
+
+        cart.splice(index,1);
+
+    }
+
+    updateCart();
+}
+
+
+/* UPDATE CART */
+
+function updateCart(){
+
+    const box=document.getElementById("cartItems");
+
+    let total=0;
+    let count=0;
+
+    if(cart.length===0){
+
+        box.innerHTML=`
+        <div class="empty">
+        Your cart is empty.<br>
+        Select items from the menu.
+        </div>
+        `;
+
+    }else{
+
+        box.innerHTML=cart.map((item,index)=>{
+
+            total += item.price * item.qty;
+
+            count += item.qty;
+
+            return `
+
+            <div class="cart-item">
+
+                <div class="cart-line">
+
+                    <span>
+                    ${escapeHTML(item.name)}
+                    </span>
+
+                    <b>
+                    ₹${item.price * item.qty}
+                    </b>
+
+                </div>
+
+                <div class="qty">
+
+                    <button
+                    onclick="changeQty(${index},-1)">
+                    −
+                    </button>
+
+                    <span>
+                    ${item.qty}
+                    </span>
+
+                    <button
+                    onclick="changeQty(${index},1)">
+                    +
+                    </button>
+
+                    <small>
+                    ₹${item.price} each
+                    </small>
+
+                </div>
+
+            </div>
+
+            `;
+
+        }).join("");
+
+    }
+
+    document.getElementById("total").textContent=total;
+
+    document.getElementById("cartCount").textContent=count;
+
+}
+
+
+/* OPEN CART */
+
+function openCart(){
+
+    document
+    .getElementById("drawer")
+    .classList
+    .add("open");
+
+}
+
+
+/* CLOSE CART */
+
+function closeCart(){
+
+    document
+    .getElementById("drawer")
+    .classList
+    .remove("open");
+
+}
+
+
+/* SECURITY */
+
+function escapeHTML(text){
+
+    return text.replace(
+        /[&<>"']/g,
+        function(character){
+
+            return {
+
+                "&":"&amp;",
+                "<":"&lt;",
+                ">":"&gt;",
+                '"':"&quot;",
+                "'":"&#039;"
+
+            }[character];
+
+        }
+    );
+
+}
+
+
+/* PLACE ORDER */
+
+function placeOrder(){
+
+    if(cart.length===0){
+
+        alert("Please add at least one item.");
+
+        return;
+
+    }
+
+
+    const customer=
+    document
+    .getElementById("customer")
+    .value
+    .trim();
+
+
+    const table=
+    document
+    .getElementById("table")
+    .value
+    .trim();
+
+
+    const notes=
+    document
+    .getElementById("notes")
+    .value
+    .trim();
+
+
+    if(!customer){
+
+        alert("Please enter customer name.");
+
+        document
+        .getElementById("customer")
+        .focus();
+
+        return;
+
+    }
+
+
+    if(!table){
+
+        alert("Please enter table number.");
+
+        document
+        .getElementById("table")
+        .focus();
+
+        return;
+
+    }
+
+
+    let total=0;
+
+
+    let orderLines=cart.map(
+        function(item,index){
+
+            const subtotal=
+            item.price * item.qty;
+
+            total += subtotal;
+
+            return (
+                (index+1)+
+                ". "+
+                item.name+
+                " x"+
+                item.qty+
+                " = ₹"+
+                subtotal
+            );
+
+        }
+    );
+
+
+    const message=
+
+`*LUMORA CAFÉ & RESTAURANT*
+
+*NEW ORDER*
+
+Customer: ${customer}
+
+Table: ${table}
+
+ORDER:
+${orderLines.join("\n")}
+
+*TOTAL: ₹${total}*
+
+${notes ? "Special Note: "+notes : ""}
+
+Please confirm this order.`;
+
+
+    const whatsappURL=
+
+    "https://wa.me/919520951715?text="+
+    encodeURIComponent(message);
+
+
+    window.open(
+        whatsappURL,
+        "_blank"
+    );
+
+}
+
+
+updateCart();
+
+</script>
 
 </body>
 </html>
