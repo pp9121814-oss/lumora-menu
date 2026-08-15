@@ -3,1576 +3,491 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>LUMORA Café & Restaurant</title>
-
+<meta name="theme-color" content="#0b0907">
+<title>LUMORA — Café & Restaurant</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600&display=swap');
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    scroll-behavior:smooth;
-}
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600;700&display=swap');
 
 :root{
-    --bg:#0b0907;
-    --panel:#15100c;
-    --gold:#d9a441;
-    --gold2:#f1ca72;
-    --cream:#f4e6c9;
-    --muted:#b9aa92;
-    --line:#68491f;
+ --bg:#090705;--panel:#120d09;--panel2:#18110b;--gold:#d6a347;--gold2:#f3d083;
+ --cream:#f4e7cc;--muted:#a99b84;--line:#5c421e;--green:#6ea75a;--red:#bd463b;
 }
-
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
 body{
-    background:
-    radial-gradient(circle at top,#2a1a0d 0,#0b0907 42%);
-    color:var(--cream);
-    font-family:'Montserrat',sans-serif;
+ background:radial-gradient(circle at 50% -10%,#3a2410 0,#120c08 28%,#090705 60%);
+ color:var(--cream);font-family:Montserrat,Arial,sans-serif;
 }
-
-/* HERO */
-
-header{
-    min-height:92vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    padding:30px 20px;
+button,input,textarea{font:inherit}
+button{cursor:pointer}
+a{color:inherit}
+.hero{
+ min-height:78vh;display:flex;align-items:center;justify-content:center;text-align:center;
+ padding:50px 20px;position:relative;overflow:hidden;
 }
-
-.hero-logo{
-    width:min(390px,82vw);
-    max-height:220px;
-    object-fit:contain;
-    filter:drop-shadow(0 0 20px rgba(217,164,65,.15));
-    margin-bottom:18px;
+.hero:before,.hero:after{
+ content:"";position:absolute;border:1px solid #7d5b2c;border-radius:50%;opacity:.16;
+ width:520px;height:520px;
 }
-
-.subtitle{
-    letter-spacing:5px;
-    color:#e4c58c;
-    font-size:13px;
+.hero:before{transform:rotate(25deg)}
+.hero:after{width:360px;height:360px;transform:rotate(-20deg)}
+.hero-content{position:relative;z-index:2}
+.logo{
+ width:min(360px,82vw);max-height:220px;object-fit:contain;
+ filter:drop-shadow(0 0 25px #d6a34722);margin-bottom:20px;
 }
-
-.tagline{
-    color:var(--muted);
-    font-size:10px;
-    letter-spacing:3px;
-    margin-top:9px;
-}
-
+.kicker{font-size:11px;letter-spacing:5px;color:var(--gold2)}
+.tag{font:500 19px 'Cormorant Garamond',serif;color:#cdbb9a;margin-top:8px;font-style:italic}
 .hero-btn{
-    display:inline-block;
-    margin-top:32px;
-    border:1px solid var(--gold);
-    color:var(--gold2);
-    padding:14px 28px;
-    text-decoration:none;
-    letter-spacing:2px;
-    transition:.25s;
+ display:inline-block;margin-top:28px;padding:13px 28px;border:1px solid var(--gold);
+ color:var(--gold2);text-decoration:none;font-size:11px;letter-spacing:2px;
+ transition:.25s
 }
-
-.hero-btn:hover{
-    background:var(--gold);
-    color:#100b07;
-}
-
-/* NAV */
-
+.hero-btn:hover{background:var(--gold);color:#100b07}
 nav{
-    position:sticky;
-    top:0;
-    z-index:100;
-    background:rgba(9,7,5,.95);
-    backdrop-filter:blur(10px);
-    border-bottom:1px solid #4e381b;
+ position:sticky;top:0;z-index:80;background:#0b0806ed;backdrop-filter:blur(14px);
+ border-bottom:1px solid #4d371b
 }
-
-.nav-inner{
-    display:flex;
-    justify-content:center;
-    gap:25px;
-    flex-wrap:wrap;
-    padding:15px;
+.nav{
+ max-width:1200px;margin:auto;display:flex;align-items:center;justify-content:center;
+ gap:24px;padding:14px 16px;overflow:auto
 }
-
-nav a{
-    color:#e6c47f;
-    text-decoration:none;
-    font-size:11px;
-    letter-spacing:1.5px;
+.nav a{font-size:10px;letter-spacing:1.5px;color:#dfc384;text-decoration:none;white-space:nowrap}
+section{max-width:1250px;margin:auto;padding:70px 18px}
+.title{text-align:center;margin-bottom:30px}
+.title h2{font:600 52px 'Cormorant Garamond',serif;color:var(--gold2);font-style:italic}
+.title p{font-size:10px;letter-spacing:3px;color:var(--muted);margin-top:7px}
+.orn{color:var(--gold);margin:9px}
+.controls{
+ display:flex;gap:10px;max-width:1000px;margin:0 auto 25px;flex-wrap:wrap
 }
-
-/* SECTIONS */
-
-section{
-    max-width:1250px;
-    margin:auto;
-    padding:75px 18px;
+.search{
+ flex:1;min-width:220px;background:#120d09;border:1px solid var(--line);color:white;
+ padding:13px 15px;outline:none
 }
-
-.section-title{
-    text-align:center;
-    margin-bottom:40px;
+.search:focus{border-color:var(--gold)}
+.filters{display:flex;gap:7px;flex-wrap:wrap}
+.filter{
+ background:#120d09;color:#d9bd7d;border:1px solid #543b1c;padding:11px 13px;font-size:10px;
+ letter-spacing:1px
 }
-
-.section-title h2{
-    font:600 48px 'Cormorant Garamond',serif;
-    color:var(--gold2);
-    font-style:italic;
-}
-
-.section-title p{
-    font-size:10px;
-    letter-spacing:3px;
-    color:var(--muted);
-}
-
-.ornament{
-    color:var(--gold);
-    margin:10px;
-}
-
-/* MENU */
-
+.filter.active,.filter:hover{background:var(--gold);color:#100b07;border-color:var(--gold)}
 .menu-box{
-    border:1px solid var(--line);
-    padding:35px;
-    background:rgba(15,11,8,.96);
-    box-shadow:0 20px 60px #0008;
+ background:linear-gradient(145deg,#120d09,#0d0907);border:1px solid var(--line);
+ padding:32px;box-shadow:0 25px 70px #0009
 }
-
-.menu-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:45px;
-}
-
-.category{
-    margin-bottom:45px;
-}
-
+.menu-grid{display:grid;grid-template-columns:1fr 1fr;gap:42px}
+.category{margin-bottom:42px}
 .category h3{
-    font:600 31px 'Cormorant Garamond',serif;
-    color:var(--gold2);
-    font-style:italic;
-    border-bottom:1px solid #68491f;
-    padding-bottom:8px;
-    margin-bottom:16px;
+ color:var(--gold2);font:600 32px 'Cormorant Garamond',serif;font-style:italic;
+ border-bottom:1px solid #5b401d;padding-bottom:8px;margin-bottom:14px
 }
-
-.subcategory{
-    font-size:12px;
-    font-weight:600;
-    color:#d94335;
-    margin:15px 0 8px;
-}
-
-.subcategory.veg{
-    color:#72ae56;
-}
-
+.sub{font-size:10px;letter-spacing:2px;font-weight:700;margin:13px 0 8px;color:var(--green)}
+.sub.non{color:var(--red)}
 .item{
-    display:flex;
-    align-items:baseline;
-    gap:7px;
-    margin:9px 0;
-    font:500 18px 'Cormorant Garamond',serif;
+ display:flex;align-items:center;gap:8px;padding:9px 0;border-bottom:1px solid #261b10;
+ transition:.2s
 }
-
-.item-name{
-    color:#eee0c7;
-}
-
-.dots{
-    flex:1;
-    border-bottom:1px dotted #765d3b;
-    min-width:15px;
-}
-
-.price{
-    font:500 12px Montserrat;
-    color:#f0d39a;
-    white-space:nowrap;
-}
-
+.item:hover{transform:translateX(3px)}
+.dot{width:7px;height:7px;border-radius:50%;flex:none}
+.dot.veg{background:var(--green);box-shadow:0 0 7px #6ea75a66}
+.dot.non{background:var(--red);box-shadow:0 0 7px #bd463b66}
+.item-name{font:500 18px 'Cormorant Garamond',serif}
+.badge{font-size:7px;border:1px solid #856128;color:#d8b86d;padding:3px 5px;white-space:nowrap}
+.dots{flex:1;border-bottom:1px dotted #604b2e;min-width:10px}
+.price{font-size:11px;color:#f0d39a;white-space:nowrap}
 .add{
-    border:1px solid #765524;
-    background:#171009;
-    color:#e9c36d;
-    padding:5px 8px;
-    cursor:pointer;
-    font-size:10px;
+ background:#171008;color:#e9c36d;border:1px solid #6b4c20;padding:6px 8px;font-size:9px;
+ transition:.2s
 }
-
-.add:hover{
-    background:var(--gold);
-    color:#100b07;
+.add:hover{background:var(--gold);color:#100b07}
+.added{animation:pop .35s}
+@keyframes pop{50%{transform:scale(1.12)}}
+.no-results{text-align:center;color:var(--muted);padding:35px;display:none}
+.contact{
+ max-width:700px;margin:auto;text-align:center;border:1px solid var(--line);
+ padding:45px 20px;background:#100b08
 }
-
-/* CONTACT */
-
-.contact-card{
-    max-width:700px;
-    margin:auto;
-    text-align:center;
-    border:1px solid var(--line);
-    padding:45px 25px;
-    background:#100c09;
+.contact h3{font:600 47px 'Cormorant Garamond',serif;color:var(--gold2)}
+.phone{display:inline-block;margin-top:18px;color:var(--gold2);text-decoration:none;font-size:22px}
+.location{color:#cbbb9e;margin-top:10px;font-size:13px}
+footer{text-align:center;border-top:1px solid #4d371b;padding:28px;color:#827661;font-size:9px;letter-spacing:1px}
+footer strong{display:block;font:600 29px 'Cormorant Garamond',serif;color:var(--gold2);letter-spacing:4px}
+.cart-btn{
+ position:fixed;right:18px;bottom:82px;z-index:90;background:#161009;border:1px solid var(--gold);
+ color:var(--gold2);padding:12px 15px;box-shadow:0 8px 30px #0009
 }
-
-.contact-card h3{
-    font:600 44px 'Cormorant Garamond',serif;
-    color:var(--gold2);
-}
-
-.phone{
-    display:inline-block;
-    margin-top:20px;
-    color:var(--gold2);
-    font-size:23px;
-    text-decoration:none;
-}
-
-.location{
-    margin-top:12px;
-    color:#d6c5a5;
-}
-
-/* FOOTER */
-
-footer{
-    text-align:center;
-    border-top:1px solid #4e381b;
-    padding:30px;
-    background:#080604;
-    color:#8e806c;
-    font-size:10px;
-}
-
-footer strong{
-    font:600 27px 'Cormorant Garamond',serif;
-    color:var(--gold2);
-    display:block;
-    letter-spacing:4px;
-}
-
-/* CART BUTTON */
-
-.cart-fab{
-    position:fixed;
-    right:18px;
-    bottom:88px;
-    background:#171009;
-    border:1px solid var(--gold);
-    color:var(--gold2);
-    padding:11px 14px;
-    z-index:110;
-    cursor:pointer;
-    box-shadow:0 8px 30px #0008;
-}
-
-#cartCount{
-    background:#b82e22;
-    color:white;
-    border-radius:20px;
-    padding:2px 6px;
-    font-size:10px;
-}
-
-/* CALL */
-
+.count{background:var(--red);color:white;border-radius:20px;padding:2px 6px;font-size:9px}
 .call{
-    position:fixed;
-    right:18px;
-    bottom:18px;
-    width:56px;
-    height:56px;
-    border-radius:50%;
-    background:var(--gold);
-    color:#100b07;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-decoration:none;
-    font-size:22px;
-    z-index:110;
+ position:fixed;right:18px;bottom:18px;z-index:90;width:52px;height:52px;border-radius:50%;
+ display:flex;align-items:center;justify-content:center;background:var(--gold);color:#100b07;
+ text-decoration:none;font-size:20px;box-shadow:0 8px 25px #0008
 }
-
-/* CART DRAWER */
-
+.toast{
+ position:fixed;left:50%;bottom:25px;transform:translate(-50%,120px);
+ z-index:300;background:#171009;border:1px solid var(--gold);color:var(--gold2);
+ padding:11px 17px;font-size:11px;transition:.3s;box-shadow:0 10px 35px #0009
+}
+.toast.show{transform:translate(-50%,0)}
 .drawer{
-    position:fixed;
-    right:-430px;
-    top:0;
-    width:min(420px,94vw);
-    height:100vh;
-    background:#100c09;
-    border-left:1px solid var(--line);
-    z-index:200;
-    padding:24px;
-    transition:.3s;
-    overflow:auto;
-    box-shadow:-15px 0 50px #0009;
+ position:fixed;right:-440px;top:0;width:min(430px,94vw);height:100vh;z-index:200;
+ background:#100b08;border-left:1px solid var(--line);padding:24px;overflow:auto;
+ transition:.3s;box-shadow:-20px 0 60px #000b
 }
-
-.drawer.open{
-    right:0;
+.drawer.open{right:0}
+.close{float:right;border:0;background:none;color:var(--gold2);font-size:30px}
+.drawer h2{font:600 40px 'Cormorant Garamond',serif;color:var(--gold2);margin-bottom:18px}
+.cart-item{padding:14px 0;border-bottom:1px solid #332415}
+.cart-line{display:flex;justify-content:space-between;gap:10px}
+.cart-name{font-family:'Cormorant Garamond',serif;font-size:19px}
+.qty{display:flex;align-items:center;gap:9px;margin-top:9px}
+.qty button{width:28px;height:28px;background:#191008;border:1px solid #62471f;color:var(--gold2)}
+.total{display:flex;justify-content:space-between;padding:22px 0;font-size:20px;color:var(--gold2)}
+.form input,.form textarea{
+ width:100%;margin:6px 0;padding:12px;background:#171009;border:1px solid #513a1d;
+ color:white;outline:none
 }
-
-.drawer h2{
-    font:600 38px 'Cormorant Garamond',serif;
-    color:var(--gold2);
-    margin-bottom:18px;
+.form textarea{min-height:75px;resize:vertical}
+.order-btn{
+ width:100%;padding:14px;background:transparent;border:1px solid var(--gold);
+ color:var(--gold2);margin-top:7px;font-size:11px;letter-spacing:1px
 }
-
-.close{
-    float:right;
-    background:none;
-    border:0;
-    color:var(--gold2);
-    font-size:27px;
-    cursor:pointer;
+.order-btn:hover{background:var(--gold);color:#100b07}
+.empty{text-align:center;color:#958873;padding:35px 0}
+.note{font-size:9px;color:#81735f;line-height:1.6;margin-top:10px}
+.overlay{
+ position:fixed;inset:0;background:#0008;z-index:190;display:none
 }
-
-.cart-item{
-    border-bottom:1px solid #3e2c19;
-    padding:13px 0;
-}
-
-.cart-line{
-    display:flex;
-    justify-content:space-between;
-    gap:8px;
-}
-
-.qty{
-    display:flex;
-    align-items:center;
-    gap:9px;
-    margin-top:8px;
-}
-
-.qty button{
-    width:28px;
-    height:28px;
-    background:#1d140d;
-    color:var(--gold2);
-    border:1px solid #65481f;
-    cursor:pointer;
-}
-
-.total{
-    display:flex;
-    justify-content:space-between;
-    font-size:20px;
-    color:var(--gold2);
-    padding:20px 0;
-}
-
-.form input,
-.form textarea{
-    width:100%;
-    margin:7px 0;
-    padding:12px;
-    background:#171009;
-    border:1px solid #503919;
-    color:white;
-    outline:none;
-}
-
-.form textarea{
-    min-height:70px;
-    resize:vertical;
-}
-
-.checkout-btn{
-    width:100%;
-    margin-top:8px;
-    border:1px solid var(--gold);
-    background:transparent;
-    color:var(--gold2);
-    padding:14px;
-    cursor:pointer;
-    letter-spacing:1px;
-}
-
-.checkout-btn:hover{
-    background:var(--gold);
-    color:#100b07;
-}
-
-.empty{
-    color:#958873;
-    text-align:center;
-    padding:30px 0;
-}
-
-.note{
-    font-size:10px;
-    color:#8e806c;
-    line-height:1.6;
-    margin-top:12px;
-}
-
-/* MOBILE */
-
+.overlay.show{display:block}
 @media(max-width:800px){
-
-    .menu-grid{
-        grid-template-columns:1fr;
-    }
-
-    .menu-box{
-        padding:20px 12px;
-    }
-
-    .item{
-        font-size:16px;
-    }
-
-    .section-title h2{
-        font-size:40px;
-    }
-
-    .hero-logo{
-        width:min(330px,88vw);
-    }
-
-    nav a{
-        font-size:9px;
-    }
-
-    .drawer{
-        width:94vw;
-    }
+ .hero{min-height:70vh}
+ .menu-grid{grid-template-columns:1fr}
+ .menu-box{padding:18px 12px}
+ .title h2{font-size:43px}
+ .item-name{font-size:16px}
+ .nav{justify-content:flex-start}
+}
+@media(max-width:500px){
+ .badge{display:none}
+ .dots{display:none}
+ .item{flex-wrap:wrap}
+ .price{margin-left:auto}
+ .add{margin-left:auto}
 }
 </style>
 </head>
-
 <body>
 
-<!-- HERO -->
-
-<header id="home">
-
-<div>
-
-<img
-src="lumora-logo.png"
-class="hero-logo"
-alt="LUMORA Café & Restaurant Logo"
->
-
-<div class="subtitle">
-CAFÉ & RESTAURANT
-</div>
-
-<div class="tagline">
-FINE DINING • FAMILY RESTAURANT • CAFÉ
-</div>
-
-<a href="#menu" class="hero-btn">
-EXPLORE MENU
-</a>
-
-</div>
-
+<header class="hero" id="home">
+ <div class="hero-content">
+   <img class="logo" src="lumora-logo.png" alt="LUMORA logo">
+   <div class="kicker">CAFÉ & RESTAURANT</div>
+   <div class="tag">Fine Dining • Family Restaurant • Café</div>
+   <a href="#menu" class="hero-btn">EXPLORE MENU</a>
+ </div>
 </header>
 
-
-<!-- NAV -->
-
 <nav>
-
-<div class="nav-inner">
-
-<a href="#home">HOME</a>
-<a href="#menu">MENU</a>
-<a href="#indian">INDIAN</a>
-<a href="#chinese">CHINESE</a>
-<a href="#beverages">BEVERAGES</a>
-<a href="#contact">CONTACT</a>
-
-</div>
-
+ <div class="nav">
+  <a href="#home">HOME</a>
+  <a href="#menu">MENU</a>
+  <a href="#indian">INDIAN</a>
+  <a href="#chinese">CHINESE</a>
+  <a href="#beverages">BEVERAGES</a>
+  <a href="#contact">CONTACT</a>
+ </div>
 </nav>
 
-
-<!-- MENU -->
-
 <section id="menu">
-
-<div class="section-title">
-
-<h2>Our Menu</h2>
-
-<div class="ornament">
-❧ ✦ ❧
-</div>
-
-<p>
-SELECT YOUR FAVOURITES & PLACE YOUR ORDER
-</p>
-
-</div>
-
-
-<div class="menu-box">
-
-<div class="menu-grid">
-
-
-<!-- INDIAN -->
-
-<div>
-
-<div class="category" id="indian">
-
-<h3>Indian Main Course</h3>
-
-<div class="subcategory veg">
-Veg
-</div>
-
-<div class="item">
-<span class="item-name">Yellow Dal Tadka</span>
-<span class="dots"></span>
-<span class="price">₹199</span>
-<button class="add" onclick="add('Yellow Dal Tadka',199)">ADD</button>
-</div>
-
-<div class="item">
-<span class="item-name">Dal Makhani</span>
-<span class="dots"></span>
-<span class="price">₹259</span>
-<button class="add" onclick="add('Dal Makhani',259)">ADD</button>
-</div>
-
-<div class="item">
-<span class="item-name">Mix Veg</span>
-<span class="dots"></span>
-<span class="price">₹249</span>
-<button class="add" onclick="add('Mix Veg',249)">ADD</button>
-</div>
-
-<div class="item">
-<span class="item-name">Mix Veg Handi</span>
-<span class="dots"></span>
-<span class="price">₹249</span>
-<button class="add" onclick="add('Mix Veg Handi',249)">ADD</button>
-</div>
-
-<div class="item">
-<span class="item-name">Mutter Mushroom</span>
-<span class="dots"></span>
-<span class="price">₹299</span>
-<button class="add" onclick="add('Mutter Mushroom',299)">ADD</button>
-</div>
-
-<div class="item">
-<span class="item-name">Soya Chaap Masala</span>
-<span class="dots"></span>
-<span class="price">₹279</span>
-<button class="add" onclick="add('Soya Chaap Masala',279)">ADD</button>
-</div>
-
-<div class="item">
-<span class="item-name">Malai Kofta</span>
-<span class="dots"></span>
-<span class="price">₹299</span>
-<button class="add" onclick="add('Malai Kofta',299)">ADD</button>
-</div>
-
-<div class="item">
-<span class="item-name">Kadai Paneer</span>
-<span class="dots"></span>
-<span class="price">₹299</span>
-<button class="add" onclick="add('Kadai Paneer',299)">ADD</button>
-</div>
-
-<div class="item">
-<span class="item-name">Paneer Lababdar</span>
-<span class="dots"></span>
-<span class="price">₹299</span>
-<button class="add" onclick="add('Paneer Lababdar',299)">ADD</button>
-</div>
-
-<div class="subcategory">
-Non-Veg
-</div>
-
-<div class="item">
-<span class="item-name">Butter Chicken</span>
-<span class="dots"></span>
-<span class="price">₹299</span>
-<button class="add" onclick="add('Butter Chicken',299)">ADD</button>
-</div>
-
-<div class="item">
-<span class="item-name">Kadai Chicken</span>
-<span class="dots"></span>
-<span class="price">₹299</span>
-<button class="add" onclick="add('Kadai Chicken',299)">ADD</button>
-</div>
-
-<div class="item">
-<span class="item-name">Chicken Tikka Masala</span>
-<span class="dots"></span>
-<span class="price">₹349</span>
-<button class="add" onclick="add('Chicken Tikka Masala',349)">ADD</button>
-</div>
-
-<div class="item">
-<span class="item-name">Chicken Korma</span>
-<span class="dots"></span>
-<span class="price">₹349</span>
-<button class="add" onclick="add('Chicken Korma',349)">ADD</button>
-</div>
-
-<div class="item">
-<span class="item-name">Mutton Rogan Josh</span>
-<span class="dots"></span>
-<span class="price">₹449</span>
-<button class="add" onclick="add('Mutton Rogan Josh',449)">ADD</button>
-</div>
-
-</div>
-
-
-<!-- FRIED RICE -->
-
-<div class="category">
-
-<h3>Fried Rice</h3>
-
-<div class="item">
-<span class="item-name">Vegetable Fried Rice</span>
-<span class="dots"></span>
-<span class="price">₹159</span>
-<button class="add" onclick="add('Vegetable Fried Rice',159)">ADD</button>
-</div>
-
-<div class="item">
-<span class="item-name">Chilli Garlic Fried Rice</span>
-<span class="dots"></span>
-<span class="price">₹169</span>
-<button class="add" onclick="add('Chilli Garlic Fried Rice',169)">ADD</button>
-</div>
-
-<div class="item">
-<span class="item-name">Egg Fried Rice</span>
-<span class="dots"></span>
-<span class="price">₹189</span>
-<button class="add" onclick="add('Egg Fried Rice',189)">ADD</button>
-</div>
-
-<div class="item">
-<span class="item-name">Chicken Fried Rice</span>
-<span class="dots"></span>
-<span class="price">₹219</span>
-<button class="add" onclick="add('Chicken Fried Rice',219)">ADD</button>
-</div>
-
-<div class="item">
-<span class="item-name">Chicken Schezwan Fried Rice</span>
-<span class="dots"></span>
-<span class="price">₹239</span>
-<button class="add" onclick="add('Chicken Schezwan Fried Rice',239)">ADD</button>
-</div>
-
-</div>
-
-
-<!-- NOODLES -->
-
-<div class="category">
-
-<h3>Noodles</h3>
-
-<div class="subcategory veg">
-Veg
-</div>
-
-<div class="item">
-<span class="item-name">Veg Hakka Noodles</span>
-<span class="dots"></span>
-<span class="price">₹149</span>
-<button class="add" onclick="add('Veg Hakka Noodles',149)">ADD</button>
-</div>
-
-<div class="item">
-<span class="item-name">Veg Schezwan Noodles</span>
-<span class="dots"></span>
-<span class="price">₹159</span>
-<button class="add" onclick="add('Veg Schezwan Noodles',159)">ADD</button>
-</div>
-
-<div class="subcategory">
-Non-Veg
-</div>
-
-<div class="item">
-<span class="item-name">Egg Noodles</span>
-<span class="dots"></span>
-<span class="price">₹179</span>
-<button class="add" onclick="add('Egg Noodles',179)">ADD</button>
-</div>
-
-<div class="item">
-<span class="item-name">Chicken Hakka Noodles</span>
-<span class="dots"></span>
-<span class="price">₹199</span>
-<button class="add" onclick="add('Chicken Hakka Noodles',199)">ADD</button>
-</div>
-
-<div class="item">
-<span class="item-name">Chicken Chilli Garlic Noodles</span>
-<span class="dots"></span>
-<span class="price">₹219</span>
-<button class="add" onclick="add('Chicken Chilli Garlic Noodles',219)">ADD</button>
-</div>
-
-</div>
-
-
-<!-- BIRYANI -->
-
-<div class="category">
-
-<h3>Biryani & Rice</h3>
-
-<div class="item">
-<span class="item-name">Steamed Rice</span>
-<span class="dots"></span>
-<span class="price">₹139</span>
-<button class="add" onclick="add('Steamed Rice',139)">ADD</button>
-</div>
-
-<div class="item">
-<span class="item-name">Jeera Rice</span>
-<span class="dots"></span>
-<span class="price">₹149</span>
-<button class="add" onclick="add('Jeera Rice',149)">ADD</button>
-</div>
-
-<div class="item">
-<span class="item-name">Veg Pulao</span>
-<span class="dots"></span>
-<span class="price">₹169</span>
-<button class="add" onclick="add('Veg Pulao',169)">ADD</button>
-</div>
-
-<div class="item">
-<span class="item-name">Veg Dum Biryani</span>
-<span class="dots"></span>
-<span class="price">₹299</span>
-<button class="add" onclick="add('Veg Dum Biryani',299)">ADD</button>
-</div>
-
-<div class="item">
-<span class="item-name">Chicken Dum Biryani</span>
-<span class="dots"></span>
-<span class="price">₹399</span>
-<button class="add" onclick="add('Chicken Dum Biryani',399)">ADD</button>
-</div>
-
-<div class="item">
-<span class="item-name">Mutton Biryani</span>
-<span class="dots"></span>
-<span class="price">₹449</span>
-<button class="add" onclick="add('Mutton Biryani',449)">ADD</button>
-</div>
-
-</div>
-
-
-<!-- BREAD -->
-
-<div class="category">
-
-<h3>Bread Basket</h3>
-
-<div class="item">
-<span class="item-name">Plain Roti</span>
-<span class="dots"></span>
-<span class="price">₹18</span>
-<button class="add" onclick="add('Plain Roti',18)">ADD</button>
-</div>
-
-<div class="item">
-<span class="item-name">Butter Roti</span>
-<span class="dots"></span>
-<span class="price">₹24</span>
-<button class="add" onclick="add('Butter Roti',24)">ADD</button>
-</div>
-
-<div class="item">
-<span class="item-name">Lachha Paratha</span>
-<span class="dots"></span>
-<span class="price">₹50</span>
-<button class="add" onclick="add('Lachha Paratha',50)">ADD</button>
-</div>
-
-<div class="item">
-<span class="item-name">Pudina Paratha</span>
-<span class="dots"></span>
-<span class="price">₹55</span>
-<button class="add" onclick="add('Pudina Paratha',55)">ADD</button>
-</div>
-
-<div class="item">
-<span class="item-name">Plain Naan</span>
-<span class="dots"></span>
-<span class="price">₹40</span>
-<button class="add" onclick="add('Plain Naan',40)">ADD</button>
-</div>
-
-<div class="item">
-<span class="item-name">Butter Naan</span>
-<span class="dots"></span>
-<span class="price">₹50</span>
-<button class="add" onclick="add('Butter Naan',50)">ADD</button>
-</div>
-
-<div class="item">
-<span class="item-name">Garlic Naan</span>
-<span class="dots"></span>
-<span class="price">₹60</span>
-<button class="add" onclick="add('Garlic Naan',60)">ADD</button>
-</div>
-
-</div>
-
-</div>
-
-
-<!-- CHINESE -->
-
-<div id="chinese">
-
-<div class="category">
-
-<h3>Chinese Starters</h3>
-
-<div class="subcategory veg">
-Veg
-</div>
-
-<div class="item">
-<span class="item-name">Honey Chilli Potato</span>
-<span class="dots"></span>
-<span class="price">₹179</span>
-<button class="add" onclick="add('Honey Chilli Potato',179)">ADD</button>
-</div>
-
-<div class="item">
-<span class="item-name">Veg Manchurian</span>
-<span class="dots"></span>
-<span class="price">₹249</span>
-<button class="add" onclick="add('Veg Manchurian',249)">ADD</button>
-</div>
-
-<div class="item">
-<span class="item-name">Chilli Dry Soya Chaap</span>
-<span class="dots"></span>
-<span class="price">₹249</span>
-<button class="add" onclick="add('Chilli Dry Soya Chaap',249)">ADD</button>
-</div>
-
-<div class="item">
-<span class="item-name">Chilli Paneer</span>
-<span class="dots"></span>
-<span class="price">₹289</span>
-<button class="add" onclick="add('Chilli Paneer',289)">ADD</button>
-</div>
-
-<div class="subcategory">
-Non-Veg
-</div>
-
-<div class="item">
-<span class="item-name">Kung Pao Chicken</span>
-<span class="dots"></span>
-<span class="price">₹289</span>
-<button class="add" onclick="add('Kung Pao Chicken',289)">ADD</button>
-</div>
-
-<div class="item">
-<span class="item-name">Dry Chilli Chicken</span>
-<span class="dots"></span>
-<span class="price">₹279</span>
-<button class="add" onclick="add('Dry Chilli Chicken',279)">ADD</button>
-</div>
-
-<div class="item">
-<span class="item-name">Chicken Manchurian</span>
-<span class="dots"></span>
-<span class="price">₹279</span>
-<button class="add" onclick="add('Chicken Manchurian',279)">ADD</button>
-</div>
-
-<div class="item">
-<span class="item-name">Chicken Lollipop</span>
-<span class="dots"></span>
-<span class="price">₹299</span>
-<button class="add" onclick="add('Chicken Lollipop',299)">ADD</button>
-</div>
-
-<div class="item">
-<span class="item-name">Prawns Dry Chilli</span>
-<span class="dots"></span>
-<span class="price">₹449</span>
-<button class="add" onclick="add('Prawns Dry Chilli',449)">ADD</button>
-</div>
-
-</div>
-
-
-<!-- SOUPS -->
-
-<div class="category">
-
-<h3>Soups</h3>
-
-<div class="item">
-<span class="item-name">Tomato Basil Soup</span>
-<span class="dots"></span>
-<span class="price">₹149</span>
-<button class="add" onclick="add('Tomato Basil Soup',149)">ADD</button>
-</div>
-
-<div class="item">
-<span class="item-name">Cream Of Mushroom Soup</span>
-<span class="dots"></span>
-<span class="price">₹149</span>
-<button class="add" onclick="add('Cream Of Mushroom Soup',149)">ADD</button>
-</div>
-
-<div class="item">
-<span class="item-name">Sweet Corn Soup</span>
-<span class="dots"></span>
-<span class="price">₹119</span>
-<button class="add" onclick="add('Sweet Corn Soup',119)">ADD</button>
-</div>
-
-<div class="item">
-<span class="item-name">Manchow Soup</span>
-<span class="dots"></span>
-<span class="price">₹119</span>
-<button class="add" onclick="add('Manchow Soup',119)">ADD</button>
-</div>
-
-<div class="item">
-<span class="item-name">Hot & Sour Soup</span>
-<span class="dots"></span>
-<span class="price">₹119</span>
-<button class="add" onclick="add('Hot & Sour Soup',119)">ADD</button>
-</div>
-
-</div>
-
-
-<!-- DIM SUM -->
-
-<div class="category">
-
-<h3>Dim Sum</h3>
-
-<div class="subcategory veg">
-Veg
-</div>
-
-<div class="item">
-<span class="item-name">Spinach & Corn Dumplings</span>
-<span class="dots"></span>
-<span class="price">₹179</span>
-<button class="add" onclick="add('Spinach & Corn Dumplings',179)">ADD</button>
-</div>
-
-<div class="item">
-<span class="item-name">Mushroom & Veg Dumplings</span>
-<span class="dots"></span>
-<span class="price">₹179</span>
-<button class="add" onclick="add('Mushroom & Veg Dumplings',179)">ADD</button>
-</div>
-
-<div class="subcategory">
-Non-Veg
-</div>
-
-<div class="item">
-<span class="item-name">Chicken Dumplings</span>
-<span class="dots"></span>
-<span class="price">₹199</span>
-<button class="add" onclick="add('Chicken Dumplings',199)">ADD</button>
-</div>
-
-<div class="item">
-<span class="item-name">Pan Fried Chicken Dim Sum</span>
-<span class="dots"></span>
-<span class="price">₹219</span>
-<button class="add" onclick="add('Pan Fried Chicken Dim Sum',219)">ADD</button>
-</div>
-
-</div>
-
-
-<!-- MOMOS -->
-
-<div class="category">
-
-<h3>Tandoori Momos</h3>
-
-<div class="item">
-<span class="item-name">Tandoori Paneer Momos</span>
-<span class="dots"></span>
-<span class="price">₹249</span>
-<button class="add" onclick="add('Tandoori Paneer Momos',249)">ADD</button>
-</div>
-
-<div class="item">
-<span class="item-name">Tandoori Chicken Momos</span>
-<span class="dots"></span>
-<span class="price">₹249</span>
-<button class="add" onclick="add('Tandoori Chicken Momos',249)">ADD</button>
-</div>
-
-</div>
-
-
-<!-- BEVERAGES -->
-
-<div class="category" id="beverages">
-
-<h3>Cold Coffee / Smoothie</h3>
-
-<div class="item">
-<span class="item-name">Gold Coffee</span>
-<span class="dots"></span>
-<span class="price">₹139</span>
-<button class="add" onclick="add('Gold Coffee',139)">ADD</button>
-</div>
-
-<div class="item">
-<span class="item-name">Double Shot Iced Coffee</span>
-<span class="dots"></span>
-<span class="price">₹149</span>
-<button class="add" onclick="add('Double Shot Iced Coffee',149)">ADD</button>
-</div>
-
-<div class="item">
-<span class="item-name">Cold Coffee with Icecream</span>
-<span class="dots"></span>
-<span class="price">₹159</span>
-<button class="add" onclick="add('Cold Coffee with Icecream',159)">ADD</button>
-</div>
-
-<div class="item">
-<span class="item-name">Lassi</span>
-<span class="dots"></span>
-<span class="price">₹129</span>
-<button class="add" onclick="add('Lassi',129)">ADD</button>
-</div>
-
-<div class="item">
-<span class="item-name">Mango Smoothie</span>
-<span class="dots"></span>
-<span class="price">₹179</span>
-<button class="add" onclick="add('Mango Smoothie',179)">ADD</button>
-</div>
-
-<div class="item">
-<span class="item-name">Mix Fruit Smoothie</span>
-<span class="dots"></span>
-<span class="price">₹179</span>
-<button class="add" onclick="add('Mix Fruit Smoothie',179)">ADD</button>
-</div>
-
-</div>
-
-
-<!-- SHAKES -->
-
-<div class="category">
-
-<h3>Shakes</h3>
-
-<div class="item">
-<span class="item-name">Chocolate Shake</span>
-<span class="dots"></span>
-<span class="price">₹159</span>
-<button class="add" onclick="add('Chocolate Shake',159)">ADD</button>
-</div>
-
-<div class="item">
-<span class="item-name">Mango Shake</span>
-<span class="dots"></span>
-<span class="price">₹159</span>
-<button class="add" onclick="add('Mango Shake',159)">ADD</button>
-</div>
-
-<div class="item">
-<span class="item-name">Strawberry Shake</span>
-<span class="dots"></span>
-<span class="price">₹149</span>
-<button class="add" onclick="add('Strawberry Shake',149)">ADD</button>
-</div>
-
-<div class="item">
-<span class="item-name">Oreo Shake</span>
-<span class="dots"></span>
-<span class="price">₹159</span>
-<button class="add" onclick="add('Oreo Shake',159)">ADD</button>
-</div>
-
-<div class="item">
-<span class="item-name">Kit Kat Shake</span>
-<span class="dots"></span>
-<span class="price">₹169</span>
-<button class="add" onclick="add('Kit Kat Shake',169)">ADD</button>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
+ <div class="title">
+  <h2>Our Menu</h2><div class="orn">❧ ✦ ❧</div>
+  <p>SELECT YOUR FAVOURITES & PLACE YOUR ORDER</p>
+ </div>
+
+ <div class="controls">
+  <input id="search" class="search" placeholder="🔎  Search dishes..." oninput="filterMenu()">
+  <div class="filters">
+   <button class="filter active" onclick="setFilter('all',this)">ALL</button>
+   <button class="filter" onclick="setFilter('veg',this)">VEG</button>
+   <button class="filter" onclick="setFilter('non',this)">NON-VEG</button>
+   <button class="filter" onclick="setFilter('popular',this)">POPULAR</button>
+  </div>
+ </div>
+
+ <div class="menu-box">
+  <div class="menu-grid">
+
+   <div>
+    <div class="category" id="indian">
+     <h3>Indian Main Course</h3>
+     <div class="sub">● VEG</div>
+     <div class="item veg" data-name="Yellow Dal Tadka" data-popular="0"><i class="dot veg"></i><span class="item-name">Yellow Dal Tadka</span><span class="dots"></span><span class="price">₹199</span><button class="add" onclick="add('Yellow Dal Tadka',199,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Dal Makhani" data-popular="1"><i class="dot veg"></i><span class="item-name">Dal Makhani</span><span class="badge">POPULAR</span><span class="dots"></span><span class="price">₹259</span><button class="add" onclick="add('Dal Makhani',259,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Mix Veg" data-popular="0"><i class="dot veg"></i><span class="item-name">Mix Veg</span><span class="dots"></span><span class="price">₹249</span><button class="add" onclick="add('Mix Veg',249,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Mix Veg Handi" data-popular="0"><i class="dot veg"></i><span class="item-name">Mix Veg Handi</span><span class="dots"></span><span class="price">₹249</span><button class="add" onclick="add('Mix Veg Handi',249,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Mutter Mushroom" data-popular="0"><i class="dot veg"></i><span class="item-name">Mutter Mushroom</span><span class="dots"></span><span class="price">₹299</span><button class="add" onclick="add('Mutter Mushroom',299,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Soya Chaap Masala" data-popular="1"><i class="dot veg"></i><span class="item-name">Soya Chaap Masala</span><span class="badge">POPULAR</span><span class="dots"></span><span class="price">₹279</span><button class="add" onclick="add('Soya Chaap Masala',279,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Malai Kofta" data-popular="0"><i class="dot veg"></i><span class="item-name">Malai Kofta</span><span class="dots"></span><span class="price">₹299</span><button class="add" onclick="add('Malai Kofta',299,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Kadai Paneer" data-popular="1"><i class="dot veg"></i><span class="item-name">Kadai Paneer</span><span class="badge">POPULAR</span><span class="dots"></span><span class="price">₹299</span><button class="add" onclick="add('Kadai Paneer',299,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Paneer Lababdar" data-popular="0"><i class="dot veg"></i><span class="item-name">Paneer Lababdar</span><span class="dots"></span><span class="price">₹299</span><button class="add" onclick="add('Paneer Lababdar',299,'veg',this)">ADD</button></div>
+     <div class="sub non">● NON-VEG</div>
+     <div class="item non" data-name="Butter Chicken" data-popular="1"><i class="dot non"></i><span class="item-name">Butter Chicken</span><span class="badge">POPULAR</span><span class="dots"></span><span class="price">₹299</span><button class="add" onclick="add('Butter Chicken',299,'non',this)">ADD</button></div>
+     <div class="item non" data-name="Kadai Chicken" data-popular="0"><i class="dot non"></i><span class="item-name">Kadai Chicken</span><span class="dots"></span><span class="price">₹299</span><button class="add" onclick="add('Kadai Chicken',299,'non',this)">ADD</button></div>
+     <div class="item non" data-name="Chicken Tikka Masala" data-popular="1"><i class="dot non"></i><span class="item-name">Chicken Tikka Masala</span><span class="badge">POPULAR</span><span class="dots"></span><span class="price">₹349</span><button class="add" onclick="add('Chicken Tikka Masala',349,'non',this)">ADD</button></div>
+     <div class="item non" data-name="Chicken Korma" data-popular="0"><i class="dot non"></i><span class="item-name">Chicken Korma</span><span class="dots"></span><span class="price">₹349</span><button class="add" onclick="add('Chicken Korma',349,'non',this)">ADD</button></div>
+     <div class="item non" data-name="Mutton Rogan Josh" data-popular="0"><i class="dot non"></i><span class="item-name">Mutton Rogan Josh</span><span class="dots"></span><span class="price">₹449</span><button class="add" onclick="add('Mutton Rogan Josh',449,'non',this)">ADD</button></div>
+    </div>
+
+    <div class="category">
+     <h3>Fried Rice</h3>
+     <div class="item veg" data-name="Vegetable Fried Rice" data-popular="0"><i class="dot veg"></i><span class="item-name">Vegetable Fried Rice</span><span class="dots"></span><span class="price">₹159</span><button class="add" onclick="add('Vegetable Fried Rice',159,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Chilli Garlic Fried Rice" data-popular="0"><i class="dot veg"></i><span class="item-name">Chilli Garlic Fried Rice</span><span class="dots"></span><span class="price">₹169</span><button class="add" onclick="add('Chilli Garlic Fried Rice',169,'veg',this)">ADD</button></div>
+     <div class="item non" data-name="Egg Fried Rice" data-popular="0"><i class="dot non"></i><span class="item-name">Egg Fried Rice</span><span class="dots"></span><span class="price">₹189</span><button class="add" onclick="add('Egg Fried Rice',189,'non',this)">ADD</button></div>
+     <div class="item non" data-name="Chicken Fried Rice" data-popular="1"><i class="dot non"></i><span class="item-name">Chicken Fried Rice</span><span class="badge">POPULAR</span><span class="dots"></span><span class="price">₹219</span><button class="add" onclick="add('Chicken Fried Rice',219,'non',this)">ADD</button></div>
+     <div class="item non" data-name="Chicken Schezwan Fried Rice" data-popular="0"><i class="dot non"></i><span class="item-name">Chicken Schezwan Fried Rice</span><span class="dots"></span><span class="price">₹239</span><button class="add" onclick="add('Chicken Schezwan Fried Rice',239,'non',this)">ADD</button></div>
+    </div>
+
+    <div class="category">
+     <h3>Noodles</h3>
+     <div class="sub">● VEG</div>
+     <div class="item veg" data-name="Veg Hakka Noodles" data-popular="0"><i class="dot veg"></i><span class="item-name">Veg Hakka Noodles</span><span class="dots"></span><span class="price">₹149</span><button class="add" onclick="add('Veg Hakka Noodles',149,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Veg Schezwan Noodles" data-popular="0"><i class="dot veg"></i><span class="item-name">Veg Schezwan Noodles</span><span class="dots"></span><span class="price">₹159</span><button class="add" onclick="add('Veg Schezwan Noodles',159,'veg',this)">ADD</button></div>
+     <div class="sub non">● NON-VEG</div>
+     <div class="item non" data-name="Egg Noodles" data-popular="0"><i class="dot non"></i><span class="item-name">Egg Noodles</span><span class="dots"></span><span class="price">₹179</span><button class="add" onclick="add('Egg Noodles',179,'non',this)">ADD</button></div>
+     <div class="item non" data-name="Chicken Hakka Noodles" data-popular="1"><i class="dot non"></i><span class="item-name">Chicken Hakka Noodles</span><span class="badge">POPULAR</span><span class="dots"></span><span class="price">₹199</span><button class="add" onclick="add('Chicken Hakka Noodles',199,'non',this)">ADD</button></div>
+     <div class="item non" data-name="Chicken Chilli Garlic Noodles" data-popular="0"><i class="dot non"></i><span class="item-name">Chicken Chilli Garlic Noodles</span><span class="dots"></span><span class="price">₹219</span><button class="add" onclick="add('Chicken Chilli Garlic Noodles',219,'non',this)">ADD</button></div>
+    </div>
+
+    <div class="category">
+     <h3>Biryani & Rice</h3>
+     <div class="item veg" data-name="Steamed Rice" data-popular="0"><i class="dot veg"></i><span class="item-name">Steamed Rice</span><span class="dots"></span><span class="price">₹139</span><button class="add" onclick="add('Steamed Rice',139,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Jeera Rice" data-popular="0"><i class="dot veg"></i><span class="item-name">Jeera Rice</span><span class="dots"></span><span class="price">₹149</span><button class="add" onclick="add('Jeera Rice',149,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Veg Pulao" data-popular="0"><i class="dot veg"></i><span class="item-name">Veg Pulao</span><span class="dots"></span><span class="price">₹169</span><button class="add" onclick="add('Veg Pulao',169,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Veg Dum Biryani" data-popular="1"><i class="dot veg"></i><span class="item-name">Veg Dum Biryani</span><span class="badge">POPULAR</span><span class="dots"></span><span class="price">₹299</span><button class="add" onclick="add('Veg Dum Biryani',299,'veg',this)">ADD</button></div>
+     <div class="item non" data-name="Chicken Dum Biryani" data-popular="1"><i class="dot non"></i><span class="item-name">Chicken Dum Biryani</span><span class="badge">POPULAR</span><span class="dots"></span><span class="price">₹399</span><button class="add" onclick="add('Chicken Dum Biryani',399,'non',this)">ADD</button></div>
+     <div class="item non" data-name="Mutton Biryani" data-popular="0"><i class="dot non"></i><span class="item-name">Mutton Biryani</span><span class="dots"></span><span class="price">₹449</span><button class="add" onclick="add('Mutton Biryani',449,'non',this)">ADD</button></div>
+    </div>
+
+    <div class="category">
+     <h3>Bread Basket</h3>
+     <div class="item veg" data-name="Plain Roti" data-popular="0"><i class="dot veg"></i><span class="item-name">Plain Roti</span><span class="dots"></span><span class="price">₹18</span><button class="add" onclick="add('Plain Roti',18,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Butter Roti" data-popular="0"><i class="dot veg"></i><span class="item-name">Butter Roti</span><span class="dots"></span><span class="price">₹24</span><button class="add" onclick="add('Butter Roti',24,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Lachha Paratha" data-popular="0"><i class="dot veg"></i><span class="item-name">Lachha Paratha</span><span class="dots"></span><span class="price">₹50</span><button class="add" onclick="add('Lachha Paratha',50,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Pudina Paratha" data-popular="0"><i class="dot veg"></i><span class="item-name">Pudina Paratha</span><span class="dots"></span><span class="price">₹55</span><button class="add" onclick="add('Pudina Paratha',55,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Plain Naan" data-popular="0"><i class="dot veg"></i><span class="item-name">Plain Naan</span><span class="dots"></span><span class="price">₹40</span><button class="add" onclick="add('Plain Naan',40,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Butter Naan" data-popular="0"><i class="dot veg"></i><span class="item-name">Butter Naan</span><span class="dots"></span><span class="price">₹50</span><button class="add" onclick="add('Butter Naan',50,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Garlic Naan" data-popular="1"><i class="dot veg"></i><span class="item-name">Garlic Naan</span><span class="badge">POPULAR</span><span class="dots"></span><span class="price">₹60</span><button class="add" onclick="add('Garlic Naan',60,'veg',this)">ADD</button></div>
+    </div>
+   </div>
+
+   <div>
+    <div class="category" id="chinese">
+     <h3>Chinese Starters</h3>
+     <div class="sub">● VEG</div>
+     <div class="item veg" data-name="Honey Chilli Potato" data-popular="1"><i class="dot veg"></i><span class="item-name">Honey Chilli Potato</span><span class="badge">POPULAR</span><span class="dots"></span><span class="price">₹179</span><button class="add" onclick="add('Honey Chilli Potato',179,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Veg Manchurian" data-popular="0"><i class="dot veg"></i><span class="item-name">Veg Manchurian</span><span class="dots"></span><span class="price">₹249</span><button class="add" onclick="add('Veg Manchurian',249,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Chilli Dry Soya Chaap" data-popular="0"><i class="dot veg"></i><span class="item-name">Chilli Dry Soya Chaap</span><span class="dots"></span><span class="price">₹249</span><button class="add" onclick="add('Chilli Dry Soya Chaap',249,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Chilli Paneer" data-popular="1"><i class="dot veg"></i><span class="item-name">Chilli Paneer</span><span class="badge">POPULAR</span><span class="dots"></span><span class="price">₹289</span><button class="add" onclick="add('Chilli Paneer',289,'veg',this)">ADD</button></div>
+     <div class="sub non">● NON-VEG</div>
+     <div class="item non" data-name="Kung Pao Chicken" data-popular="0"><i class="dot non"></i><span class="item-name">Kung Pao Chicken</span><span class="dots"></span><span class="price">₹289</span><button class="add" onclick="add('Kung Pao Chicken',289,'non',this)">ADD</button></div>
+     <div class="item non" data-name="Dry Chilli Chicken" data-popular="1"><i class="dot non"></i><span class="item-name">Dry Chilli Chicken</span><span class="badge">POPULAR</span><span class="dots"></span><span class="price">₹279</span><button class="add" onclick="add('Dry Chilli Chicken',279,'non',this)">ADD</button></div>
+     <div class="item non" data-name="Chicken Manchurian" data-popular="0"><i class="dot non"></i><span class="item-name">Chicken Manchurian</span><span class="dots"></span><span class="price">₹279</span><button class="add" onclick="add('Chicken Manchurian',279,'non',this)">ADD</button></div>
+     <div class="item non" data-name="Chicken Lollipop" data-popular="1"><i class="dot non"></i><span class="item-name">Chicken Lollipop</span><span class="badge">POPULAR</span><span class="dots"></span><span class="price">₹299</span><button class="add" onclick="add('Chicken Lollipop',299,'non',this)">ADD</button></div>
+     <div class="item non" data-name="Prawns Dry Chilli" data-popular="0"><i class="dot non"></i><span class="item-name">Prawns Dry Chilli</span><span class="dots"></span><span class="price">₹449</span><button class="add" onclick="add('Prawns Dry Chilli',449,'non',this)">ADD</button></div>
+    </div>
+
+    <div class="category">
+     <h3>Soups</h3>
+     <div class="item veg" data-name="Tomato Basil Soup" data-popular="0"><i class="dot veg"></i><span class="item-name">Tomato Basil Soup</span><span class="dots"></span><span class="price">₹149</span><button class="add" onclick="add('Tomato Basil Soup',149,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Cream Of Mushroom Soup" data-popular="0"><i class="dot veg"></i><span class="item-name">Cream Of Mushroom Soup</span><span class="dots"></span><span class="price">₹149</span><button class="add" onclick="add('Cream Of Mushroom Soup',149,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Sweet Corn Soup" data-popular="0"><i class="dot veg"></i><span class="item-name">Sweet Corn Soup</span><span class="dots"></span><span class="price">₹119</span><button class="add" onclick="add('Sweet Corn Soup',119,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Manchow Soup" data-popular="1"><i class="dot veg"></i><span class="item-name">Manchow Soup</span><span class="badge">POPULAR</span><span class="dots"></span><span class="price">₹119</span><button class="add" onclick="add('Manchow Soup',119,'veg',this)">ADD</button></div>
+     <div class="item non" data-name="Hot & Sour Soup" data-popular="0"><i class="dot non"></i><span class="item-name">Hot & Sour Soup</span><span class="dots"></span><span class="price">₹119</span><button class="add" onclick="add('Hot & Sour Soup',119,'non',this)">ADD</button></div>
+    </div>
+
+    <div class="category">
+     <h3>Dim Sum</h3>
+     <div class="sub">● VEG</div>
+     <div class="item veg" data-name="Spinach & Corn Dumplings" data-popular="0"><i class="dot veg"></i><span class="item-name">Spinach & Corn Dumplings</span><span class="dots"></span><span class="price">₹179</span><button class="add" onclick="add('Spinach & Corn Dumplings',179,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Mushroom & Veg Dumplings" data-popular="0"><i class="dot veg"></i><span class="item-name">Mushroom & Veg Dumplings</span><span class="dots"></span><span class="price">₹179</span><button class="add" onclick="add('Mushroom & Veg Dumplings',179,'veg',this)">ADD</button></div>
+     <div class="sub non">● NON-VEG</div>
+     <div class="item non" data-name="Chicken Dumplings" data-popular="0"><i class="dot non"></i><span class="item-name">Chicken Dumplings</span><span class="dots"></span><span class="price">₹199</span><button class="add" onclick="add('Chicken Dumplings',199,'non',this)">ADD</button></div>
+     <div class="item non" data-name="Pan Fried Chicken Dim Sum" data-popular="0"><i class="dot non"></i><span class="item-name">Pan Fried Chicken Dim Sum</span><span class="dots"></span><span class="price">₹219</span><button class="add" onclick="add('Pan Fried Chicken Dim Sum',219,'non',this)">ADD</button></div>
+    </div>
+
+    <div class="category">
+     <h3>Tandoori Momos</h3>
+     <div class="item veg" data-name="Tandoori Paneer Momos" data-popular="1"><i class="dot veg"></i><span class="item-name">Tandoori Paneer Momos</span><span class="badge">POPULAR</span><span class="dots"></span><span class="price">₹249</span><button class="add" onclick="add('Tandoori Paneer Momos',249,'veg',this)">ADD</button></div>
+     <div class="item non" data-name="Tandoori Chicken Momos" data-popular="1"><i class="dot non"></i><span class="item-name">Tandoori Chicken Momos</span><span class="badge">POPULAR</span><span class="dots"></span><span class="price">₹249</span><button class="add" onclick="add('Tandoori Chicken Momos',249,'non',this)">ADD</button></div>
+    </div>
+
+    <div class="category" id="beverages">
+     <h3>Cold Coffee / Smoothie</h3>
+     <div class="item veg" data-name="Gold Coffee" data-popular="0"><i class="dot veg"></i><span class="item-name">Gold Coffee</span><span class="dots"></span><span class="price">₹139</span><button class="add" onclick="add('Gold Coffee',139,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Double Shot Iced Coffee" data-popular="1"><i class="dot veg"></i><span class="item-name">Double Shot Iced Coffee</span><span class="badge">POPULAR</span><span class="dots"></span><span class="price">₹149</span><button class="add" onclick="add('Double Shot Iced Coffee',149,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Cold Coffee with Icecream" data-popular="1"><i class="dot veg"></i><span class="item-name">Cold Coffee with Icecream</span><span class="badge">POPULAR</span><span class="dots"></span><span class="price">₹159</span><button class="add" onclick="add('Cold Coffee with Icecream',159,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Lassi" data-popular="0"><i class="dot veg"></i><span class="item-name">Lassi</span><span class="dots"></span><span class="price">₹129</span><button class="add" onclick="add('Lassi',129,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Mango Smoothie" data-popular="1"><i class="dot veg"></i><span class="item-name">Mango Smoothie</span><span class="badge">POPULAR</span><span class="dots"></span><span class="price">₹179</span><button class="add" onclick="add('Mango Smoothie',179,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Mix Fruit Smoothie" data-popular="0"><i class="dot veg"></i><span class="item-name">Mix Fruit Smoothie</span><span class="dots"></span><span class="price">₹179</span><button class="add" onclick="add('Mix Fruit Smoothie',179,'veg',this)">ADD</button></div>
+    </div>
+
+    <div class="category">
+     <h3>Shakes</h3>
+     <div class="item veg" data-name="Chocolate Shake" data-popular="1"><i class="dot veg"></i><span class="item-name">Chocolate Shake</span><span class="badge">POPULAR</span><span class="dots"></span><span class="price">₹159</span><button class="add" onclick="add('Chocolate Shake',159,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Mango Shake" data-popular="0"><i class="dot veg"></i><span class="item-name">Mango Shake</span><span class="dots"></span><span class="price">₹159</span><button class="add" onclick="add('Mango Shake',159,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Strawberry Shake" data-popular="0"><i class="dot veg"></i><span class="item-name">Strawberry Shake</span><span class="dots"></span><span class="price">₹149</span><button class="add" onclick="add('Strawberry Shake',149,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Oreo Shake" data-popular="1"><i class="dot veg"></i><span class="item-name">Oreo Shake</span><span class="badge">POPULAR</span><span class="dots"></span><span class="price">₹159</span><button class="add" onclick="add('Oreo Shake',159,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Kit Kat Shake" data-popular="0"><i class="dot veg"></i><span class="item-name">Kit Kat Shake</span><span class="dots"></span><span class="price">₹169</span><button class="add" onclick="add('Kit Kat Shake',169,'veg',this)">ADD</button></div>
+    </div>
+   </div>
+  </div>
+  <div class="no-results" id="noResults">No dishes found. Try another search.</div>
+ </div>
 </section>
-
-
-<!-- CONTACT -->
 
 <section id="contact">
-
-<div class="section-title">
-
-<h2>Contact Us</h2>
-
-<div class="ornament">
-❧ ✦ ❧
-</div>
-
-</div>
-
-<div class="contact-card">
-
-<h3>LUMORA</h3>
-
-<p>
-FINE DINING • FAMILY RESTAURANT • CAFÉ
-</p>
-
-<a class="phone" href="tel:+919520951715">
-☎ 9520951715
-</a>
-
-<div class="location">
-📍 Raipur Chowk, Dehradun, Uttarakhand
-</div>
-
-</div>
-
+ <div class="title"><h2>Visit Us</h2><div class="orn">❧ ✦ ❧</div></div>
+ <div class="contact">
+  <h3>LUMORA</h3>
+  <p>FINE DINING • FAMILY RESTAURANT • CAFÉ</p>
+  <a class="phone" href="tel:+919520951715">☎ 9520951715</a>
+  <div class="location">📍 Raipur Chowk, Dehradun, Uttarakhand</div>
+ </div>
 </section>
 
-
 <footer>
-
-<strong>LUMORA</strong>
-
-CAFÉ & RESTAURANT
-
-<br><br>
-
-© 2026 LUMORA • All Rights Reserved.
-
+ <strong>LUMORA</strong>
+ CAFÉ & RESTAURANT<br><br>
+ © 2026 LUMORA • All Rights Reserved.
 </footer>
 
+<button class="cart-btn" onclick="openCart()">🛒 CART <span class="count" id="cartCount">0</span></button>
+<a class="call" href="tel:+919520951715">☎</a>
+<div class="toast" id="toast">Added to cart</div>
+<div class="overlay" id="overlay" onclick="closeCart()"></div>
 
-<!-- CART -->
-
-<button class="cart-fab" onclick="openCart()">
-
-🛒 CART
-
-<span id="cartCount">0</span>
-
-</button>
-
-
-<a class="call" href="tel:+919520951715">
-☎
-</a>
-
-
-<!-- CART DRAWER -->
-
-<div class="drawer" id="drawer">
-
-<button class="close" onclick="closeCart()">
-×
-</button>
-
-<h2>
-Your Order
-</h2>
-
-<div id="cartItems"></div>
-
-<div class="total">
-
-<span>
-Total
-</span>
-
-<strong>
-₹<span id="total">0</span>
-</strong>
-
-</div>
-
-
-<div class="form">
-
-<input
-id="customer"
-placeholder="Customer name"
-maxlength="50"
->
-
-<input
-id="table"
-placeholder="Table number"
-maxlength="20"
->
-
-<textarea
-id="notes"
-placeholder="Special instructions (optional)"
-></textarea>
-
-<button
-class="checkout-btn"
-onclick="placeOrder()"
->
-PLACE ORDER ON WHATSAPP
-</button>
-
-<p class="note">
-
-Your selected order will open in WhatsApp.
-Review it and press Send.
-
-</p>
-
-</div>
-
-</div>
-
+<aside class="drawer" id="drawer">
+ <button class="close" onclick="closeCart()">×</button>
+ <h2>Your Order</h2>
+ <div id="cartItems"></div>
+ <div class="total"><span>Total</span><strong>₹<span id="total">0</span></strong></div>
+ <div class="form">
+  <input id="customer" placeholder="Customer name">
+  <input id="table" placeholder="Table number">
+  <textarea id="notes" placeholder="Special instructions (optional)"></textarea>
+  <button class="order-btn" onclick="placeOrder()">PLACE ORDER ON WHATSAPP</button>
+  <p class="note">Your order will open in WhatsApp to 9520951715. Review the message and press Send.</p>
+ </div>
+</aside>
 
 <script>
-
 let cart=[];
+let currentFilter='all';
 
-
-/* ADD ITEM */
-
-function add(name,price){
-
-    const found=cart.find(item=>item.name===name);
-
-    if(found){
-
-        found.qty++;
-
-    }else{
-
-        cart.push({
-            name:name,
-            price:price,
-            qty:1
-        });
-
-    }
-
-    updateCart();
-
-    openCart();
+function add(name,price,type,btn){
+ const found=cart.find(x=>x.name===name);
+ if(found) found.qty++;
+ else cart.push({name,price,type,qty:1});
+ updateCart();
+ if(btn){btn.classList.remove('added');void btn.offsetWidth;btn.classList.add('added')}
+ showToast(name+' added to cart');
 }
-
-
-/* CHANGE QUANTITY */
-
-function changeQty(index,change){
-
-    cart[index].qty += change;
-
-    if(cart[index].qty <= 0){
-
-        cart.splice(index,1);
-
-    }
-
-    updateCart();
-}
-
-
-/* UPDATE CART */
 
 function updateCart(){
-
-    const box=document.getElementById("cartItems");
-
-    let total=0;
-    let count=0;
-
-    if(cart.length===0){
-
-        box.innerHTML=`
-        <div class="empty">
-        Your cart is empty.<br>
-        Select items from the menu.
-        </div>
-        `;
-
-    }else{
-
-        box.innerHTML=cart.map((item,index)=>{
-
-            total += item.price * item.qty;
-
-            count += item.qty;
-
-            return `
-
-            <div class="cart-item">
-
-                <div class="cart-line">
-
-                    <span>
-                    ${escapeHTML(item.name)}
-                    </span>
-
-                    <b>
-                    ₹${item.price * item.qty}
-                    </b>
-
-                </div>
-
-                <div class="qty">
-
-                    <button
-                    onclick="changeQty(${index},-1)">
-                    −
-                    </button>
-
-                    <span>
-                    ${item.qty}
-                    </span>
-
-                    <button
-                    onclick="changeQty(${index},1)">
-                    +
-                    </button>
-
-                    <small>
-                    ₹${item.price} each
-                    </small>
-
-                </div>
-
-            </div>
-
-            `;
-
-        }).join("");
-
-    }
-
-    document.getElementById("total").textContent=total;
-
-    document.getElementById("cartCount").textContent=count;
-
+ const box=document.getElementById('cartItems');
+ let total=0,count=0;
+ if(!cart.length){
+  box.innerHTML='<div class="empty">Your cart is empty.<br>Select something delicious from the menu.</div>';
+ }else{
+  box.innerHTML=cart.map((x,i)=>{
+   const sub=x.price*x.qty; total+=sub; count+=x.qty;
+   return `<div class="cart-item">
+    <div class="cart-line"><span class="cart-name">${esc(x.name)}</span><b>₹${sub}</b></div>
+    <div class="qty">
+     <button onclick="changeQty(${i},-1)">−</button>
+     <span>${x.qty}</span>
+     <button onclick="changeQty(${i},1)">+</button>
+     <small>₹${x.price} each</small>
+    </div>
+   </div>`;
+  }).join('');
+ }
+ document.getElementById('total').textContent=total;
+ document.getElementById('cartCount').textContent=count;
 }
 
-
-/* OPEN CART */
+function changeQty(i,n){
+ cart[i].qty+=n;
+ if(cart[i].qty<=0)cart.splice(i,1);
+ updateCart();
+}
 
 function openCart(){
-
-    document
-    .getElementById("drawer")
-    .classList
-    .add("open");
-
+ document.getElementById('drawer').classList.add('open');
+ document.getElementById('overlay').classList.add('show');
 }
-
-
-/* CLOSE CART */
-
 function closeCart(){
-
-    document
-    .getElementById("drawer")
-    .classList
-    .remove("open");
-
+ document.getElementById('drawer').classList.remove('open');
+ document.getElementById('overlay').classList.remove('show');
+}
+function showToast(text){
+ const t=document.getElementById('toast');t.textContent='✓ '+text;t.classList.add('show');
+ clearTimeout(window.toastTimer);window.toastTimer=setTimeout(()=>t.classList.remove('show'),1600);
+}
+function esc(s){
+ return s.replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]));
 }
 
-
-/* SECURITY */
-
-function escapeHTML(text){
-
-    return text.replace(
-        /[&<>"']/g,
-        function(character){
-
-            return {
-
-                "&":"&amp;",
-                "<":"&lt;",
-                ">":"&gt;",
-                '"':"&quot;",
-                "'":"&#039;"
-
-            }[character];
-
-        }
-    );
-
+function setFilter(type,btn){
+ currentFilter=type;
+ document.querySelectorAll('.filter').forEach(x=>x.classList.remove('active'));
+ btn.classList.add('active');
+ filterMenu();
 }
-
-
-/* PLACE ORDER */
+function filterMenu(){
+ const q=document.getElementById('search').value.toLowerCase().trim();
+ const items=document.querySelectorAll('.item');
+ let shown=0;
+ items.forEach(item=>{
+  const matchName=item.dataset.name.toLowerCase().includes(q);
+  const matchType=currentFilter==='all'||item.classList.contains(currentFilter);
+  const matchPopular=currentFilter!=='popular'||item.dataset.popular==='1';
+  const show=matchName&&matchType&&matchPopular;
+  item.style.display=show?'flex':'none';
+  if(show)shown++;
+ });
+ document.getElementById('noResults').style.display=shown?'none':'block';
+}
 
 function placeOrder(){
+ if(!cart.length){alert('Please add at least one item.');return}
+ const customer=document.getElementById('customer').value.trim();
+ const table=document.getElementById('table').value.trim();
+ const notes=document.getElementById('notes').value.trim();
+ if(!customer){alert('Please enter customer name.');return}
+ if(!table){alert('Please enter table number.');return}
 
-    if(cart.length===0){
-
-        alert("Please add at least one item.");
-
-        return;
-
-    }
-
-
-    const customer=
-    document
-    .getElementById("customer")
-    .value
-    .trim();
-
-
-    const table=
-    document
-    .getElementById("table")
-    .value
-    .trim();
-
-
-    const notes=
-    document
-    .getElementById("notes")
-    .value
-    .trim();
-
-
-    if(!customer){
-
-        alert("Please enter customer name.");
-
-        document
-        .getElementById("customer")
-        .focus();
-
-        return;
-
-    }
-
-
-    if(!table){
-
-        alert("Please enter table number.");
-
-        document
-        .getElementById("table")
-        .focus();
-
-        return;
-
-    }
-
-
-    let total=0;
-
-
-    let orderLines=cart.map(
-        function(item,index){
-
-            const subtotal=
-            item.price * item.qty;
-
-            total += subtotal;
-
-            return (
-                (index+1)+
-                ". "+
-                item.name+
-                " x"+
-                item.qty+
-                " = ₹"+
-                subtotal
-            );
-
-        }
-    );
-
-
-    const message=
-
-`*LUMORA CAFÉ & RESTAURANT*
+ let total=0;
+ const lines=cart.map((x,i)=>{
+  const sub=x.price*x.qty;total+=sub;
+  return `${i+1}. ${x.name} x${x.qty} = ₹${sub}`;
+ });
+ const msg=`*LUMORA CAFÉ & RESTAURANT*
 
 *NEW ORDER*
-
 Customer: ${customer}
-
 Table: ${table}
 
-ORDER:
-${orderLines.join("\n")}
+*ORDER*
+${lines.join('\n')}
 
-*TOTAL: ₹${total}*
-
-${notes ? "Special Note: "+notes : ""}
+*TOTAL: ₹${total}*${notes?`\n\nSpecial Note: ${notes}`:''}
 
 Please confirm this order.`;
-
-
-    const whatsappURL=
-
-    "https://wa.me/919520951715?text="+
-    encodeURIComponent(message);
-
-
-    window.open(
-        whatsappURL,
-        "_blank"
-    );
-
+ window.open('https://wa.me/919520951715?text='+encodeURIComponent(msg),'_blank');
 }
 
-
 updateCart();
-
 </script>
-
 </body>
 </html>
