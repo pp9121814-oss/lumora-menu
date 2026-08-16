@@ -190,10 +190,15 @@ footer strong{display:block;font:600 29px 'Cormorant Garamond',serif;color:var(-
 <nav>
  <div class="nav">
   <a href="#home">HOME</a>
-  <a href="#menu">MENU</a>
-  <a href="#indian">INDIAN</a>
-  <a href="#chinese">CHINESE</a>
   <a href="#beverages">BEVERAGES</a>
+  <a href="#italian">ITALIAN & CONTINENTAL</a>
+  <a href="#tandoor">TANDOOR STARTERS</a>
+  <a href="#dimsum">DIM SUM</a>
+  <a href="#chinese">CHINESE</a>
+  <a href="#soup">SOUPS & SALADS</a>
+  <a href="#indian">INDIAN MAIN COURSE</a>
+  <a href="#rice">RICE & BREADS</a>
+  <a href="#desserts">DESSERTS</a>
   <a href="#contact">CONTACT</a>
  </div>
 </nav>
@@ -210,136 +215,339 @@ footer strong{display:block;font:600 29px 'Cormorant Garamond',serif;color:var(-
    <button class="filter active" onclick="setFilter('all',this)">ALL</button>
    <button class="filter" onclick="setFilter('veg',this)">VEG</button>
    <button class="filter" onclick="setFilter('non',this)">NON-VEG</button>
-   <button class="filter" onclick="setFilter('popular',this)">POPULAR</button>
   </div>
  </div>
 
  <div class="menu-box">
   <div class="menu-grid">
 
+   <!-- LEFT COLUMN -->
    <div>
+    <!-- BEVERAGES SECTION -->
+    <div class="category" id="beverages">
+     <h3>Mocktail</h3>
+     <div class="item veg" data-name="Virgin Mojito"><i class="dot veg"></i><span class="item-name">Virgin Mojito (Watermelon/Green Apple/Orange)</span><span class="dots"></span><span class="price">₹149</span><button class="add" onclick="add('Virgin Mojito',149,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Kiwi Sparkal"><i class="dot veg"></i><span class="item-name">Kiwi Sparkal</span><span class="dots"></span><span class="price">₹149</span><button class="add" onclick="add('Kiwi Sparkal',149,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Orange Sunsine"><i class="dot veg"></i><span class="item-name">Orange Sunsine</span><span class="dots"></span><span class="price">₹149</span><button class="add" onclick="add('Orange Sunsine',149,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Spicy Guava"><i class="dot veg"></i><span class="item-name">Spicy Guava</span><span class="dots"></span><span class="price">₹159</span><button class="add" onclick="add('Spicy Guava',159,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Mango Merry"><i class="dot veg"></i><span class="item-name">Mango Merry</span><span class="dots"></span><span class="price">₹149</span><button class="add" onclick="add('Mango Merry',149,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Aam Panna"><i class="dot veg"></i><span class="item-name">Aam Panna</span><span class="dots"></span><span class="price">₹159</span><button class="add" onclick="add('Aam Panna',159,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Lichi Delight"><i class="dot veg"></i><span class="item-name">Lichi Delight</span><span class="dots"></span><span class="price">₹159</span><button class="add" onclick="add('Lichi Delight',159,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Fruit Punch"><i class="dot veg"></i><span class="item-name">Fruit Punch</span><span class="dots"></span><span class="price">₹159</span><button class="add" onclick="add('Fruit Punch',159,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Pineapple Sunrice"><i class="dot veg"></i><span class="item-name">Pineapple Sunrice</span><span class="dots"></span><span class="price">₹149</span><button class="add" onclick="add('Pineapple Sunrice',149,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Orange Bloosum"><i class="dot veg"></i><span class="item-name">Orange Bloosum</span><span class="dots"></span><span class="price">₹149</span><button class="add" onclick="add('Orange Bloosum',149,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Ocean Blue"><i class="dot veg"></i><span class="item-name">Ocean Blue</span><span class="dots"></span><span class="price">₹149</span><button class="add" onclick="add('Ocean Blue',149,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Virgin Merry"><i class="dot veg"></i><span class="item-name">Virgin Merry</span><span class="dots"></span><span class="price">₹119</span><button class="add" onclick="add('Virgin Merry',119,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Juice"><i class="dot veg"></i><span class="item-name">Juice</span><span class="dots"></span><span class="price">₹119</span><button class="add" onclick="add('Juice',119,'veg',this)">ADD</button></div>
+
+     <h3 style="margin-top:20px;">Hot Tea / Coffee</h3>
+     <div class="item veg" data-name="Black Tea"><i class="dot veg"></i><span class="item-name">Black Tea</span><span class="dots"></span><span class="price">₹49</span><button class="add" onclick="add('Black Tea',49,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Lemon Tea"><i class="dot veg"></i><span class="item-name">Lemon Tea</span><span class="dots"></span><span class="price">₹59</span><button class="add" onclick="add('Lemon Tea',59,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Normal Tea"><i class="dot veg"></i><span class="item-name">Normal Tea</span><span class="dots"></span><span class="price">₹59</span><button class="add" onclick="add('Normal Tea',59,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Masala Tea"><i class="dot veg"></i><span class="item-name">Masala Tea</span><span class="dots"></span><span class="price">₹69</span><button class="add" onclick="add('Masala Tea',69,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Green Tea"><i class="dot veg"></i><span class="item-name">Green Tea</span><span class="dots"></span><span class="price">₹69</span><button class="add" onclick="add('Green Tea',69,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Hot Coffee"><i class="dot veg"></i><span class="item-name">Hot Coffee</span><span class="dots"></span><span class="price">₹129</span><button class="add" onclick="add('Hot Coffee',129,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Black Coffee"><i class="dot veg"></i><span class="item-name">Black Coffee</span><span class="dots"></span><span class="price">₹119</span><button class="add" onclick="add('Black Coffee',119,'veg',this)">ADD</button></div>
+
+     <h3 style="margin-top:20px;">Soft Beverage</h3>
+     <div class="item veg" data-name="Soft Drink"><i class="dot veg"></i><span class="item-name">Soft Drink</span><span class="dots"></span><span class="price">₹99</span><button class="add" onclick="add('Soft Drink',99,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Fresh Lime Water"><i class="dot veg"></i><span class="item-name">Fresh Lime Water</span><span class="dots"></span><span class="price">₹109</span><button class="add" onclick="add('Fresh Lime Water',109,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Red Bull"><i class="dot veg"></i><span class="item-name">Red Bull</span><span class="dots"></span><span class="price">₹229</span><button class="add" onclick="add('Red Bull',229,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Gingerale"><i class="dot veg"></i><span class="item-name">Gingerale</span><span class="dots"></span><span class="price">₹129</span><button class="add" onclick="add('Gingerale',129,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Ice Tea"><i class="dot veg"></i><span class="item-name">Ice Tea</span><span class="dots"></span><span class="price">₹119</span><button class="add" onclick="add('Ice Tea',119,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Lemon Ice Tea"><i class="dot veg"></i><span class="item-name">Lemon Ice Tea</span><span class="dots"></span><span class="price">₹129</span><button class="add" onclick="add('Lemon Ice Tea',129,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Peach Ice Tea"><i class="dot veg"></i><span class="item-name">Peach Ice Tea</span><span class="dots"></span><span class="price">₹129</span><button class="add" onclick="add('Peach Ice Tea',129,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Passion Fruit Ice Tea"><i class="dot veg"></i><span class="item-name">Passion Fruit Ice Tea</span><span class="dots"></span><span class="price">₹129</span><button class="add" onclick="add('Passion Fruit Ice Tea',129,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Strowberry Ice Tea"><i class="dot veg"></i><span class="item-name">Strowberry Ice Tea</span><span class="dots"></span><span class="price">₹129</span><button class="add" onclick="add('Strowberry Ice Tea',129,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Dite Coke"><i class="dot veg"></i><span class="item-name">Dite Coke</span><span class="dots"></span><span class="price">₹129</span><button class="add" onclick="add('Dite Coke',129,'veg',this)">ADD</button></div>
+
+     <h3 style="margin-top:20px;">Cold Coffee / Smoothie</h3>
+     <div class="item veg" data-name="Cold Coffee"><i class="dot veg"></i><span class="item-name">Cold Coffee</span><span class="dots"></span><span class="price">₹139</span><button class="add" onclick="add('Cold Coffee',139,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Dubble Shot Cold Coffee"><i class="dot veg"></i><span class="item-name">Dubble Shot Cold Coffee</span><span class="dots"></span><span class="price">₹149</span><button class="add" onclick="add('Dubble Shot Cold Coffee',149,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Cold Coffee With Icecream"><i class="dot veg"></i><span class="item-name">Cold Coffee With Icecream</span><span class="dots"></span><span class="price">₹159</span><button class="add" onclick="add('Cold Coffee With Icecream',159,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Lassi Sweet/Salt"><i class="dot veg"></i><span class="item-name">Lassi Sweet/Salt</span><span class="dots"></span><span class="price">₹129</span><button class="add" onclick="add('Lassi Sweet/Salt',129,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Banana Smoothie"><i class="dot veg"></i><span class="item-name">Banana Smoothie</span><span class="dots"></span><span class="price">₹179</span><button class="add" onclick="add('Banana Smoothie',179,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Mango Smoothie"><i class="dot veg"></i><span class="item-name">Mango Smoothie</span><span class="dots"></span><span class="price">₹179</span><button class="add" onclick="add('Mango Smoothie',179,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Strawberry Smoothie"><i class="dot veg"></i><span class="item-name">Strawberry Smoothie</span><span class="dots"></span><span class="price">₹179</span><button class="add" onclick="add('Strawberry Smoothie',179,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Mix Fruit Smoothie"><i class="dot veg"></i><span class="item-name">Mix Fruit Smoothie</span><span class="dots"></span><span class="price">₹179</span><button class="add" onclick="add('Mix Fruit Smoothie',179,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Blueberry Smoothie"><i class="dot veg"></i><span class="item-name">Blueberry Smoothie</span><span class="dots"></span><span class="price">₹179</span><button class="add" onclick="add('Blueberry Smoothie',179,'veg',this)">ADD</button></div>
+
+     <h3 style="margin-top:20px;">Shakes</h3>
+     <div class="item veg" data-name="Chocolate Shakes"><i class="dot veg"></i><span class="item-name">Chocolate Shakes</span><span class="dots"></span><span class="price">₹159</span><button class="add" onclick="add('Chocolate Shakes',159,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Mango Shakes"><i class="dot veg"></i><span class="item-name">Mango Shakes</span><span class="dots"></span><span class="price">₹159</span><button class="add" onclick="add('Mango Shakes',159,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Strawberry Shakes"><i class="dot veg"></i><span class="item-name">Strawberry Shakes</span><span class="dots"></span><span class="price">₹149</span><button class="add" onclick="add('Strawberry Shakes',149,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Banana Shakes"><i class="dot veg"></i><span class="item-name">Banana Shakes</span><span class="dots"></span><span class="price">₹139</span><button class="add" onclick="add('Banana Shakes',139,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Oreo Shakes"><i class="dot veg"></i><span class="item-name">Oreo Shakes</span><span class="dots"></span><span class="price">₹159</span><button class="add" onclick="add('Oreo Shakes',159,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Vanilla Shakes"><i class="dot veg"></i><span class="item-name">Vanilla Shakes</span><span class="dots"></span><span class="price">₹159</span><button class="add" onclick="add('Vanilla Shakes',159,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Kit Kat Shakes"><i class="dot veg"></i><span class="item-name">Kit Kat Shakes</span><span class="dots"></span><span class="price">₹169</span><button class="add" onclick="add('Kit Kat Shakes',169,'veg',this)">ADD</button></div>
+    </div>
+
+    <!-- ITALIAN CUISINE SECTION -->
+    <div class="category" id="italian">
+     <h3>Italian Cuisine</h3>
+     
+     <div class="sub">● ROLLS & WRAPS</div>
+     <div class="item veg" data-name="Veg Roll"><i class="dot veg"></i><span class="item-name">Veg Roll</span><span class="dots"></span><span class="price">₹149</span><button class="add" onclick="add('Veg Roll',149,'veg',this)">ADD</button></div>
+     <div class="item non" data-name="Egg Roll"><i class="dot non"></i><span class="item-name">Egg Roll</span><span class="dots"></span><span class="price">₹169</span><button class="add" onclick="add('Egg Roll',169,'non',this)">ADD</button></div>
+     <div class="item veg" data-name="Peri Peri Paneer Wrap"><i class="dot veg"></i><span class="item-name">Peri Peri Paneer Wrap</span><span class="dots"></span><span class="price">₹179</span><button class="add" onclick="add('Peri Peri Paneer Wrap',179,'veg',this)">ADD</button></div>
+     <div class="item non" data-name="Bbq Chicken Wrap"><i class="dot non"></i><span class="item-name">Bbq Chicken Wrap</span><span class="dots"></span><span class="price">₹189</span><button class="add" onclick="add('Bbq Chicken Wrap',189,'non',this)">ADD</button></div>
+     <div class="item non" data-name="Chilli Chicken Wrap"><i class="dot non"></i><span class="item-name">Chilli Chicken Wrap</span><span class="dots"></span><span class="price">₹189</span><button class="add" onclick="add('Chilli Chicken Wrap',189,'non',this)">ADD</button></div>
+     <div class="item non" data-name="Chicken Tikka Roll"><i class="dot non"></i><span class="item-name">Chicken Tikka Roll</span><span class="dots"></span><span class="price">₹219</span><button class="add" onclick="add('Chicken Tikka Roll',219,'non',this)">ADD</button></div>
+     <div class="item veg" data-name="Paneer Tikka Roll"><i class="dot veg"></i><span class="item-name">Paneer Tikka Roll</span><span class="dots"></span><span class="price">₹199</span><button class="add" onclick="add('Paneer Tikka Roll',199,'veg',this)">ADD</button></div>
+     <div class="item non" data-name="Chicken Malai Tikka Roll"><i class="dot non"></i><span class="item-name">Chicken Malai Tikka Roll</span><span class="dots"></span><span class="price">₹219</span><button class="add" onclick="add('Chicken Malai Tikka Roll',219,'non',this)">ADD</button></div>
+
+     <div class="sub">● SANDWICH & FRIES</div>
+     <div class="item veg" data-name="French Fries"><i class="dot veg"></i><span class="item-name">French Fries</span><span class="dots"></span><span class="price">₹129</span><button class="add" onclick="add('French Fries',129,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Veg Sandwich With Fry"><i class="dot veg"></i><span class="item-name">Veg Sandwich With Fry</span><span class="dots"></span><span class="price">₹159</span><button class="add" onclick="add('Veg Sandwich With Fry',159,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Veg & Cheese Sandwich"><i class="dot veg"></i><span class="item-name">Veg & Cheese Sandwich</span><span class="dots"></span><span class="price">₹169</span><button class="add" onclick="add('Veg & Cheese Sandwich',169,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Corn & Cheese Sandwich"><i class="dot veg"></i><span class="item-name">Corn & Cheese Sandwich</span><span class="dots"></span><span class="price">₹169</span><button class="add" onclick="add('Corn & Cheese Sandwich',169,'veg',this)">ADD</button></div>
+     <div class="item non" data-name="Spicy Grilled Chicken Sandwich"><i class="dot non"></i><span class="item-name">Spicy Grilled Chicken Sandwich</span><span class="dots"></span><span class="price">₹259</span><button class="add" onclick="add('Spicy Grilled Chicken Sandwich',259,'non',this)">ADD</button></div>
+     <div class="item veg" data-name="Peri Peri Paneer Sandwich"><i class="dot veg"></i><span class="item-name">Peri Peri Paneer Sandwich</span><span class="dots"></span><span class="price">₹259</span><button class="add" onclick="add('Peri Peri Paneer Sandwich',259,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Avocado & Cheese Sandwich"><i class="dot veg"></i><span class="item-name">Avocado & Cheese Sandwich</span><span class="dots"></span><span class="price">₹289</span><button class="add" onclick="add('Avocado & Cheese Sandwich',289,'veg',this)">ADD</button></div>
+
+     <div class="sub">● PIZZA</div>
+     <div class="item veg" data-name="Margherita Pizza"><i class="dot veg"></i><span class="item-name">Margherita Pizza</span><span class="dots"></span><span class="price">₹199</span><button class="add" onclick="add('Margherita Pizza',199,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Garden Fresh Veg Pizza With Pesto"><i class="dot veg"></i><span class="item-name">Garden Fresh Veg Pizza With Pesto</span><span class="dots"></span><span class="price">₹219</span><button class="add" onclick="add('Garden Fresh Veg Pizza With Pesto',219,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Mushroom & Grilled Vegetable Pizza"><i class="dot veg"></i><span class="item-name">Mushroom & Grilled Vegetable Pizza</span><span class="dots"></span><span class="price">₹219</span><button class="add" onclick="add('Mushroom & Grilled Vegetable Pizza',219,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Peri Peri Paneer Tikka Pizza"><i class="dot veg"></i><span class="item-name">Peri Peri Paneer Tikka Pizza</span><span class="dots"></span><span class="price">₹229</span><button class="add" onclick="add('Peri Peri Paneer Tikka Pizza',229,'veg',this)">ADD</button></div>
+     <div class="item non" data-name="Grilled Chicken Sausage Pizza"><i class="dot non"></i><span class="item-name">Grilled Chicken Sausage Pizza</span><span class="dots"></span><span class="price">₹229</span><button class="add" onclick="add('Grilled Chicken Sausage Pizza',229,'non',this)">ADD</button></div>
+     <div class="item non" data-name="Pepperoni Pizza"><i class="dot non"></i><span class="item-name">Pepperoni Pizza</span><span class="dots"></span><span class="price">₹259</span><button class="add" onclick="add('Pepperoni Pizza',259,'non',this)">ADD</button></div>
+     <div class="item non" data-name="Bbq Chicken Pizza"><i class="dot non"></i><span class="item-name">Bbq Chicken Pizza</span><span class="dots"></span><span class="price">₹259</span><button class="add" onclick="add('Bbq Chicken Pizza',259,'non',this)">ADD</button></div>
+     <div class="item non" data-name="Mediterranean Pizza Sea Food"><i class="dot non"></i><span class="item-name">Mediterranean Pizza Sea Food</span><span class="dots"></span><span class="price">₹369</span><button class="add" onclick="add('Mediterranean Pizza Sea Food',369,'non',this)">ADD</button></div>
+
+     <div class="sub">● MEXICAN</div>
+     <div class="item veg" data-name="Nacos With Tomato Salsa"><i class="dot veg"></i><span class="item-name">Nacos With Tomato Salsa</span><span class="dots"></span><span class="price">₹139</span><button class="add" onclick="add('Nacos With Tomato Salsa',139,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Baked Nachos With Tomato Salsa"><i class="dot veg"></i><span class="item-name">Baked Nachos With Tomato Salsa</span><span class="dots"></span><span class="price">₹159</span><button class="add" onclick="add('Baked Nachos With Tomato Salsa',159,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Mexican Veg Tacos With Salsa"><i class="dot veg"></i><span class="item-name">Mexican Veg Tacos With Salsa</span><span class="dots"></span><span class="price">₹199</span><button class="add" onclick="add('Mexican Veg Tacos With Salsa',199,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Veg & Cheese Quesadilla"><i class="dot veg"></i><span class="item-name">Veg & Cheese Quesadilla</span><span class="dots"></span><span class="price">₹199</span><button class="add" onclick="add('Veg & Cheese Quesadilla',199,'veg',this)">ADD</button></div>
+     <div class="item non" data-name="Mexican Chicken Tacos With Salsa"><i class="dot non"></i><span class="item-name">Mexican Chicken Tacos With Salsa</span><span class="dots"></span><span class="price">₹249</span><button class="add" onclick="add('Mexican Chicken Tacos With Salsa',249,'non',this)">ADD</button></div>
+     <div class="item veg" data-name="Mexican Rice Bowl"><i class="dot veg"></i><span class="item-name">Mexican Rice Bowl</span><span class="dots"></span><span class="price">₹499</span><button class="add" onclick="add('Mexican Rice Bowl',499,'veg',this)">ADD</button></div>
+
+     <div class="sub">● BURGERS</div>
+     <div class="item veg" data-name="Veg & Cheese Burger with Spicy Mayo"><i class="dot veg"></i><span class="item-name">Veg & Cheese Burger with Spicy Mayo</span><span class="dots"></span><span class="price">₹139</span><button class="add" onclick="add('Veg & Cheese Burger with Spicy Mayo',139,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Peri Peri Paneer Burger with Lettuce"><i class="dot veg"></i><span class="item-name">Peri Peri Paneer Burger with Lettuce</span><span class="dots"></span><span class="price">₹159</span><button class="add" onclick="add('Peri Peri Paneer Burger with Lettuce',159,'veg',this)">ADD</button></div>
+     <div class="item non" data-name="Grilled Chicken & Cheese Burger"><i class="dot non"></i><span class="item-name">Grilled Chicken & Cheese Burger</span><span class="dots"></span><span class="price">₹189</span><button class="add" onclick="add('Grilled Chicken & Cheese Burger',189,'non',this)">ADD</button></div>
+     <div class="item non" data-name="Calzone Marinated Chicken Burger With Japanese Mayo"><i class="dot non"></i><span class="item-name">Calzone Marinated Chicken Burger With Japanese Mayo</span><span class="dots"></span><span class="price">₹219</span><button class="add" onclick="add('Calzone Marinated Chicken Burger With Japanese Mayo',219,'non',this)">ADD</button></div>
+     <div class="item non" data-name="Grilled Chicken Sausage Burger"><i class="dot non"></i><span class="item-name">Grilled Chicken Sausage Burger</span><span class="dots"></span><span class="price">₹149</span><button class="add" onclick="add('Grilled Chicken Sausage Burger',149,'non',this)">ADD</button></div>
+
+     <div class="sub">● PASTA</div>
+     <div class="item veg" data-name="Choice Your Pasta Veg"><i class="dot veg"></i><span class="item-name">Choice Your Pasta Veg</span><span class="dots"></span><span class="price">₹209</span><button class="add" onclick="add('Choice Your Pasta Veg',209,'veg',this)">ADD</button></div>
+     <div class="item non" data-name="Choice Your Pasta Chicken"><i class="dot non"></i><span class="item-name">Choice Your Pasta Chicken</span><span class="dots"></span><span class="price">₹259</span><button class="add" onclick="add('Choice Your Pasta Chicken',259,'non',this)">ADD</button></div>
+
+     <div class="sub">● THAI</div>
+     <div class="item veg" data-name="Veg Green Curry"><i class="dot veg"></i><span class="item-name">Veg Green Curry</span><span class="dots"></span><span class="price">₹399</span><button class="add" onclick="add('Veg Green Curry',399,'veg',this)">ADD</button></div>
+     <div class="item non" data-name="Chicken Red Curry"><i class="dot non"></i><span class="item-name">Chicken Red Curry</span><span class="dots"></span><span class="price">₹499</span><button class="add" onclick="add('Chicken Red Curry',499,'non',this)">ADD</button></div>
+     <div class="item non" data-name="Fish Yellow Curry"><i class="dot non"></i><span class="item-name">Fish Yellow Curry</span><span class="dots"></span><span class="price">₹549</span><button class="add" onclick="add('Fish Yellow Curry',549,'non',this)">ADD</button></div>
+     <div class="item veg" data-name="Khao Sui Curry Noodle V/N"><i class="dot veg"></i><span class="item-name">Khao Sui Curry Noodle (Veg/Non-Veg)</span><span class="dots"></span><span class="price">₹399</span><button class="add" onclick="add('Khao Sui Curry Noodle',399,'veg',this)">ADD</button></div>
+    </div>
+
+    <!-- TANDOOR STARTERS SECTION -->
+    <div class="category" id="tandoor">
+     <h3>Tandoor Starters</h3>
+     <div class="sub">● VEG</div>
+     <div class="item veg" data-name="Tandoori Paneer Tikka / Haryali"><i class="dot veg"></i><span class="item-name">Tandoori Paneer Tikka / Haryali</span><span class="dots"></span><span class="price">₹299</span><button class="add" onclick="add('Tandoori Paneer Tikka / Haryali',299,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Tandoori Malai Tikka"><i class="dot veg"></i><span class="item-name">Tandoori Malai Tikka</span><span class="dots"></span><span class="price">₹319</span><button class="add" onclick="add('Tandoori Malai Tikka',319,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Tandoori Stuffed Mushroom"><i class="dot veg"></i><span class="item-name">Tandoori Stuffed Mushroom</span><span class="dots"></span><span class="price">₹299</span><button class="add" onclick="add('Tandoori Stuffed Mushroom',299,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Malai Soya Chaap"><i class="dot veg"></i><span class="item-name">Malai Soya Chaap</span><span class="dots"></span><span class="price">₹299</span><button class="add" onclick="add('Malai Soya Chaap',299,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Spicy Tandoori Soya Chaap"><i class="dot veg"></i><span class="item-name">Spicy Tandoori Soya Chaap</span><span class="dots"></span><span class="price">₹289</span><button class="add" onclick="add('Spicy Tandoori Soya Chaap',289,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Dahi Ke Shole"><i class="dot veg"></i><span class="item-name">Dahi Ke Shole</span><span class="dots"></span><span class="price">₹299</span><button class="add" onclick="add('Dahi Ke Shole',299,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Dahi Ke Kabab"><i class="dot veg"></i><span class="item-name">Dahi Ke Kabab</span><span class="dots"></span><span class="price">₹319</span><button class="add" onclick="add('Dahi Ke Kabab',319,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Mushroom Galoti"><i class="dot veg"></i><span class="item-name">Mushroom Galoti</span><span class="dots"></span><span class="price">₹319</span><button class="add" onclick="add('Mushroom Galoti',319,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Veg Kabab Platter"><i class="dot veg"></i><span class="item-name">Veg Kabab Platter</span><span class="dots"></span><span class="price">₹450</span><button class="add" onclick="add('Veg Kabab Platter',450,'veg',this)">ADD</button></div>
+     
+     <div class="sub non">● NON-VEG</div>
+     <div class="item non" data-name="Tandoori Chicken"><i class="dot non"></i><span class="item-name">Tandoori Chicken (Half/Full)</span><span class="dots"></span><span class="price">₹279</span><button class="add" onclick="add('Tandoori Chicken',279,'non',this)">ADD</button></div>
+     <div class="item non" data-name="Afghani Chicken"><i class="dot non"></i><span class="item-name">Afghani Chicken (Half/Full)</span><span class="dots"></span><span class="price">₹299</span><button class="add" onclick="add('Afghani Chicken',299,'non',this)">ADD</button></div>
+     <div class="item non" data-name="Chicken Tikka / Basil Tikka"><i class="dot non"></i><span class="item-name">Chicken Tikka / Basil Tikka</span><span class="dots"></span><span class="price">₹319</span><button class="add" onclick="add('Chicken Tikka / Basil Tikka',319,'non',this)">ADD</button></div>
+     <div class="item non" data-name="Chicken Malai Tikka"><i class="dot non"></i><span class="item-name">Chicken Malai Tikka</span><span class="dots"></span><span class="price">₹319</span><button class="add" onclick="add('Chicken Malai Tikka',319,'non',this)">ADD</button></div>
+     <div class="item non" data-name="Chicken Tangri Kabab"><i class="dot non"></i><span class="item-name">Chicken Tangri Kabab</span><span class="dots"></span><span class="price">₹449</span><button class="add" onclick="add('Chicken Tangri Kabab',449,'non',this)">ADD</button></div>
+     <div class="item non" data-name="Chicken Seekh Kabab"><i class="dot non"></i><span class="item-name">Chicken Seekh Kabab</span><span class="dots"></span><span class="price">₹279</span><button class="add" onclick="add('Chicken Seekh Kabab',279,'non',this)">ADD</button></div>
+     <div class="item non" data-name="Mutton Seekh Kabab"><i class="dot non"></i><span class="item-name">Mutton Seekh Kabab</span><span class="dots"></span><span class="price">₹449</span><button class="add" onclick="add('Mutton Seekh Kabab',449,'non',this)">ADD</button></div>
+     <div class="item non" data-name="Mutton Galoti"><i class="dot non"></i><span class="item-name">Mutton Galoti</span><span class="dots"></span><span class="price">₹439</span><button class="add" onclick="add('Mutton Galoti',439,'non',this)">ADD</button></div>
+     <div class="item non" data-name="Ajwaini Fish Tikka"><i class="dot non"></i><span class="item-name">Ajwaini Fish Tikka</span><span class="dots"></span><span class="price">₹349</span><button class="add" onclick="add('Ajwaini Fish Tikka',349,'non',this)">ADD</button></div>
+     <div class="item non" data-name="Amritsari Fish"><i class="dot non"></i><span class="item-name">Amritsari Fish</span><span class="dots"></span><span class="price">₹299</span><button class="add" onclick="add('Amritsari Fish',299,'non',this)">ADD</button></div>
+     <div class="item non" data-name="Non Veg Kabab Platter"><i class="dot non"></i><span class="item-name">Non Veg Kabab Platter</span><span class="dots"></span><span class="price">₹599</span><button class="add" onclick="add('Non Veg Kabab Platter',599,'non',this)">ADD</button></div>
+    </div>
+   </div>
+
+   <!-- RIGHT COLUMN -->
+   <div>
+    <!-- DIM SUM SECTION -->
+    <div class="category" id="dimsum">
+     <h3>Dim Sum</h3>
+     <div class="sub">● VEG</div>
+     <div class="item veg" data-name="Spinach & Corn Dumplings"><i class="dot veg"></i><span class="item-name">Spinach & Corn Dumplings</span><span class="dots"></span><span class="price">₹179</span><button class="add" onclick="add('Spinach & Corn Dumplings',179,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Mushroom & Veg Dumplings"><i class="dot veg"></i><span class="item-name">Mushroom & Veg Dumplings</span><span class="dots"></span><span class="price">₹179</span><button class="add" onclick="add('Mushroom & Veg Dumplings',179,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Assorted Veg & Glass Noodles Dim Sum"><i class="dot veg"></i><span class="item-name">Assorted Veg & Glass Noodles Dim Sum</span><span class="dots"></span><span class="price">₹179</span><button class="add" onclick="add('Assorted Veg & Glass Noodles Dim Sum',179,'veg',this)">ADD</button></div>
+     <div class="sub non">● NON-VEG</div>
+     <div class="item non" data-name="Chicken & Spring Onion Steamed Dumplings"><i class="dot non"></i><span class="item-name">Chicken & Spring Onion Steamed Dumplings</span><span class="dots"></span><span class="price">₹199</span><button class="add" onclick="add('Chicken & Spring Onion Steamed Dumplings',199,'non',this)">ADD</button></div>
+     <div class="item non" data-name="Pan-fried Chicken & Roasted Peanut Dim Sum"><i class="dot non"></i><span class="item-name">Pan-fried Chicken & Roasted Peanut Dim Sum</span><span class="dots"></span><span class="price">₹219</span><button class="add" onclick="add('Pan-fried Chicken & Roasted Peanut Dim Sum',219,'non',this)">ADD</button></div>
+     <div class="item non" data-name="Lamb Black Pepper Dim Sum"><i class="dot non"></i><span class="item-name">Lamb Black Pepper Dim Sum</span><span class="dots"></span><span class="price">₹299</span><button class="add" onclick="add('Lamb Black Pepper Dim Sum',299,'non',this)">ADD</button></div>
+     <div class="item non" data-name="Seafood Dim Sum"><i class="dot non"></i><span class="item-name">Seafood Dim Sum</span><span class="dots"></span><span class="price">₹299</span><button class="add" onclick="add('Seafood Dim Sum',299,'non',this)">ADD</button></div>
+    </div>
+
+    <!-- CHINESE SECTION -->
+    <div class="category" id="chinese">
+     <h3>Chinese Main Course</h3>
+     <div class="sub">● VEG</div>
+     <div class="item veg" data-name="Stir-Fried Veg in Hot Garlic Sauce"><i class="dot veg"></i><span class="item-name">Stir-Fried Veg in Hot Garlic Sauce</span><span class="dots"></span><span class="price">₹259</span><button class="add" onclick="add('Stir-Fried Veg in Hot Garlic Sauce',259,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Veg Dumplings in Beijing Sauce"><i class="dot veg"></i><span class="item-name">Veg Dumplings in Beijing Sauce</span><span class="dots"></span><span class="price">₹259</span><button class="add" onclick="add('Veg Dumplings in Beijing Sauce',259,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Chilli Cottage Cheese"><i class="dot veg"></i><span class="item-name">Chilli Cottage Cheese</span><span class="dots"></span><span class="price">₹279</span><button class="add" onclick="add('Chilli Cottage Cheese',279,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Soya Chaap in Chilli Garlic Sauce"><i class="dot veg"></i><span class="item-name">Soya Chaap in Chilli Garlic Sauce</span><span class="dots"></span><span class="price">₹269</span><button class="add" onclick="add('Soya Chaap in Chilli Garlic Sauce',269,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Stir-Fried Green Vegetables"><i class="dot veg"></i><span class="item-name">Stir-Fried Green Vegetables</span><span class="dots"></span><span class="price">₹299</span><button class="add" onclick="add('Stir-Fried Green Vegetables',299,'veg',this)">ADD</button></div>
+     
+     <div class="sub non">● NON-VEG</div>
+     <div class="item non" data-name="Diced Chicken in Schezwan Sauce"><i class="dot non"></i><span class="item-name">Diced Chicken in Schezwan Sauce</span><span class="dots"></span><span class="price">₹299</span><button class="add" onclick="add('Diced Chicken in Schezwan Sauce',299,'non',this)">ADD</button></div>
+     <div class="item non" data-name="Kung Pao Chicken"><i class="dot non"></i><span class="item-name">Kung Pao Chicken</span><span class="dots"></span><span class="price">₹299</span><button class="add" onclick="add('Kung Pao Chicken',299,'non',this)">ADD</button></div>
+     <div class="item non" data-name="Lemon Chicken"><i class="dot non"></i><span class="item-name">Lemon Chicken</span><span class="dots"></span><span class="price">₹299</span><button class="add" onclick="add('Lemon Chicken',299,'non',this)">ADD</button></div>
+     <div class="item non" data-name="Sliced Chicken with Vegetables"><i class="dot non"></i><span class="item-name">Sliced Chicken with Vegetables</span><span class="dots"></span><span class="price">₹299</span><button class="add" onclick="add('Sliced Chicken with Vegetables',299,'non',this)">ADD</button></div>
+     <div class="item non" data-name="Chicken in Black Bean Sauce"><i class="dot non"></i><span class="item-name">Chicken in Black Bean Sauce</span><span class="dots"></span><span class="price">₹299</span><button class="add" onclick="add('Chicken in Black Bean Sauce',299,'non',this)">ADD</button></div>
+     <div class="item non" data-name="Chicken in Black Pepper Sauce"><i class="dot non"></i><span class="item-name">Chicken in Black Pepper Sauce</span><span class="dots"></span><span class="price">₹319</span><button class="add" onclick="add('Chicken in Black Pepper Sauce',319,'non',this)">ADD</button></div>
+     <div class="item non" data-name="Lamb in Chilli Sauce"><i class="dot non"></i><span class="item-name">Lamb in Chilli Sauce</span><span class="dots"></span><span class="price">₹399</span><button class="add" onclick="add('Lamb in Chilli Sauce',399,'non',this)">ADD</button></div>
+     <div class="item non" data-name="Sliced Fish in Ginger Garlic Sauce"><i class="dot non"></i><span class="item-name">Sliced Fish in Ginger Garlic Sauce</span><span class="dots"></span><span class="price">₹319</span><button class="add" onclick="add('Sliced Fish in Ginger Garlic Sauce',319,'non',this)">ADD</button></div>
+     <div class="item non" data-name="Prawns in Hot Garlic Sauce"><i class="dot non"></i><span class="item-name">Prawns in Hot Garlic Sauce</span><span class="dots"></span><span class="price">₹499</span><button class="add" onclick="add('Prawns in Hot Garlic Sauce',499,'non',this)">ADD</button></div>
+
+     <h3 style="margin-top:20px;">Noodles</h3>
+     <div class="sub">● VEG</div>
+     <div class="item veg" data-name="Veg Hakka Noodles"><i class="dot veg"></i><span class="item-name">Veg Hakka Noodles</span><span class="dots"></span><span class="price">₹149</span><button class="add" onclick="add('Veg Hakka Noodles',149,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Veg Schezwan Noodles"><i class="dot veg"></i><span class="item-name">Veg Schezwan Noodles</span><span class="dots"></span><span class="price">₹159</span><button class="add" onclick="add('Veg Schezwan Noodles',159,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Veg Chilli Garlic Noodles"><i class="dot veg"></i><span class="item-name">Veg Chilli Garlic Noodles</span><span class="dots"></span><span class="price">₹159</span><button class="add" onclick="add('Veg Chilli Garlic Noodles',159,'veg',this)">ADD</button></div>
+     <div class="sub non">● NON-VEG</div>
+     <div class="item non" data-name="Egg Noodles"><i class="dot non"></i><span class="item-name">Egg Noodles</span><span class="dots"></span><span class="price">₹179</span><button class="add" onclick="add('Egg Noodles',179,'non',this)">ADD</button></div>
+     <div class="item non" data-name="Chicken Hakka Noodles"><i class="dot non"></i><span class="item-name">Chicken Hakka Noodles</span><span class="dots"></span><span class="price">₹199</span><button class="add" onclick="add('Chicken Hakka Noodles',199,'non',this)">ADD</button></div>
+     <div class="item non" data-name="Chicken Chilli Garlic Noodles"><i class="dot non"></i><span class="item-name">Chicken Chilli Garlic Noodles</span><span class="dots"></span><span class="price">₹219</span><button class="add" onclick="add('Chicken Chilli Garlic Noodles',219,'non',this)">ADD</button></div>
+     <div class="item non" data-name="Roasted Garlic Chicken Noodles"><i class="dot non"></i><span class="item-name">Roasted Garlic Chicken Noodles</span><span class="dots"></span><span class="price">₹219</span><button class="add" onclick="add('Roasted Garlic Chicken Noodles',219,'non',this)">ADD</button></div>
+     <div class="item non" data-name="Seafood Schezwan Noodles"><i class="dot non"></i><span class="item-name">Seafood Schezwan Noodles</span><span class="dots"></span><span class="price">₹349</span><button class="add" onclick="add('Seafood Schezwan Noodles',349,'non',this)">ADD</button></div>
+     <div class="item non" data-name="Mix Meat Noodles"><i class="dot non"></i><span class="item-name">Mix Meat Noodles</span><span class="dots"></span><span class="price">₹349</span><button class="add" onclick="add('Mix Meat Noodles',349,'non',this)">ADD</button></div>
+
+     <h3 style="margin-top:20px;">Tandoori Momos</h3>
+     <div class="item veg" data-name="Tandoori Paneer Momos Malai / Spicy"><i class="dot veg"></i><span class="item-name">Tandoori Paneer Momos (Malai / Spicy)</span><span class="dots"></span><span class="price">₹249</span><button class="add" onclick="add('Tandoori Paneer Momos',249,'veg',this)">ADD</button></div>
+     <div class="item non" data-name="Tandoori Chicken Momos Malai / Spicy"><i class="dot non"></i><span class="item-name">Tandoori Chicken Momos (Malai / Spicy)</span><span class="dots"></span><span class="price">₹249</span><button class="add" onclick="add('Tandoori Chicken Momos',249,'non',this)">ADD</button></div>
+     <div class="item veg" data-name="Crumb Fried Momos with Sweet Chilli"><i class="dot veg"></i><span class="item-name">Crumb Fried Momos with Sweet Chilli</span><span class="dots"></span><span class="price">₹219</span><button class="add" onclick="add('Crumb Fried Momos',219,'veg',this)">ADD</button></div>
+
+     <h3 style="margin-top:20px;">Chinese Starters</h3>
+     <div class="sub">● VEG</div>
+     <div class="item veg" data-name="Veg Salt & Pepper"><i class="dot veg"></i><span class="item-name">Veg Salt & Pepper</span><span class="dots"></span><span class="price">₹249</span><button class="add" onclick="add('Veg Salt & Pepper',249,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Honey Chilli Potato"><i class="dot veg"></i><span class="item-name">Honey Chilli Potato</span><span class="dots"></span><span class="price">₹179</span><button class="add" onclick="add('Honey Chilli Potato',179,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Vegetable & Glass Noodles Spring Roll"><i class="dot veg"></i><span class="item-name">Vegetable & Glass Noodles Spring Roll</span><span class="dots"></span><span class="price">₹199</span><button class="add" onclick="add('Vegetable & Glass Noodles Spring Roll',199,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Veg Manchurian"><i class="dot veg"></i><span class="item-name">Veg Manchurian</span><span class="dots"></span><span class="price">₹249</span><button class="add" onclick="add('Veg Manchurian',249,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Chilli Dry Soya Chaap"><i class="dot veg"></i><span class="item-name">Chilli Dry Soya Chaap</span><span class="dots"></span><span class="price">₹249</span><button class="add" onclick="add('Chilli Dry Soya Chaap',249,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Crispy Corn & Spinach"><i class="dot veg"></i><span class="item-name">Crispy Corn & Spinach</span><span class="dots"></span><span class="price">₹239</span><button class="add" onclick="add('Crispy Corn & Spinach',239,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Chilli Paneer with Bell Pepper"><i class="dot veg"></i><span class="item-name">Chilli Paneer with Bell Pepper</span><span class="dots"></span><span class="price">₹289</span><button class="add" onclick="add('Chilli Paneer with Bell Pepper',289,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Silken Tofu Chef's Special"><i class="dot veg"></i><span class="item-name">Silken Tofu Chef's Special</span><span class="dots"></span><span class="price">₹289</span><button class="add" onclick="add('Silken Tofu Chef\'s Special',289,'veg',this)">ADD</button></div>
+     
+     <div class="sub non">● NON-VEG</div>
+     <div class="item non" data-name="Kung Pao Chicken with Peanuts"><i class="dot non"></i><span class="item-name">Kung Pao Chicken with Peanuts</span><span class="dots"></span><span class="price">₹289</span><button class="add" onclick="add('Kung Pao Chicken with Peanuts',289,'non',this)">ADD</button></div>
+     <div class="item non" data-name="Dry Chilli Chicken with Bell Pepper"><i class="dot non"></i><span class="item-name">Dry Chilli Chicken with Bell Pepper</span><span class="dots"></span><span class="price">₹279</span><button class="add" onclick="add('Dry Chilli Chicken with Bell Pepper',279,'non',this)">ADD</button></div>
+     <div class="item non" data-name="Crispy Chicken Salt & Five Spice"><i class="dot non"></i><span class="item-name">Crispy Chicken Salt & Five Spice</span><span class="dots"></span><span class="price">₹279</span><button class="add" onclick="add('Crispy Chicken Salt & Five Spice',279,'non',this)">ADD</button></div>
+     <div class="item non" data-name="Chicken Mongolian"><i class="dot non"></i><span class="item-name">Chicken Mongolian</span><span class="dots"></span><span class="price">₹279</span><button class="add" onclick="add('Chicken Mongolian',279,'non',this)">ADD</button></div>
+     <div class="item non" data-name="Schezwan Chicken Lollipop"><i class="dot non"></i><span class="item-name">Schezwan Chicken Lollipop</span><span class="dots"></span><span class="price">₹299</span><button class="add" onclick="add('Schezwan Chicken Lollipop',299,'non',this)">ADD</button></div>
+     <div class="item non" data-name="Black Pepper Chicken Chef's Special"><i class="dot non"></i><span class="item-name">Black Pepper Chicken Chef's Special</span><span class="dots"></span><span class="price">₹299</span><button class="add" onclick="add('Black Pepper Chicken Chef\'s Special',299,'non',this)">ADD</button></div>
+     <div class="item non" data-name="Schezwan Dry Chilli Fish"><i class="dot non"></i><span class="item-name">Schezwan Dry Chilli Fish</span><span class="dots"></span><span class="price">₹339</span><button class="add" onclick="add('Schezwan Dry Chilli Fish',339,'non',this)">ADD</button></div>
+     <div class="item non" data-name="Cumin Lamb Chef's Special"><i class="dot non"></i><span class="item-name">Cumin Lamb Chef's Special</span><span class="dots"></span><span class="price">₹399</span><button class="add" onclick="add('Cumin Lamb Chef\'s Special',399,'non',this)">ADD</button></div>
+     <div class="item non" data-name="Crispy Calamari with Roasted Garlic"><i class="dot non"></i><span class="item-name">Crispy Calamari with Roasted Garlic</span><span class="dots"></span><span class="price">₹339</span><button class="add" onclick="add('Crispy Calamari with Roasted Garlic',339,'non',this)">ADD</button></div>
+     <div class="item non" data-name="Prawns Dry Chilli"><i class="dot non"></i><span class="item-name">Prawns Dry Chilli</span><span class="dots"></span><span class="price">₹449</span><button class="add" onclick="add('Prawns Dry Chilli',449,'non',this)">ADD</button></div>
+    </div>
+
+    <!-- SOUPS & SALADS SECTION -->
+    <div class="category" id="soup">
+     <h3>Salads</h3>
+     <div class="item veg" data-name="Garden Green Salad"><i class="dot veg"></i><span class="item-name">Garden Green Salad</span><span class="dots"></span><span class="price">₹139</span><button class="add" onclick="add('Garden Green Salad',139,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Russian Salad"><i class="dot veg"></i><span class="item-name">Russian Salad</span><span class="dots"></span><span class="price">₹229</span><button class="add" onclick="add('Russian Salad',229,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Caesar Salad Veg / Chicken"><i class="dot veg"></i><span class="item-name">Caesar Salad (Veg/Chicken)</span><span class="dots"></span><span class="price">₹249</span><button class="add" onclick="add('Caesar Salad',249,'veg',this)">ADD</button></div>
+     <div class="item non" data-name="Chicken Tikka Salad"><i class="dot non"></i><span class="item-name">Chicken Tikka Salad</span><span class="dots"></span><span class="price">₹299</span><button class="add" onclick="add('Chicken Tikka Salad',299,'non',this)">ADD</button></div>
+
+     <h3 style="margin-top:20px;">Soups</h3>
+     <div class="item veg" data-name="Tomato Basil Soup"><i class="dot veg"></i><span class="item-name">Tomato Basil Soup</span><span class="dots"></span><span class="price">₹149</span><button class="add" onclick="add('Tomato Basil Soup',149,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Cream Of Mushroom Soup"><i class="dot veg"></i><span class="item-name">Cream Of Mushroom Soup</span><span class="dots"></span><span class="price">₹149</span><button class="add" onclick="add('Cream Of Mushroom Soup',149,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Sweet Corn Soup V/n"><i class="dot veg"></i><span class="item-name">Sweet Corn Soup (Veg/Non-Veg)</span><span class="dots"></span><span class="price">₹119</span><button class="add" onclick="add('Sweet Corn Soup',119,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Manchow Soup V/n"><i class="dot veg"></i><span class="item-name">Manchow Soup (Veg/Non-Veg)</span><span class="dots"></span><span class="price">₹119</span><button class="add" onclick="add('Manchow Soup',119,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Lemon Coriander Mushroom Soup V/n"><i class="dot veg"></i><span class="item-name">Lemon Coriander Mushroom Soup (V/N)</span><span class="dots"></span><span class="price">₹119</span><button class="add" onclick="add('Lemon Coriander Mushroom Soup',119,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Hot & Sour Soup Chef Special V/n"><i class="dot veg"></i><span class="item-name">Hot & Sour Soup Chef Special (V/N)</span><span class="dots"></span><span class="price">₹119</span><button class="add" onclick="add('Hot & Sour Soup Chef Special',119,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Noodles Soup Bowl With Dumplings V/n"><i class="dot veg"></i><span class="item-name">Noodles Soup Bowl With Dumplings (V/N)</span><span class="dots"></span><span class="price">₹299</span><button class="add" onclick="add('Noodles Soup Bowl With Dumplings',299,'veg',this)">ADD</button></div>
+    </div>
+
+    <!-- INDIAN MAIN COURSE SECTION -->
     <div class="category" id="indian">
      <h3>Indian Main Course</h3>
      <div class="sub">● VEG</div>
-     <div class="item veg" data-name="Yellow Dal Tadka" data-popular="0"><i class="dot veg"></i><span class="item-name">Yellow Dal Tadka</span><span class="dots"></span><span class="price">₹199</span><button class="add" onclick="add('Yellow Dal Tadka',199,'veg',this)">ADD</button></div>
-     <div class="item veg" data-name="Dal Makhani" data-popular="1"><i class="dot veg"></i><span class="item-name">Dal Makhani</span><span class="badge">POPULAR</span><span class="dots"></span><span class="price">₹259</span><button class="add" onclick="add('Dal Makhani',259,'veg',this)">ADD</button></div>
-     <div class="item veg" data-name="Mix Veg" data-popular="0"><i class="dot veg"></i><span class="item-name">Mix Veg</span><span class="dots"></span><span class="price">₹249</span><button class="add" onclick="add('Mix Veg',249,'veg',this)">ADD</button></div>
-     <div class="item veg" data-name="Mix Veg Handi" data-popular="0"><i class="dot veg"></i><span class="item-name">Mix Veg Handi</span><span class="dots"></span><span class="price">₹249</span><button class="add" onclick="add('Mix Veg Handi',249,'veg',this)">ADD</button></div>
-     <div class="item veg" data-name="Mutter Mushroom" data-popular="0"><i class="dot veg"></i><span class="item-name">Mutter Mushroom</span><span class="dots"></span><span class="price">₹299</span><button class="add" onclick="add('Mutter Mushroom',299,'veg',this)">ADD</button></div>
-     <div class="item veg" data-name="Soya Chaap Masala" data-popular="1"><i class="dot veg"></i><span class="item-name">Soya Chaap Masala</span><span class="badge">POPULAR</span><span class="dots"></span><span class="price">₹279</span><button class="add" onclick="add('Soya Chaap Masala',279,'veg',this)">ADD</button></div>
-     <div class="item veg" data-name="Malai Kofta" data-popular="0"><i class="dot veg"></i><span class="item-name">Malai Kofta</span><span class="dots"></span><span class="price">₹299</span><button class="add" onclick="add('Malai Kofta',299,'veg',this)">ADD</button></div>
-     <div class="item veg" data-name="Kadai Paneer" data-popular="1"><i class="dot veg"></i><span class="item-name">Kadai Paneer</span><span class="badge">POPULAR</span><span class="dots"></span><span class="price">₹299</span><button class="add" onclick="add('Kadai Paneer',299,'veg',this)">ADD</button></div>
-     <div class="item veg" data-name="Paneer Lababdar" data-popular="0"><i class="dot veg"></i><span class="item-name">Paneer Lababdar</span><span class="dots"></span><span class="price">₹299</span><button class="add" onclick="add('Paneer Lababdar',299,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Yellow Dal Tadka"><i class="dot veg"></i><span class="item-name">Yellow Dal Tadka</span><span class="dots"></span><span class="price">₹199</span><button class="add" onclick="add('Yellow Dal Tadka',199,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Dal Makhani"><i class="dot veg"></i><span class="item-name">Dal Makhani</span><span class="dots"></span><span class="price">₹259</span><button class="add" onclick="add('Dal Makhani',259,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Mix Veg"><i class="dot veg"></i><span class="item-name">Mix Veg</span><span class="dots"></span><span class="price">₹239</span><button class="add" onclick="add('Mix Veg',239,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Mix Veg Handi"><i class="dot veg"></i><span class="item-name">Mix Veg Handi</span><span class="dots"></span><span class="price">₹249</span><button class="add" onclick="add('Mix Veg Handi',249,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Mutter Mushroom"><i class="dot veg"></i><span class="item-name">Mutter Mushroom</span><span class="dots"></span><span class="price">₹249</span><button class="add" onclick="add('Mutter Mushroom',249,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Mushroom Hara Pyaza"><i class="dot veg"></i><span class="item-name">Mushroom Hara Pyaza</span><span class="dots"></span><span class="price">₹289</span><button class="add" onclick="add('Mushroom Hara Pyaza',289,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Soya Chaap Masala"><i class="dot veg"></i><span class="item-name">Soya Chaap Masala</span><span class="dots"></span><span class="price">₹279</span><button class="add" onclick="add('Soya Chaap Masala',279,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Malai Kofta"><i class="dot veg"></i><span class="item-name">Malai Kofta</span><span class="dots"></span><span class="price">₹299</span><button class="add" onclick="add('Malai Kofta',299,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Kadai Paneer"><i class="dot veg"></i><span class="item-name">Kadai Paneer</span><span class="dots"></span><span class="price">₹299</span><button class="add" onclick="add('Kadai Paneer',299,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Paneer Lababdar"><i class="dot veg"></i><span class="item-name">Paneer Lababdar</span><span class="dots"></span><span class="price">₹299</span><button class="add" onclick="add('Paneer Lababdar',299,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Shahi Paneer"><i class="dot veg"></i><span class="item-name">Shahi Paneer</span><span class="dots"></span><span class="price">₹299</span><button class="add" onclick="add('Shahi Paneer',299,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Paneer Tikka Masala"><i class="dot veg"></i><span class="item-name">Paneer Tikka Masala</span><span class="dots"></span><span class="price">₹299</span><button class="add" onclick="add('Paneer Tikka Masala',299,'veg',this)">ADD</button></div>
+
      <div class="sub non">● NON-VEG</div>
-     <div class="item non" data-name="Butter Chicken" data-popular="1"><i class="dot non"></i><span class="item-name">Butter Chicken</span><span class="badge">POPULAR</span><span class="dots"></span><span class="price">₹299</span><button class="add" onclick="add('Butter Chicken',299,'non',this)">ADD</button></div>
-     <div class="item non" data-name="Kadai Chicken" data-popular="0"><i class="dot non"></i><span class="item-name">Kadai Chicken</span><span class="dots"></span><span class="price">₹299</span><button class="add" onclick="add('Kadai Chicken',299,'non',this)">ADD</button></div>
-     <div class="item non" data-name="Chicken Tikka Masala" data-popular="1"><i class="dot non"></i><span class="item-name">Chicken Tikka Masala</span><span class="badge">POPULAR</span><span class="dots"></span><span class="price">₹349</span><button class="add" onclick="add('Chicken Tikka Masala',349,'non',this)">ADD</button></div>
-     <div class="item non" data-name="Chicken Korma" data-popular="0"><i class="dot non"></i><span class="item-name">Chicken Korma</span><span class="dots"></span><span class="price">₹349</span><button class="add" onclick="add('Chicken Korma',349,'non',this)">ADD</button></div>
-     <div class="item non" data-name="Mutton Rogan Josh" data-popular="0"><i class="dot non"></i><span class="item-name">Mutton Rogan Josh</span><span class="dots"></span><span class="price">₹449</span><button class="add" onclick="add('Mutton Rogan Josh',449,'non',this)">ADD</button></div>
+     <div class="item non" data-name="Home Style Chicken Curry"><i class="dot non"></i><span class="item-name">Home Style Chicken Curry (Half/Full)</span><span class="dots"></span><span class="price">₹299</span><button class="add" onclick="add('Home Style Chicken Curry',299,'non',this)">ADD</button></div>
+     <div class="item non" data-name="Butter Chicken"><i class="dot non"></i><span class="item-name">Butter Chicken (Half/Full)</span><span class="dots"></span><span class="price">₹329</span><button class="add" onclick="add('Butter Chicken',329,'non',this)">ADD</button></div>
+     <div class="item non" data-name="Kadai Chicken"><i class="dot non"></i><span class="item-name">Kadai Chicken (Half/Full)</span><span class="dots"></span><span class="price">₹299</span><button class="add" onclick="add('Kadai Chicken',299,'non',this)">ADD</button></div>
+     <div class="item non" data-name="Chicken Handi"><i class="dot non"></i><span class="item-name">Chicken Handi (Half/Full)</span><span class="dots"></span><span class="price">₹299</span><button class="add" onclick="add('Chicken Handi',299,'non',this)">ADD</button></div>
+     <div class="item non" data-name="Chicken Lababdar"><i class="dot non"></i><span class="item-name">Chicken Lababdar</span><span class="dots"></span><span class="price">₹349</span><button class="add" onclick="add('Chicken Lababdar',349,'non',this)">ADD</button></div>
+     <div class="item non" data-name="Chicken Tikka Masala"><i class="dot non"></i><span class="item-name">Chicken Tikka Masala</span><span class="dots"></span><span class="price">₹349</span><button class="add" onclick="add('Chicken Tikka Masala',349,'non',this)">ADD</button></div>
+     <div class="item non" data-name="Chicken Keema Masala"><i class="dot non"></i><span class="item-name">Chicken Keema Masala</span><span class="dots"></span><span class="price">₹299</span><button class="add" onclick="add('Chicken Keema Masala',299,'non',this)">ADD</button></div>
+     <div class="item non" data-name="Patiala Chicken"><i class="dot non"></i><span class="item-name">Patiala Chicken</span><span class="dots"></span><span class="price">₹349</span><button class="add" onclick="add('Patiala Chicken',349,'non',this)">ADD</button></div>
+     <div class="item non" data-name="Chicken Korma"><i class="dot non"></i><span class="item-name">Chicken Korma</span><span class="dots"></span><span class="price">₹349</span><button class="add" onclick="add('Chicken Korma',349,'non',this)">ADD</button></div>
+     <div class="item non" data-name="Mutton Seekh Kebab Masala"><i class="dot non"></i><span class="item-name">Mutton Seekh Kebab Masala</span><span class="dots"></span><span class="price">₹379</span><button class="add" onclick="add('Mutton Seekh Kebab Masala',379,'non',this)">ADD</button></div>
+     <div class="item non" data-name="Mutton Rogan Josh"><i class="dot non"></i><span class="item-name">Mutton Rogan Josh</span><span class="dots"></span><span class="price">₹449</span><button class="add" onclick="add('Mutton Rogan Josh',449,'non',this)">ADD</button></div>
+     <div class="item non" data-name="Fish Curry"><i class="dot non"></i><span class="item-name">Fish Curry</span><span class="dots"></span><span class="price">₹349</span><button class="add" onclick="add('Fish Curry',349,'non',this)">ADD</button></div>
     </div>
 
-    <div class="category">
+    <!-- RICE, BREADS & RAITA SECTION -->
+    <div class="category" id="rice">
      <h3>Fried Rice</h3>
-     <div class="item veg" data-name="Vegetable Fried Rice" data-popular="0"><i class="dot veg"></i><span class="item-name">Vegetable Fried Rice</span><span class="dots"></span><span class="price">₹159</span><button class="add" onclick="add('Vegetable Fried Rice',159,'veg',this)">ADD</button></div>
-     <div class="item veg" data-name="Chilli Garlic Fried Rice" data-popular="0"><i class="dot veg"></i><span class="item-name">Chilli Garlic Fried Rice</span><span class="dots"></span><span class="price">₹169</span><button class="add" onclick="add('Chilli Garlic Fried Rice',169,'veg',this)">ADD</button></div>
-     <div class="item non" data-name="Egg Fried Rice" data-popular="0"><i class="dot non"></i><span class="item-name">Egg Fried Rice</span><span class="dots"></span><span class="price">₹189</span><button class="add" onclick="add('Egg Fried Rice',189,'non',this)">ADD</button></div>
-     <div class="item non" data-name="Chicken Fried Rice" data-popular="1"><i class="dot non"></i><span class="item-name">Chicken Fried Rice</span><span class="badge">POPULAR</span><span class="dots"></span><span class="price">₹219</span><button class="add" onclick="add('Chicken Fried Rice',219,'non',this)">ADD</button></div>
-     <div class="item non" data-name="Chicken Schezwan Fried Rice" data-popular="0"><i class="dot non"></i><span class="item-name">Chicken Schezwan Fried Rice</span><span class="dots"></span><span class="price">₹239</span><button class="add" onclick="add('Chicken Schezwan Fried Rice',239,'non',this)">ADD</button></div>
+     <div class="item veg" data-name="Vegetable Fried Rice"><i class="dot veg"></i><span class="item-name">Vegetable Fried Rice</span><span class="dots"></span><span class="price">₹159</span><button class="add" onclick="add('Vegetable Fried Rice',159,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Roasted Garlic & Spring Onion Fried Rice"><i class="dot veg"></i><span class="item-name">Roasted Garlic & Spring Onion Fried Rice</span><span class="dots"></span><span class="price">₹169</span><button class="add" onclick="add('Roasted Garlic & Spring Onion Fried Rice',169,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Chilli Garlic Fried Rice"><i class="dot veg"></i><span class="item-name">Chilli Garlic Fried Rice</span><span class="dots"></span><span class="price">₹169</span><button class="add" onclick="add('Chilli Garlic Fried Rice',169,'veg',this)">ADD</button></div>
+     <div class="item non" data-name="Egg & Spring Onion Fried Rice"><i class="dot non"></i><span class="item-name">Egg & Spring Onion Fried Rice</span><span class="dots"></span><span class="price">₹189</span><button class="add" onclick="add('Egg & Spring Onion Fried Rice',189,'non',this)">ADD</button></div>
+     <div class="item non" data-name="Chicken Fried Rice"><i class="dot non"></i><span class="item-name">Chicken Fried Rice</span><span class="dots"></span><span class="price">₹219</span><button class="add" onclick="add('Chicken Fried Rice',219,'non',this)">ADD</button></div>
+     <div class="item non" data-name="Chicken Schezwan Fried Rice"><i class="dot non"></i><span class="item-name">Chicken Schezwan Fried Rice</span><span class="dots"></span><span class="price">₹239</span><button class="add" onclick="add('Chicken Schezwan Fried Rice',239,'non',this)">ADD</button></div>
+     <div class="item non" data-name="Seafood Fried Rice"><i class="dot non"></i><span class="item-name">Seafood Fried Rice</span><span class="dots"></span><span class="price">₹349</span><button class="add" onclick="add('Seafood Fried Rice',349,'non',this)">ADD</button></div>
+     <div class="item non" data-name="Mix Meat Fried Rice"><i class="dot non"></i><span class="item-name">Mix Meat Fried Rice</span><span class="dots"></span><span class="price">₹349</span><button class="add" onclick="add('Mix Meat Fried Rice',349,'non',this)">ADD</button></div>
+
+     <h3 style="margin-top:20px;">Biryani & Rice</h3>
+     <div class="item veg" data-name="Steamed Rice"><i class="dot veg"></i><span class="item-name">Steamed Rice</span><span class="dots"></span><span class="price">₹139</span><button class="add" onclick="add('Steamed Rice',139,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Jeera Rice"><i class="dot veg"></i><span class="item-name">Jeera Rice</span><span class="dots"></span><span class="price">₹149</span><button class="add" onclick="add('Jeera Rice',149,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Veg Pulao"><i class="dot veg"></i><span class="item-name">Veg Pulao</span><span class="dots"></span><span class="price">₹169</span><button class="add" onclick="add('Veg Pulao',169,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Veg Dum Biryani"><i class="dot veg"></i><span class="item-name">Veg Dum Biryani</span><span class="dots"></span><span class="price">₹299</span><button class="add" onclick="add('Veg Dum Biryani',299,'veg',this)">ADD</button></div>
+     <div class="item non" data-name="Chicken Dum Biryani"><i class="dot non"></i><span class="item-name">Chicken Dum Biryani</span><span class="dots"></span><span class="price">₹399</span><button class="add" onclick="add('Chicken Dum Biryani',399,'non',this)">ADD</button></div>
+     <div class="item non" data-name="Mutton Biryani"><i class="dot non"></i><span class="item-name">Mutton Biryani</span><span class="dots"></span><span class="price">₹449</span><button class="add" onclick="add('Mutton Biryani',449,'non',this)">ADD</button></div>
+
+     <h3 style="margin-top:20px;">Bread</h3>
+     <div class="item veg" data-name="Plain Roti"><i class="dot veg"></i><span class="item-name">Plain Roti</span><span class="dots"></span><span class="price">₹18</span><button class="add" onclick="add('Plain Roti',18,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Butter Roti"><i class="dot veg"></i><span class="item-name">Butter Roti</span><span class="dots"></span><span class="price">₹24</span><button class="add" onclick="add('Butter Roti',24,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Lachha Paratha"><i class="dot veg"></i><span class="item-name">Lachha Paratha</span><span class="dots"></span><span class="price">₹50</span><button class="add" onclick="add('Lachha Paratha',50,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Pudina Paratha"><i class="dot veg"></i><span class="item-name">Pudina Paratha</span><span class="dots"></span><span class="price">₹55</span><button class="add" onclick="add('Pudina Paratha',55,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="R/G Parantha"><i class="dot veg"></i><span class="item-name">R/G Parantha</span><span class="dots"></span><span class="price">₹55</span><button class="add" onclick="add('R/G Parantha',55,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Stuffed Paratha"><i class="dot veg"></i><span class="item-name">Stuffed Paratha</span><span class="dots"></span><span class="price">₹70</span><button class="add" onclick="add('Stuffed Paratha',70,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Plain Naan"><i class="dot veg"></i><span class="item-name">Plain Naan</span><span class="dots"></span><span class="price">₹40</span><button class="add" onclick="add('Plain Naan',40,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Butter Naan"><i class="dot veg"></i><span class="item-name">Butter Naan</span><span class="dots"></span><span class="price">₹50</span><button class="add" onclick="add('Butter Naan',50,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Garlic Naan"><i class="dot veg"></i><span class="item-name">Garlic Naan</span><span class="dots"></span><span class="price">₹60</span><button class="add" onclick="add('Garlic Naan',60,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Cheese Naan"><i class="dot veg"></i><span class="item-name">Cheese Naan</span><span class="dots"></span><span class="price">₹80</span><button class="add" onclick="add('Cheese Naan',80,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Kulcha (Aloo, Onion, Paneer, Mix)"><i class="dot veg"></i><span class="item-name">Kulcha (Aloo, Onion, Paneer, Mix)</span><span class="dots"></span><span class="price">₹60</span><button class="add" onclick="add('Kulcha',60,'veg',this)">ADD</button></div>
+
+     <h3 style="margin-top:20px;">Raita</h3>
+     <div class="item veg" data-name="Mix Raita"><i class="dot veg"></i><span class="item-name">Mix Raita</span><span class="dots"></span><span class="price">₹129</span><button class="add" onclick="add('Mix Raita',129,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Boondi Raita"><i class="dot veg"></i><span class="item-name">Boondi Raita</span><span class="dots"></span><span class="price">₹119</span><button class="add" onclick="add('Boondi Raita',119,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Pineapple Raita"><i class="dot veg"></i><span class="item-name">Pineapple Raita</span><span class="dots"></span><span class="price">₹149</span><button class="add" onclick="add('Pineapple Raita',149,'veg',this)">ADD</button></div>
     </div>
 
-    <div class="category">
-     <h3>Noodles</h3>
-     <div class="sub">● VEG</div>
-     <div class="item veg" data-name="Veg Hakka Noodles" data-popular="0"><i class="dot veg"></i><span class="item-name">Veg Hakka Noodles</span><span class="dots"></span><span class="price">₹149</span><button class="add" onclick="add('Veg Hakka Noodles',149,'veg',this)">ADD</button></div>
-     <div class="item veg" data-name="Veg Schezwan Noodles" data-popular="0"><i class="dot veg"></i><span class="item-name">Veg Schezwan Noodles</span><span class="dots"></span><span class="price">₹159</span><button class="add" onclick="add('Veg Schezwan Noodles',159,'veg',this)">ADD</button></div>
-     <div class="sub non">● NON-VEG</div>
-     <div class="item non" data-name="Egg Noodles" data-popular="0"><i class="dot non"></i><span class="item-name">Egg Noodles</span><span class="dots"></span><span class="price">₹179</span><button class="add" onclick="add('Egg Noodles',179,'non',this)">ADD</button></div>
-     <div class="item non" data-name="Chicken Hakka Noodles" data-popular="1"><i class="dot non"></i><span class="item-name">Chicken Hakka Noodles</span><span class="badge">POPULAR</span><span class="dots"></span><span class="price">₹199</span><button class="add" onclick="add('Chicken Hakka Noodles',199,'non',this)">ADD</button></div>
-     <div class="item non" data-name="Chicken Chilli Garlic Noodles" data-popular="0"><i class="dot non"></i><span class="item-name">Chicken Chilli Garlic Noodles</span><span class="dots"></span><span class="price">₹219</span><button class="add" onclick="add('Chicken Chilli Garlic Noodles',219,'non',this)">ADD</button></div>
-    </div>
-
-    <div class="category">
-     <h3>Biryani & Rice</h3>
-     <div class="item veg" data-name="Steamed Rice" data-popular="0"><i class="dot veg"></i><span class="item-name">Steamed Rice</span><span class="dots"></span><span class="price">₹139</span><button class="add" onclick="add('Steamed Rice',139,'veg',this)">ADD</button></div>
-     <div class="item veg" data-name="Jeera Rice" data-popular="0"><i class="dot veg"></i><span class="item-name">Jeera Rice</span><span class="dots"></span><span class="price">₹149</span><button class="add" onclick="add('Jeera Rice',149,'veg',this)">ADD</button></div>
-     <div class="item veg" data-name="Veg Pulao" data-popular="0"><i class="dot veg"></i><span class="item-name">Veg Pulao</span><span class="dots"></span><span class="price">₹169</span><button class="add" onclick="add('Veg Pulao',169,'veg',this)">ADD</button></div>
-     <div class="item veg" data-name="Veg Dum Biryani" data-popular="1"><i class="dot veg"></i><span class="item-name">Veg Dum Biryani</span><span class="badge">POPULAR</span><span class="dots"></span><span class="price">₹299</span><button class="add" onclick="add('Veg Dum Biryani',299,'veg',this)">ADD</button></div>
-     <div class="item non" data-name="Chicken Dum Biryani" data-popular="1"><i class="dot non"></i><span class="item-name">Chicken Dum Biryani</span><span class="badge">POPULAR</span><span class="dots"></span><span class="price">₹399</span><button class="add" onclick="add('Chicken Dum Biryani',399,'non',this)">ADD</button></div>
-     <div class="item non" data-name="Mutton Biryani" data-popular="0"><i class="dot non"></i><span class="item-name">Mutton Biryani</span><span class="dots"></span><span class="price">₹449</span><button class="add" onclick="add('Mutton Biryani',449,'non',this)">ADD</button></div>
-    </div>
-
-    <div class="category">
-     <h3>Bread Basket</h3>
-     <div class="item veg" data-name="Plain Roti" data-popular="0"><i class="dot veg"></i><span class="item-name">Plain Roti</span><span class="dots"></span><span class="price">₹18</span><button class="add" onclick="add('Plain Roti',18,'veg',this)">ADD</button></div>
-     <div class="item veg" data-name="Butter Roti" data-popular="0"><i class="dot veg"></i><span class="item-name">Butter Roti</span><span class="dots"></span><span class="price">₹24</span><button class="add" onclick="add('Butter Roti',24,'veg',this)">ADD</button></div>
-     <div class="item veg" data-name="Lachha Paratha" data-popular="0"><i class="dot veg"></i><span class="item-name">Lachha Paratha</span><span class="dots"></span><span class="price">₹50</span><button class="add" onclick="add('Lachha Paratha',50,'veg',this)">ADD</button></div>
-     <div class="item veg" data-name="Pudina Paratha" data-popular="0"><i class="dot veg"></i><span class="item-name">Pudina Paratha</span><span class="dots"></span><span class="price">₹55</span><button class="add" onclick="add('Pudina Paratha',55,'veg',this)">ADD</button></div>
-     <div class="item veg" data-name="Plain Naan" data-popular="0"><i class="dot veg"></i><span class="item-name">Plain Naan</span><span class="dots"></span><span class="price">₹40</span><button class="add" onclick="add('Plain Naan',40,'veg',this)">ADD</button></div>
-     <div class="item veg" data-name="Butter Naan" data-popular="0"><i class="dot veg"></i><span class="item-name">Butter Naan</span><span class="dots"></span><span class="price">₹50</span><button class="add" onclick="add('Butter Naan',50,'veg',this)">ADD</button></div>
-     <div class="item veg" data-name="Garlic Naan" data-popular="1"><i class="dot veg"></i><span class="item-name">Garlic Naan</span><span class="badge">POPULAR</span><span class="dots"></span><span class="price">₹60</span><button class="add" onclick="add('Garlic Naan',60,'veg',this)">ADD</button></div>
+    <!-- DESSERTS SECTION -->
+    <div class="category" id="desserts">
+     <h3>Desserts</h3>
+     <div class="item veg" data-name="Rasmalai"><i class="dot veg"></i><span class="item-name">Rasmalai</span><span class="dots"></span><span class="price">₹149</span><button class="add" onclick="add('Rasmalai',149,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Hot Gulab Jamun with ice cream"><i class="dot veg"></i><span class="item-name">Hot Gulab Jamun with ice cream</span><span class="dots"></span><span class="price">₹149</span><button class="add" onclick="add('Hot Gulab Jamun with ice cream',149,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Brownie with Ice Cream"><i class="dot veg"></i><span class="item-name">Brownie with Ice Cream</span><span class="dots"></span><span class="price">₹179</span><button class="add" onclick="add('Brownie with Ice Cream',179,'veg',this)">ADD</button></div>
+     <div class="item veg" data-name="Ice Cream"><i class="dot veg"></i><span class="item-name">Ice Cream</span><span class="dots"></span><span class="price">₹99</span><button class="add" onclick="add('Ice Cream',99,'veg',this)">ADD</button></div>
     </div>
    </div>
 
-   <div>
-    <div class="category" id="chinese">
-     <h3>Chinese Starters</h3>
-     <div class="sub">● VEG</div>
-     <div class="item veg" data-name="Honey Chilli Potato" data-popular="1"><i class="dot veg"></i><span class="item-name">Honey Chilli Potato</span><span class="badge">POPULAR</span><span class="dots"></span><span class="price">₹179</span><button class="add" onclick="add('Honey Chilli Potato',179,'veg',this)">ADD</button></div>
-     <div class="item veg" data-name="Veg Manchurian" data-popular="0"><i class="dot veg"></i><span class="item-name">Veg Manchurian</span><span class="dots"></span><span class="price">₹249</span><button class="add" onclick="add('Veg Manchurian',249,'veg',this)">ADD</button></div>
-     <div class="item veg" data-name="Chilli Dry Soya Chaap" data-popular="0"><i class="dot veg"></i><span class="item-name">Chilli Dry Soya Chaap</span><span class="dots"></span><span class="price">₹249</span><button class="add" onclick="add('Chilli Dry Soya Chaap',249,'veg',this)">ADD</button></div>
-     <div class="item veg" data-name="Chilli Paneer" data-popular="1"><i class="dot veg"></i><span class="item-name">Chilli Paneer</span><span class="badge">POPULAR</span><span class="dots"></span><span class="price">₹289</span><button class="add" onclick="add('Chilli Paneer',289,'veg',this)">ADD</button></div>
-     <div class="sub non">● NON-VEG</div>
-     <div class="item non" data-name="Kung Pao Chicken" data-popular="0"><i class="dot non"></i><span class="item-name">Kung Pao Chicken</span><span class="dots"></span><span class="price">₹289</span><button class="add" onclick="add('Kung Pao Chicken',289,'non',this)">ADD</button></div>
-     <div class="item non" data-name="Dry Chilli Chicken" data-popular="1"><i class="dot non"></i><span class="item-name">Dry Chilli Chicken</span><span class="badge">POPULAR</span><span class="dots"></span><span class="price">₹279</span><button class="add" onclick="add('Dry Chilli Chicken',279,'non',this)">ADD</button></div>
-     <div class="item non" data-name="Chicken Manchurian" data-popular="0"><i class="dot non"></i><span class="item-name">Chicken Manchurian</span><span class="dots"></span><span class="price">₹279</span><button class="add" onclick="add('Chicken Manchurian',279,'non',this)">ADD</button></div>
-     <div class="item non" data-name="Chicken Lollipop" data-popular="1"><i class="dot non"></i><span class="item-name">Chicken Lollipop</span><span class="badge">POPULAR</span><span class="dots"></span><span class="price">₹299</span><button class="add" onclick="add('Chicken Lollipop',299,'non',this)">ADD</button></div>
-     <div class="item non" data-name="Prawns Dry Chilli" data-popular="0"><i class="dot non"></i><span class="item-name">Prawns Dry Chilli</span><span class="dots"></span><span class="price">₹449</span><button class="add" onclick="add('Prawns Dry Chilli',449,'non',this)">ADD</button></div>
-    </div>
-
-    <div class="category">
-     <h3>Soups</h3>
-     <div class="item veg" data-name="Tomato Basil Soup" data-popular="0"><i class="dot veg"></i><span class="item-name">Tomato Basil Soup</span><span class="dots"></span><span class="price">₹149</span><button class="add" onclick="add('Tomato Basil Soup',149,'veg',this)">ADD</button></div>
-     <div class="item veg" data-name="Cream Of Mushroom Soup" data-popular="0"><i class="dot veg"></i><span class="item-name">Cream Of Mushroom Soup</span><span class="dots"></span><span class="price">₹149</span><button class="add" onclick="add('Cream Of Mushroom Soup',149,'veg',this)">ADD</button></div>
-     <div class="item veg" data-name="Sweet Corn Soup" data-popular="0"><i class="dot veg"></i><span class="item-name">Sweet Corn Soup</span><span class="dots"></span><span class="price">₹119</span><button class="add" onclick="add('Sweet Corn Soup',119,'veg',this)">ADD</button></div>
-     <div class="item veg" data-name="Manchow Soup" data-popular="1"><i class="dot veg"></i><span class="item-name">Manchow Soup</span><span class="badge">POPULAR</span><span class="dots"></span><span class="price">₹119</span><button class="add" onclick="add('Manchow Soup',119,'veg',this)">ADD</button></div>
-     <div class="item non" data-name="Hot & Sour Soup" data-popular="0"><i class="dot non"></i><span class="item-name">Hot & Sour Soup</span><span class="dots"></span><span class="price">₹119</span><button class="add" onclick="add('Hot & Sour Soup',119,'non',this)">ADD</button></div>
-    </div>
-
-    <div class="category">
-     <h3>Dim Sum</h3>
-     <div class="sub">● VEG</div>
-     <div class="item veg" data-name="Spinach & Corn Dumplings" data-popular="0"><i class="dot veg"></i><span class="item-name">Spinach & Corn Dumplings</span><span class="dots"></span><span class="price">₹179</span><button class="add" onclick="add('Spinach & Corn Dumplings',179,'veg',this)">ADD</button></div>
-     <div class="item veg" data-name="Mushroom & Veg Dumplings" data-popular="0"><i class="dot veg"></i><span class="item-name">Mushroom & Veg Dumplings</span><span class="dots"></span><span class="price">₹179</span><button class="add" onclick="add('Mushroom & Veg Dumplings',179,'veg',this)">ADD</button></div>
-     <div class="sub non">● NON-VEG</div>
-     <div class="item non" data-name="Chicken Dumplings" data-popular="0"><i class="dot non"></i><span class="item-name">Chicken Dumplings</span><span class="dots"></span><span class="price">₹199</span><button class="add" onclick="add('Chicken Dumplings',199,'non',this)">ADD</button></div>
-     <div class="item non" data-name="Pan Fried Chicken Dim Sum" data-popular="0"><i class="dot non"></i><span class="item-name">Pan Fried Chicken Dim Sum</span><span class="dots"></span><span class="price">₹219</span><button class="add" onclick="add('Pan Fried Chicken Dim Sum',219,'non',this)">ADD</button></div>
-    </div>
-
-    <div class="category">
-     <h3>Tandoori Momos</h3>
-     <div class="item veg" data-name="Tandoori Paneer Momos" data-popular="1"><i class="dot veg"></i><span class="item-name">Tandoori Paneer Momos</span><span class="badge">POPULAR</span><span class="dots"></span><span class="price">₹249</span><button class="add" onclick="add('Tandoori Paneer Momos',249,'veg',this)">ADD</button></div>
-     <div class="item non" data-name="Tandoori Chicken Momos" data-popular="1"><i class="dot non"></i><span class="item-name">Tandoori Chicken Momos</span><span class="badge">POPULAR</span><span class="dots"></span><span class="price">₹249</span><button class="add" onclick="add('Tandoori Chicken Momos',249,'non',this)">ADD</button></div>
-    </div>
-
-    <div class="category" id="beverages">
-     <h3>Cold Coffee / Smoothie</h3>
-     <div class="item veg" data-name="Gold Coffee" data-popular="0"><i class="dot veg"></i><span class="item-name">Gold Coffee</span><span class="dots"></span><span class="price">₹139</span><button class="add" onclick="add('Gold Coffee',139,'veg',this)">ADD</button></div>
-     <div class="item veg" data-name="Double Shot Iced Coffee" data-popular="1"><i class="dot veg"></i><span class="item-name">Double Shot Iced Coffee</span><span class="badge">POPULAR</span><span class="dots"></span><span class="price">₹149</span><button class="add" onclick="add('Double Shot Iced Coffee',149,'veg',this)">ADD</button></div>
-     <div class="item veg" data-name="Cold Coffee with Icecream" data-popular="1"><i class="dot veg"></i><span class="item-name">Cold Coffee with Icecream</span><span class="badge">POPULAR</span><span class="dots"></span><span class="price">₹159</span><button class="add" onclick="add('Cold Coffee with Icecream',159,'veg',this)">ADD</button></div>
-     <div class="item veg" data-name="Lassi" data-popular="0"><i class="dot veg"></i><span class="item-name">Lassi</span><span class="dots"></span><span class="price">₹129</span><button class="add" onclick="add('Lassi',129,'veg',this)">ADD</button></div>
-     <div class="item veg" data-name="Mango Smoothie" data-popular="1"><i class="dot veg"></i><span class="item-name">Mango Smoothie</span><span class="badge">POPULAR</span><span class="dots"></span><span class="price">₹179</span><button class="add" onclick="add('Mango Smoothie',179,'veg',this)">ADD</button></div>
-     <div class="item veg" data-name="Mix Fruit Smoothie" data-popular="0"><i class="dot veg"></i><span class="item-name">Mix Fruit Smoothie</span><span class="dots"></span><span class="price">₹179</span><button class="add" onclick="add('Mix Fruit Smoothie',179,'veg',this)">ADD</button></div>
-    </div>
-
-    <div class="category">
-     <h3>Shakes</h3>
-     <div class="item veg" data-name="Chocolate Shake" data-popular="1"><i class="dot veg"></i><span class="item-name">Chocolate Shake</span><span class="badge">POPULAR</span><span class="dots"></span><span class="price">₹159</span><button class="add" onclick="add('Chocolate Shake',159,'veg',this)">ADD</button></div>
-     <div class="item veg" data-name="Mango Shake" data-popular="0"><i class="dot veg"></i><span class="item-name">Mango Shake</span><span class="dots"></span><span class="price">₹159</span><button class="add" onclick="add('Mango Shake',159,'veg',this)">ADD</button></div>
-     <div class="item veg" data-name="Strawberry Shake" data-popular="0"><i class="dot veg"></i><span class="item-name">Strawberry Shake</span><span class="dots"></span><span class="price">₹149</span><button class="add" onclick="add('Strawberry Shake',149,'veg',this)">ADD</button></div>
-     <div class="item veg" data-name="Oreo Shake" data-popular="1"><i class="dot veg"></i><span class="item-name">Oreo Shake</span><span class="badge">POPULAR</span><span class="dots"></span><span class="price">₹159</span><button class="add" onclick="add('Oreo Shake',159,'veg',this)">ADD</button></div>
-     <div class="item veg" data-name="Kit Kat Shake" data-popular="0"><i class="dot veg"></i><span class="item-name">Kit Kat Shake</span><span class="dots"></span><span class="price">₹169</span><button class="add" onclick="add('Kit Kat Shake',169,'veg',this)">ADD</button></div>
-    </div>
-   </div>
   </div>
   <div class="no-results" id="noResults">No dishes found. Try another search.</div>
  </div>
@@ -350,7 +558,7 @@ footer strong{display:block;font:600 29px 'Cormorant Garamond',serif;color:var(-
  <div class="contact">
   <h3>LUMORA</h3>
   <p>FINE DINING • FAMILY RESTAURANT • CAFÉ</p>
-  <a class="phone" href="tel:+919520951715">☎ 9520951715</a>
+  <a class="phone" href="tel:+917017279963">☎ 7017279963 / 9520951715</a>
   <div class="location">📍 Raipur Chowk, Dehradun, Uttarakhand</div>
  </div>
 </section>
@@ -362,7 +570,7 @@ footer strong{display:block;font:600 29px 'Cormorant Garamond',serif;color:var(-
 </footer>
 
 <button class="cart-btn" onclick="openCart()">🛒 CART <span class="count" id="cartCount">0</span></button>
-<a class="call" href="tel:+919520951715">☎</a>
+<a class="call" href="tel:+917017279963">☎</a>
 <div class="toast" id="toast">Added to cart</div>
 <div class="overlay" id="overlay" onclick="closeCart()"></div>
 
@@ -376,7 +584,7 @@ footer strong{display:block;font:600 29px 'Cormorant Garamond',serif;color:var(-
   <input id="table" placeholder="Table number">
   <textarea id="notes" placeholder="Special instructions (optional)"></textarea>
   <button class="order-btn" onclick="placeOrder()">PLACE ORDER ON WHATSAPP</button>
-  <p class="note">Your order will open in WhatsApp to 9520951715. Review the message and press Send.</p>
+  <p class="note">Your order will open in WhatsApp to 7017279963. Review the message and press Send.</p>
  </div>
 </aside>
 
@@ -451,8 +659,7 @@ function filterMenu(){
  items.forEach(item=>{
   const matchName=item.dataset.name.toLowerCase().includes(q);
   const matchType=currentFilter==='all'||item.classList.contains(currentFilter);
-  const matchPopular=currentFilter!=='popular'||item.dataset.popular==='1';
-  const show=matchName&&matchType&&matchPopular;
+  const show=matchName&&matchType;
   item.style.display=show?'flex':'none';
   if(show)shown++;
  });
@@ -484,7 +691,7 @@ ${lines.join('\n')}
 *TOTAL: ₹${total}*${notes?`\n\nSpecial Note: ${notes}`:''}
 
 Please confirm this order.`;
- window.open('https://wa.me/919520951715?text='+encodeURIComponent(msg),'_blank');
+ window.open('https://wa.me/917017279963?text='+encodeURIComponent(msg),'_blank');
 }
 
 updateCart();
