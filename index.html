@@ -352,6 +352,19 @@ header{
   scroll-margin-top:95px;
 }
 
+.category-photo{
+  width:100%;
+  height:180px;
+  object-fit:cover;
+  border-radius:14px;
+  border:1px solid rgba(217,170,74,.30);
+  display:block;
+  margin-bottom:12px;
+  background:#11110f;
+}
+@media(max-width:700px){
+  .category-photo{height:150px}
+}
 .section-title{
   display:flex;
   align-items:center;
@@ -483,19 +496,11 @@ header{
 
 .cart-row{
   display:grid;
-  grid-template-columns:44px 1fr auto;
+  grid-template-columns:1fr auto;
   gap:9px;
   align-items:center;
   padding:9px 0;
   border-bottom:1px solid rgba(255,255,255,.07);
-}
-
-.cart-row img{
-  width:44px;
-  height:44px;
-  border-radius:50%;
-  object-fit:cover;
-  border:1px solid var(--gold);
 }
 
 .cart-row strong{
@@ -700,30 +705,6 @@ header{
 }
 
 /* ================= PRINTED MENU ================= */
-
-.printed{
-  padding:20px 0 80px;
-}
-
-.printed h2{
-  text-align:center;
-  font:700 42px "Cormorant Garamond",serif;
-  color:#efc86c;
-  margin-bottom:22px;
-}
-
-.menu-pages{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:15px;
-}
-
-.menu-pages img{
-  width:100%;
-  border-radius:12px;
-  border:1px solid rgba(217,170,74,.3);
-  display:block;
-}
 
 /* ================= FOOTER ================= */
 
@@ -998,6 +979,222 @@ footer a{
     bottom:76px;
   }
 }
+
+/* ===== LUMORA PREMIUM HOMEPAGE HERO ===== */
+.hero-home{
+  position:relative;
+  width:100%;
+  height:calc(100vh - 76px);
+  min-height:620px;
+  background:#050504;
+  overflow:hidden;
+  border-bottom:1px solid rgba(217,170,74,.35);
+}
+
+.hero-slider{
+  position:absolute;
+  inset:0;
+  overflow:hidden;
+}
+
+.hero-track{
+  display:flex;
+  height:100%;
+  width:500%;
+  transform:translateX(0);
+  transition:transform 1.35s cubic-bezier(.77,0,.18,1);
+}
+
+.hero-slide{
+  position:relative;
+  flex:0 0 20%;
+  height:100%;
+  overflow:hidden;
+  background:#080806;
+}
+
+.hero-slide img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  transform:scale(1.02);
+  transition:transform 7s ease;
+}
+
+.hero-slide.active img{
+  transform:scale(1.08);
+}
+
+.hero-slide:not(.hero-brand-slide):after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(90deg,rgba(0,0,0,.55),rgba(0,0,0,.08),rgba(0,0,0,.55)),
+    linear-gradient(0deg,rgba(0,0,0,.58),transparent 45%,rgba(0,0,0,.28));
+}
+
+.hero-brand-slide .hero-overlay{
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(circle at center,rgba(0,0,0,.22),rgba(0,0,0,.74)),
+    linear-gradient(90deg,rgba(0,0,0,.45),rgba(0,0,0,.45));
+}
+
+.hero-brand-center{
+  position:absolute;
+  z-index:3;
+  inset:0;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:30px;
+}
+
+.hero-brand-center img{
+  width:min(500px,72vw);
+  height:auto;
+  object-fit:contain;
+  transform:none;
+  filter:drop-shadow(0 10px 35px rgba(0,0,0,.55));
+}
+
+.hero-brand-center p{
+  color:#f1c86a;
+  font-size:13px;
+  letter-spacing:4px;
+  font-weight:700;
+  margin:5px 0 24px;
+}
+
+.hero-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border:1px solid #d9aa4a;
+  color:#f2c86b;
+  padding:12px 22px;
+  border-radius:5px;
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:.5px;
+  background:rgba(0,0,0,.35);
+  backdrop-filter:blur(5px);
+  transition:.25s;
+}
+
+.hero-btn:hover{
+  background:#d9aa4a;
+  color:#0b0905;
+}
+
+.hero-arrow{
+  position:absolute;
+  z-index:5;
+  top:50%;
+  transform:translateY(-50%);
+  width:48px;
+  height:48px;
+  border-radius:50%;
+  border:1px solid rgba(217,170,74,.8);
+  background:rgba(0,0,0,.5);
+  color:#f1c86a;
+  font-size:34px;
+  line-height:1;
+  backdrop-filter:blur(8px);
+  transition:.25s;
+}
+
+.hero-arrow:hover{
+  background:#d9aa4a;
+  color:#111;
+}
+
+.hero-prev{left:24px}
+.hero-next{right:24px}
+
+.hero-dots{
+  position:absolute;
+  z-index:6;
+  left:50%;
+  bottom:28px;
+  transform:translateX(-50%);
+  display:flex;
+  gap:10px;
+}
+
+.hero-dots button{
+  width:9px;
+  height:9px;
+  padding:0;
+  border:0;
+  border-radius:50%;
+  background:#aaa;
+  opacity:.65;
+  transition:.35s;
+}
+
+.hero-dots button.active{
+  width:30px;
+  border-radius:10px;
+  background:#e5b95b;
+  opacity:1;
+}
+
+.hero-scroll{
+  position:absolute;
+  z-index:7;
+  left:50%;
+  bottom:3px;
+  transform:translateX(-50%);
+  color:#e7bd61;
+  font-size:27px;
+  animation:heroBounce 1.7s infinite;
+}
+
+@keyframes heroBounce{
+  0%,100%{transform:translate(-50%,0)}
+  50%{transform:translate(-50%,7px)}
+}
+
+/* premium welcome separator */
+.hero-home + .menu-shell{
+  margin-top:0;
+}
+
+@media(max-width:700px){
+  .hero-home{
+    height:calc(100svh - 66px);
+    min-height:570px;
+  }
+
+  .hero-brand-center img{
+    width:min(390px,88vw);
+  }
+
+  .hero-brand-center p{
+    font-size:9px;
+    letter-spacing:2px;
+  }
+
+  .hero-arrow{
+    width:40px;
+    height:40px;
+    font-size:29px;
+  }
+
+  .hero-prev{left:12px}
+  .hero-next{right:12px}
+
+  .hero-dots{
+    bottom:26px;
+  }
+}
+
 </style>
 </head>
 
@@ -1045,36 +1242,58 @@ target="_blank">
 
 <main id="home">
 
-<section class="hero">
 
-<div class="hero-inner">
+<section class="hero-home" id="home">
 
-<img
-class="hero-logo"
-src="assets/lumora-logo.png"
-alt="Lumora Café & Restaurant">
+  <div class="hero-slider" id="heroSlider">
 
-<div class="hero-kicker">
-FINE DINING • FAMILY RESTAURANT • CAFÉ
-</div>
+    <div class="hero-track" id="heroTrack">
 
-<div class="hero-buttons">
+      <div class="hero-slide">
+        <img src="assets/hero/lumora-interior.webp" alt="Lumora restaurant interior">
+      </div>
 
-<a class="btn-gold" href="#menu">
-EXPLORE MENU
-</a>
+      <div class="hero-slide">
+        <img src="assets/hero/lumora-food.webp" alt="Lumora food">
+      </div>
 
-<a class="btn-outline" href="#about">
-OUR STORY
-</a>
+      <div class="hero-slide hero-brand-slide">
+        <img src="assets/hero/lumora-view.webp" alt="Lumora restaurant">
+        <div class="hero-overlay"></div>
+        <div class="hero-brand-center">
+          <img src="assets/lumora-logo.png" alt="Lumora Café & Restaurant">
+          <p>FINE DINING • FAMILY RESTAURANT • CAFÉ</p>
+          <a href="#menu" class="hero-btn">EXPLORE MENU</a>
+        </div>
+      </div>
 
-</div>
+      <div class="hero-slide">
+        <img src="assets/hero/lumora-food.webp" alt="Lumora signature dish">
+      </div>
 
-<div class="scroll">⌄</div>
+      <div class="hero-slide">
+        <img src="assets/hero/lumora-show.webp" alt="Lumora dining area">
+      </div>
 
-</div>
+    </div>
+
+    <button class="hero-arrow hero-prev" id="heroPrev" aria-label="Previous">‹</button>
+    <button class="hero-arrow hero-next" id="heroNext" aria-label="Next">›</button>
+
+    <div class="hero-dots" id="heroDots">
+      <button class="active"></button>
+      <button></button>
+      <button></button>
+      <button></button>
+      <button></button>
+    </div>
+
+  </div>
+
+  <div class="hero-scroll">⌄</div>
 
 </section>
+
 
 
 <!-- MENU -->
@@ -1366,36 +1585,6 @@ Saturday–Sunday: 11:00 AM — 11:30 PM
 </section>
 
 
-<!-- PRINTED MENU -->
-
-<section class="printed container">
-
-<h2>
-Printed Menu
-</h2>
-
-<div class="menu-pages">
-
-<img
-src="assets/menu-1.jpeg"
-alt="Lumora printed menu page">
-
-<img
-src="assets/menu-2.jpeg"
-alt="Lumora printed menu page">
-
-<img
-src="assets/menu-3.jpeg"
-alt="Lumora printed menu page">
-
-<img
-src="assets/menu-4.jpeg"
-alt="Lumora printed menu page">
-
-</div>
-
-</section>
-
 </main>
 
 
@@ -1518,31 +1707,7 @@ Website crafted by <b>WEBLYFT</b>
 
 <script>
 
-/* =========================================
-   FOOD IMAGES
-========================================= */
 
-const foodImages = [
-
-"https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=160&q=75",
-
-"https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&w=160&q=75",
-
-"https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=160&q=75",
-
-"https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=160&q=75",
-
-"https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=160&q=75",
-
-"https://images.unsplash.com/photo-1563379926898-05f4575a45d8?auto=format&fit=crop&w=160&q=75",
-
-"https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=160&q=75",
-
-"https://images.unsplash.com/photo-1559314809-0d155014e29e?auto=format&fit=crop&w=160&q=75"
-
-];
-
-let imageIndex=0;
 
 
 /* =========================================
@@ -2206,6 +2371,34 @@ items:[
 
 
 /* =========================================
+   CATEGORY PHOTOS — CHANGE FILENAMES HERE
+========================================= */
+const categoryImages = {
+  "Beverages": "assets/categories/beverages.jpg",
+  "Pizza": "assets/categories/pizza.jpg",
+  "Burgers": "assets/categories/burgers.jpg",
+  "Pasta": "assets/categories/pasta.jpg",
+  "Chinese Starters": "assets/categories/chinese-starters.jpg",
+  "Chinese Main Course": "assets/categories/chinese-main-course.jpg",
+  "Noodles": "assets/categories/noodles.jpg",
+  "Tandoor Starters": "assets/categories/tandoor-starters.jpg",
+  "Tandoori Momos": "assets/categories/tandoori-momos.jpg",
+  "Dim Sum": "assets/categories/dim-sum.jpg",
+  "Soups": "assets/categories/soups.jpg",
+  "Salads": "assets/categories/salads.jpg",
+  "Biryani & Rice": "assets/categories/biryani-rice.jpg",
+  "Fried Rice": "assets/categories/fried-rice.jpg",
+  "Bread": "assets/categories/bread.jpg",
+  "Raita": "assets/categories/raita.jpg",
+  "Desserts": "assets/categories/desserts.jpg",
+  "Rolls & Wraps": "assets/categories/rolls-wraps.jpg",
+  "Mexican": "assets/categories/mexican.jpg",
+  "Thai": "assets/categories/thai.jpg",
+  "Italian Cuisine": "assets/categories/italian.jpg",
+  "Indian Main Course": "assets/categories/indian-main-course.jpg"
+};
+
+/* =========================================
    RENDER MENU
 ========================================= */
 
@@ -2265,20 +2458,11 @@ sectionHTML+=`<div class="grid">`;
 
 items.forEach(([name,price])=>{
 
-const img=
-foodImages[
-imageIndex++ % foodImages.length
-];
-
 sectionHTML+=`
 
 <article class="item">
 
-<img
-class="food-img"
-src="${img}"
-alt="${name}"
-loading="lazy">
+
 
 <div>
 
@@ -2292,7 +2476,7 @@ loading="lazy">
 
 <button
 class="add"
-onclick='addToCart(${JSON.stringify(name)},${price},${JSON.stringify(img)})'>
+onclick='addToCart(${JSON.stringify(name)},${price})'>
 
 ADD
 
@@ -2360,7 +2544,7 @@ imageIndex=0;
 const cart={};
 
 
-function addToCart(name,price,img){
+function addToCart(name,price){
 
 if(!cart[name]){
 
@@ -2450,9 +2634,7 @@ entries.map(x=>`
 
 <div class="cart-row">
 
-<img
-src="${x.img}"
-alt="">
+
 
 <div>
 
@@ -2686,6 +2868,54 @@ behavior:"smooth"
 ========================================= */
 
 renderMenu();
+
+
+/* ===== HERO SLOW HORIZONTAL SLIDER ===== */
+(function(){
+  const track = document.getElementById("heroTrack");
+  const dots = [...document.querySelectorAll("#heroDots button")];
+  const slides = [...document.querySelectorAll(".hero-slide")];
+  const prev = document.getElementById("heroPrev");
+  const next = document.getElementById("heroNext");
+
+  if(!track || !slides.length) return;
+
+  let current = 0;
+  let timer;
+
+  function goTo(index){
+    current = (index + slides.length) % slides.length;
+    track.style.transform = `translateX(-${current * 20}%)`;
+
+    dots.forEach((d,i)=>d.classList.toggle("active", i===current));
+    slides.forEach((s,i)=>s.classList.toggle("active", i===current));
+  }
+
+  function start(){
+    clearInterval(timer);
+    timer = setInterval(()=>goTo(current + 1), 6500);
+  }
+
+  next.addEventListener("click", ()=>{
+    goTo(current + 1);
+    start();
+  });
+
+  prev.addEventListener("click", ()=>{
+    goTo(current - 1);
+    start();
+  });
+
+  dots.forEach((dot,i)=>{
+    dot.addEventListener("click", ()=>{
+      goTo(i);
+      start();
+    });
+  });
+
+  goTo(0);
+  start();
+})();
 
 </script>
 
