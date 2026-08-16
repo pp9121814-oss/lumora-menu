@@ -3,440 +3,290 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#080705">
 <title>LUMORA — Café & Restaurant</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Montserrat:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Montserrat:wght@300;400;500;600&display=swap');
 
-:root{
- --bg:#080705;--panel:#110e0a;--panel2:#16120d;--gold:#d4af37;--gold-bright:#f3e5ab;
- --cream:#f4ebd0;--muted:#998a72;--line:#4a371e;--green:#5fa04e;--red:#c0392b;
+:root {
+  --bg: #050505;
+  --card: #12100e;
+  --gold: #d4af37;
+  --gold-light: #f3e5ab;
+  --text: #eae6df;
+  --muted: #a3957d;
+  --border: #332617;
+  --veg: #2ecc71;
+  --nonveg: #e74c3c;
 }
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{
- background:radial-gradient(circle at 50% 0%,#24190c 0%,#0c0a07 40%,#080705 100%);
- color:var(--cream);font-family:'Montserrat',sans-serif;
-}
-button,input,textarea{font:inherit}
-button{cursor:pointer}
-a{color:inherit}
 
-/* HERO SECTION WITH SVG LOGO */
-.hero{
- min-height:80vh;display:flex;align-items:center;justify-content:center;text-align:center;
- padding:60px 20px;position:relative;background:radial-gradient(circle,#1a1309 0%,#080705 70%);
-}
-.hero-content{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;}
-.svg-logo{width:min(320px,80vw);height:auto;margin-bottom:20px;filter:drop-shadow(0 0 15px rgba(212,175,55,0.25));}
-.hero-btn{
- display:inline-block;margin-top:30px;padding:14px 32px;border:1px solid var(--gold);
- color:var(--gold-bright);text-decoration:none;font-size:11px;letter-spacing:3px;
- background:rgba(212,175,55,0.05);transition:.3s ease;font-weight:600;
-}
-.hero-btn:hover{background:var(--gold);color:#080705;box-shadow:0 0 20px rgba(212,175,55,0.4)}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background-color: var(--bg); color: var(--text); font-family: 'Montserrat', sans-serif; }
+a { color: inherit; text-decoration: none; }
 
-/* NAVIGATION */
-nav{
- position:sticky;top:0;z-index:80;background:rgba(8,7,5,0.95);backdrop-filter:blur(10px);
- border-bottom:1px solid var(--line);
-}
-.nav{
- max-width:1200px;margin:auto;display:flex;align-items:center;justify-content:center;
- gap:20px;padding:14px;overflow-x:auto;white-space:nowrap;
-}
-.nav a{font-size:10px;letter-spacing:2px;color:var(--gold-bright);text-decoration:none;font-weight:500}
-.nav a:hover{color:#fff}
+/* HEADER & LOGO */
+.hero { text-align: center; padding: 50px 20px 30px; background: radial-gradient(circle, #1a140b 0%, #050505 80%); }
+.logo-box { max-width: 380px; margin: 0 auto; }
+.logo-title { font-family: 'Cinzel', serif; font-size: 44px; font-weight: 800; color: var(--gold); letter-spacing: 6px; margin-top: 10px; }
+.logo-subtitle { font-size: 14px; letter-spacing: 4px; color: var(--gold-light); margin-top: 5px; font-weight: 500; }
+.logo-tagline { font-size: 9px; letter-spacing: 2px; color: var(--muted); margin-top: 8px; text-transform: uppercase; }
+.hero-btn { display: inline-block; margin-top: 25px; padding: 12px 30px; border: 1px solid var(--gold); color: var(--gold-light); font-size: 11px; letter-spacing: 2px; font-weight: 600; }
 
-/* MENU CONTAINER */
-section{max-width:1250px;margin:auto;padding:60px 18px}
-.title{text-align:center;margin-bottom:35px}
-.title h2{font:700 48px 'Cinzel',serif;color:var(--gold-bright);letter-spacing:2px}
-.title p{font-size:10px;letter-spacing:4px;color:var(--muted);margin-top:8px}
-.orn{color:var(--gold);margin:10px;font-size:14px}
+/* NAV BAR */
+nav { position: sticky; top: 0; z-index: 100; background: rgba(5,5,5,0.95); border-bottom: 1px solid var(--border); backdrop-filter: blur(8px); }
+.nav-links { display: flex; gap: 20px; overflow-x: auto; padding: 15px 20px; max-width: 1100px; margin: 0 auto; white-space: nowrap; }
+.nav-links a { font-size: 11px; letter-spacing: 1.5px; color: var(--gold-light); font-weight: 500; }
 
-/* CONTROLS */
-.controls{display:flex;gap:12px;max-width:1000px;margin:0 auto 30px;flex-wrap:wrap}
-.search{
- flex:1;min-width:220px;background:var(--panel);border:1px solid var(--line);color:white;
- padding:12px 16px;outline:none;font-size:12px;border-radius:2px;
-}
-.search:focus{border-color:var(--gold)}
-.filters{display:flex;gap:8px}
-.filter{
- background:var(--panel);color:var(--gold-bright);border:1px solid var(--line);
- padding:10px 18px;font-size:10px;letter-spacing:1.5px;font-weight:600;
-}
-.filter.active,.filter:hover{background:var(--gold);color:#080705;border-color:var(--gold)}
+/* MAIN CONTENT */
+.container { max-width: 1100px; margin: 0 auto; padding: 40px 20px; }
+.section-title { text-align: center; margin-bottom: 40px; }
+.section-title h2 { font-family: 'Cinzel', serif; font-size: 32px; color: var(--gold); letter-spacing: 2px; }
+.divider { color: var(--gold); margin: 8px 0; }
 
-/* MENU GRID */
-.menu-box{
- background:var(--panel);border:1px solid var(--line);
- padding:35px;box-shadow:0 30px 80px rgba(0,0,0,0.8);
-}
-.menu-grid{display:grid;grid-template-columns:1fr 1fr;gap:45px}
-.category{margin-bottom:40px}
-.category h3{
- color:var(--gold-bright);font:700 28px 'Cinzel',serif;
- border-bottom:1px solid var(--line);padding-bottom:8px;margin-bottom:16px;letter-spacing:1px;
-}
-.sub{font-size:10px;letter-spacing:2px;font-weight:700;margin:15px 0 10px;color:var(--green)}
-.sub.non{color:var(--red)}
-.item{
- display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid rgba(74,55,30,0.3);
- transition:.2s;
-}
-.item:hover{transform:translateX(4px)}
-.dot{width:8px;height:8px;border-radius:50%;flex:none}
-.dot.veg{background:var(--green);box-shadow:0 0 8px rgba(95,160,78,0.5)}
-.dot.non{background:var(--red);box-shadow:0 0 8px rgba(192,57,43,0.5)}
-.item-name{font:500 16px 'Cinzel',serif;color:#fff}
-.dots{flex:1;border-bottom:1px dotted rgba(212,175,55,0.3);min-width:15px}
-.price{font-size:13px;color:var(--gold-bright);font-weight:600;white-space:nowrap}
-.add{
- background:var(--panel2);color:var(--gold-bright);border:1px solid var(--line);
- padding:6px 12px;font-size:9px;letter-spacing:1px;font-weight:600;transition:.2s;
-}
-.add:hover{background:var(--gold);color:#080705}
-.no-results{text-align:center;color:var(--muted);padding:40px;display:none}
+/* SEARCH & FILTERS */
+.controls { display: flex; gap: 15px; margin-bottom: 30px; flex-wrap: wrap; }
+.search-input { flex: 1; min-width: 200px; padding: 12px 16px; background: var(--card); border: 1px solid var(--border); color: #fff; outline: none; border-radius: 4px; }
+.filter-btn { padding: 10px 20px; background: var(--card); border: 1px solid var(--border); color: var(--gold-light); font-size: 11px; cursor: pointer; border-radius: 4px; }
+.filter-btn.active { background: var(--gold); color: #000; font-weight: 600; }
+
+/* MENU LAYOUT */
+.menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; }
+.category { background: var(--card); border: 1px solid var(--border); padding: 25px; border-radius: 6px; }
+.category-title { font-family: 'Cinzel', serif; font-size: 22px; color: var(--gold-light); border-bottom: 1px solid var(--border); padding-bottom: 10px; margin-bottom: 20px; }
+.item { display: flex; align-items: center; justify-content: space-between; padding: 12px 0; border-bottom: 1px dashed rgba(212,175,55,0.15); }
+.item-info { display: flex; align-items: center; gap: 10px; }
+.badge { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+.veg { background: var(--veg); }
+.nonveg { background: var(--nonveg); }
+.item-name { font-size: 15px; font-weight: 500; }
+.item-action { display: flex; align-items: center; gap: 15px; }
+.price { color: var(--gold-light); font-weight: 600; font-size: 14px; }
+.add-btn { background: transparent; border: 1px solid var(--gold); color: var(--gold); padding: 5px 12px; font-size: 10px; font-weight: 600; cursor: pointer; border-radius: 3px; }
+.add-btn:hover { background: var(--gold); color: #000; }
 
 /* FOOTER & CONTACT */
-.contact{
- max-width:700px;margin:auto;text-align:center;border:1px solid var(--line);
- padding:45px 20px;background:var(--panel)
-}
-.contact h3{font:700 36px 'Cinzel',serif;color:var(--gold-bright)}
-.phone{display:inline-block;margin-top:15px;color:var(--gold-bright);text-decoration:none;font-size:20px;font-weight:600}
-.location{color:var(--muted);margin-top:10px;font-size:12px}
-footer{text-align:center;border-top:1px solid var(--line);padding:30px;color:var(--muted);font-size:10px;letter-spacing:2px}
-footer strong{display:block;font:700 24px 'Cinzel',serif;color:var(--gold-bright);margin-bottom:5px}
+.contact-box { text-align: center; border: 1px solid var(--border); padding: 40px 20px; background: var(--card); margin-top: 50px; }
+.contact-box h3 { font-family: 'Cinzel', serif; font-size: 28px; color: var(--gold); }
+.phone-num { font-size: 18px; color: var(--gold-light); margin: 15px 0 5px; font-weight: 600; display: block; }
+footer { text-align: center; padding: 30px; font-size: 11px; color: var(--muted); border-top: 1px solid var(--border); margin-top: 40px; }
 
-/* CART & DRAWER */
-.cart-btn{
- position:fixed;right:20px;bottom:80px;z-index:90;background:var(--panel);border:1px solid var(--gold);
- color:var(--gold-bright);padding:12px 18px;font-weight:600;box-shadow:0 10px 30px rgba(0,0,0,0.8)
-}
-.count{background:var(--red);color:white;border-radius:10px;padding:2px 7px;font-size:10px;margin-left:5px}
-.call{
- position:fixed;right:20px;bottom:20px;z-index:90;width:50px;height:50px;border-radius:50%;
- display:flex;align-items:center;justify-content:center;background:var(--gold);color:#080705;
- text-decoration:none;font-size:20px;box-shadow:0 10px 25px rgba(212,175,55,0.4)
-}
-.toast{
- position:fixed;left:50%;bottom:30px;transform:translate(-50%,100px);
- z-index:300;background:var(--panel);border:1px solid var(--gold);color:var(--gold-bright);
- padding:12px 24px;font-size:12px;transition:.3s;box-shadow:0 10px 30px rgba(0,0,0,0.9);
-}
-.toast.show{transform:translate(-50%,0)}
-.drawer{
- position:fixed;right:-450px;top:0;width:min(440px,95vw);height:100vh;z-index:200;
- background:var(--panel);border-left:1px solid var(--line);padding:30px;overflow-y:auto;
- transition:.3s;box-shadow:-20px 0 50px rgba(0,0,0,0.9)
-}
-.drawer.open{right:0}
-.close{float:right;border:0;background:none;color:var(--gold-bright);font-size:28px}
-.drawer h2{font:700 32px 'Cinzel',serif;color:var(--gold-bright);margin-bottom:20px}
-.cart-item{padding:12px 0;border-bottom:1px solid var(--line)}
-.cart-line{display:flex;justify-content:space-between;gap:10px}
-.cart-name{font-family:'Cinzel',serif;font-size:16px}
-.qty{display:flex;align-items:center;gap:10px;margin-top:8px}
-.qty button{width:26px;height:26px;background:var(--panel2);border:1px solid var(--line);color:var(--gold-bright)}
-.total{display:flex;justify-content:space-between;padding:20px 0;font-size:18px;color:var(--gold-bright);font-weight:600}
-.form input,.form textarea{
- width:100%;margin:8px 0;padding:12px;background:var(--panel2);border:1px solid var(--line);
- color:white;outline:none;font-size:12px;
-}
-.form textarea{min-height:70px;resize:vertical}
-.order-btn{
- width:100%;padding:14px;background:var(--gold);border:none;color:#080705;
- margin-top:10px;font-size:11px;letter-spacing:2px;font-weight:700;
-}
-.order-btn:hover{background:var(--gold-bright)}
-.empty{text-align:center;color:var(--muted);padding:40px 0}
-.overlay{position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:190;display:none}
-.overlay.show{display:block}
-
-@media(max-width:800px){
- .menu-grid{grid-template-columns:1fr}
- .menu-box{padding:20px 15px}
- .title h2{font-size:36px}
- .nav{justify-content:flex-start}
-}
+/* FLOATING CART & DRAWER */
+.cart-trigger { position: fixed; bottom: 20px; right: 20px; background: var(--gold); color: #000; padding: 12px 22px; font-weight: 700; border-radius: 30px; border: none; cursor: pointer; box-shadow: 0 5px 20px rgba(0,0,0,0.5); }
+.cart-drawer { position: fixed; top: 0; right: -400px; width: min(380px, 90vw); height: 100vh; background: var(--card); border-left: 1px solid var(--border); z-index: 200; padding: 25px; transition: 0.3s; overflow-y: auto; }
+.cart-drawer.open { right: 0; }
+.close-cart { background: none; border: none; color: var(--gold); font-size: 24px; float: right; cursor: pointer; }
+.cart-drawer h3 { font-family: 'Cinzel', serif; color: var(--gold); font-size: 24px; margin-bottom: 20px; }
+.cart-item-row { display: flex; justify-content: space-between; margin-bottom: 15px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
+.cart-input { width: 100%; padding: 10px; margin: 8px 0; background: var(--bg); border: 1px solid var(--border); color: #fff; font-size: 12px; }
+.order-btn { width: 100%; padding: 12px; background: var(--gold); border: none; color: #000; font-weight: 700; cursor: pointer; margin-top: 10px; }
 </style>
 </head>
 <body>
 
-<header class="hero" id="home">
- <div class="hero-content">
-   <!-- EXACT LOGO SVG EMBEDDED -->
-   <svg class="svg-logo" viewBox="0 0 500 320" xmlns="http://www.w3.org/2000/svg">
-     <path d="M 230,55 A 35,35 0 1,1 270,55 A 35,35 0 0,1 230,55 Z" fill="none" stroke="#d4af37" stroke-width="4"/>
-     <path d="M 225,55 A 42,42 0 0,1 275,50" fill="none" stroke="#d4af37" stroke-width="3" stroke-linecap="round"/>
-     <path d="M 243,35 L 243,72 A 4,4 0 0,0 247,76 A 4,4 0 0,0 251,72 L 251,35" fill="none" stroke="#d4af37" stroke-width="3"/>
-     <path d="M 257,35 L 257,75" stroke="#d4af37" stroke-width="3"/>
-     <path d="M 254,35 L 254,48 M 260,35 L 260,48" stroke="#d4af37" stroke-width="2"/>
-     
-     <text x="250" y="165" font-family="'Cinzel', serif" font-weight="800" font-size="64" fill="#d4af37" text-anchor="middle" letter-spacing="4">LUMORA</text>
-     
-     <path d="M 336,128 A 20,20 0 1,1 364,128" fill="none" stroke="#d4af37" stroke-width="2.5"/>
-     <path d="M 346,116 L 346,138 M 352,116 L 352,138" stroke="#d4af37" stroke-width="1.5"/>
-
-     <path d="M 170,180 L 330,180" stroke="#d4af37" stroke-width="1.5"/>
-     <circle cx="250" cy="180" r="3" fill="#d4af37"/>
-     <path d="M 240,176 Q 250,172 260,176" fill="none" stroke="#d4af37" stroke-width="1.5"/>
-     <path d="M 240,184 Q 250,188 260,184" fill="none" stroke="#d4af37" stroke-width="1.5"/>
-
-     <text x="250" y="210" font-family="'Montserrat', sans-serif" font-weight="600" font-size="20" fill="#d4af37" text-anchor="middle" letter-spacing="5">CAFÉ &amp; RESTAURANT</text>
-     <text x="250" y="245" font-family="'Montserrat', sans-serif" font-weight="500" font-size="12" fill="#f3e5ab" text-anchor="middle" letter-spacing="3">FINE DINING • FAMILY RESTAURANT • CAFÉ</text>
-   </svg>
-
-   <a href="#menu" class="hero-btn">EXPLORE MENU</a>
- </div>
-</header>
+<div class="hero">
+  <div class="logo-box">
+    <!-- SVG Vector Logo Matching Design -->
+    <svg width="80" height="80" viewBox="0 0 100 100">
+      <circle cx="50" cy="50" r="40" fill="none" stroke="#d4af37" stroke-width="3"/>
+      <path d="M 45 25 L 45 65 M 40 25 L 40 40 M 50 25 L 50 40" stroke="#d4af37" stroke-width="2"/>
+      <path d="M 55 25 Q 65 40 55 55 L 55 65" fill="none" stroke="#d4af37" stroke-width="2"/>
+    </svg>
+    <div class="logo-title">LUMORA</div>
+    <div class="logo-subtitle">CAFÉ & RESTAURANT</div>
+    <div class="logo-tagline">Fine Dining • Family Restaurant • Café</div>
+  </div>
+  <a href="#menu" class="hero-btn">VIEW MENU</a>
+</div>
 
 <nav>
- <div class="nav">
-  <a href="#home">HOME</a>
-  <a href="#beverages">BEVERAGES</a>
-  <a href="#italian">ITALIAN</a>
-  <a href="#tandoor">TANDOOR</a>
-  <a href="#dimsum">DIM SUM</a>
-  <a href="#chinese">CHINESE</a>
-  <a href="#soup">SOUPS & SALADS</a>
-  <a href="#indian">MAIN COURSE</a>
-  <a href="#rice">RICE & BREADS</a>
-  <a href="#desserts">DESSERTS</a>
-  <a href="#contact">CONTACT</a>
- </div>
+  <div class="nav-links">
+    <a href="#beverages">BEVERAGES</a>
+    <a href="#italian">ITALIAN</a>
+    <a href="#tandoor">TANDOOR</a>
+    <a href="#chinese">CHINESE</a>
+    <a href="#maincourse">MAIN COURSE</a>
+    <a href="#desserts">DESSERTS</a>
+  </div>
 </nav>
 
-<section id="menu">
- <div class="title">
-  <h2>OUR MENU</h2><div class="orn">✦ ✦ ✦</div>
-  <p>FINEST CUISINES PREPARED FOR YOU</p>
- </div>
-
- <div class="controls">
-  <input id="search" class="search" placeholder="🔎  Search dishes..." oninput="filterMenu()">
-  <div class="filters">
-   <button class="filter active" onclick="setFilter('all',this)">ALL</button>
-   <button class="filter" onclick="setFilter('veg',this)">VEG</button>
-   <button class="filter" onclick="setFilter('non',this)">NON-VEG</button>
+<div class="container" id="menu">
+  <div class="section-title">
+    <h2>OUR MENU</h2>
+    <div class="divider">✦ ✦ ✦</div>
   </div>
- </div>
 
- <div class="menu-box">
+  <div class="controls">
+    <input type="text" id="searchInput" class="search-input" placeholder="Search dishes..." oninput="filterDishes()">
+    <button class="filter-btn active" onclick="setFilter('all', this)">ALL</button>
+    <button class="filter-btn" onclick="setFilter('veg', this)">VEG</button>
+    <button class="filter-btn" onclick="setFilter('nonveg', this)">NON-VEG</button>
+  </div>
+
   <div class="menu-grid">
-
-   <!-- LEFT COLUMN -->
-   <div>
     <!-- BEVERAGES -->
     <div class="category" id="beverages">
-     <h3>Beverages & Shakes</h3>
-     <div class="item veg" data-name="Virgin Mojito"><i class="dot veg"></i><span class="item-name">Virgin Mojito</span><span class="dots"></span><span class="price">₹149</span><button class="add" onclick="add('Virgin Mojito',149,'veg',this)">ADD</button></div>
-     <div class="item veg" data-name="Kiwi Sparkal"><i class="dot veg"></i><span class="item-name">Kiwi Sparkal</span><span class="dots"></span><span class="price">₹149</span><button class="add" onclick="add('Kiwi Sparkal',149,'veg',this)">ADD</button></div>
-     <div class="item veg" data-name="Spicy Guava"><i class="dot veg"></i><span class="item-name">Spicy Guava</span><span class="dots"></span><span class="price">₹159</span><button class="add" onclick="add('Spicy Guava',159,'veg',this)">ADD</button></div>
-     <div class="item veg" data-name="Cold Coffee"><i class="dot veg"></i><span class="item-name">Cold Coffee</span><span class="dots"></span><span class="price">₹139</span><button class="add" onclick="add('Cold Coffee',139,'veg',this)">ADD</button></div>
-     <div class="item veg" data-name="Kit Kat Shake"><i class="dot veg"></i><span class="item-name">Kit Kat Shake</span><span class="dots"></span><span class="price">₹169</span><button class="add" onclick="add('Kit Kat Shake',169,'veg',this)">ADD</button></div>
-     <div class="item veg" data-name="Oreo Shake"><i class="dot veg"></i><span class="item-name">Oreo Shake</span><span class="dots"></span><span class="price">₹159</span><button class="add" onclick="add('Oreo Shake',159,'veg',this)">ADD</button></div>
+      <h3 class="category-title">Beverages & Shakes</h3>
+      <div class="item veg" data-name="Virgin Mojito">
+        <div class="item-info"><span class="badge veg"></span><span class="item-name">Virgin Mojito</span></div>
+        <div class="item-action"><span class="price">₹149</span><button class="add-btn" onclick="addToCart('Virgin Mojito', 149)">ADD</button></div>
+      </div>
+      <div class="item veg" data-name="Cold Coffee">
+        <div class="item-info"><span class="badge veg"></span><span class="item-name">Cold Coffee</span></div>
+        <div class="item-action"><span class="price">₹139</span><button class="add-btn" onclick="addToCart('Cold Coffee', 139)">ADD</button></div>
+      </div>
+      <div class="item veg" data-name="Oreo Shake">
+        <div class="item-info"><span class="badge veg"></span><span class="item-name">Oreo Shake</span></div>
+        <div class="item-action"><span class="price">₹159</span><button class="add-btn" onclick="addToCart('Oreo Shake', 159)">ADD</button></div>
+      </div>
     </div>
 
     <!-- ITALIAN -->
     <div class="category" id="italian">
-     <h3>Italian & Continental</h3>
-     <div class="sub">● PIZZA & BURGERS</div>
-     <div class="item veg" data-name="Margherita Pizza"><i class="dot veg"></i><span class="item-name">Margherita Pizza</span><span class="dots"></span><span class="price">₹199</span><button class="add" onclick="add('Margherita Pizza',199,'veg',this)">ADD</button></div>
-     <div class="item veg" data-name="Peri Peri Paneer Tikka Pizza"><i class="dot veg"></i><span class="item-name">Peri Peri Paneer Tikka Pizza</span><span class="dots"></span><span class="price">₹229</span><button class="add" onclick="add('Peri Peri Paneer Tikka Pizza',229,'veg',this)">ADD</button></div>
-     <div class="item non" data-name="Bbq Chicken Pizza"><i class="dot non"></i><span class="item-name">Bbq Chicken Pizza</span><span class="dots"></span><span class="price">₹259</span><button class="add" onclick="add('Bbq Chicken Pizza',259,'non',this)">ADD</button></div>
-     <div class="item veg" data-name="Veg & Cheese Burger"><i class="dot veg"></i><span class="item-name">Veg & Cheese Burger</span><span class="dots"></span><span class="price">₹139</span><button class="add" onclick="add('Veg & Cheese Burger',139,'veg',this)">ADD</button></div>
-     <div class="item non" data-name="Grilled Chicken & Cheese Burger"><i class="dot non"></i><span class="item-name">Grilled Chicken & Cheese Burger</span><span class="dots"></span><span class="price">₹189</span><button class="add" onclick="add('Grilled Chicken & Cheese Burger',189,'non',this)">ADD</button></div>
-     <div class="sub">● PASTA</div>
-     <div class="item veg" data-name="Choice Your Pasta Veg"><i class="dot veg"></i><span class="item-name">Choice Your Pasta Veg</span><span class="dots"></span><span class="price">₹209</span><button class="add" onclick="add('Choice Your Pasta Veg',209,'veg',this)">ADD</button></div>
-     <div class="item non" data-name="Choice Your Pasta Chicken"><i class="dot non"></i><span class="item-name">Choice Your Pasta Chicken</span><span class="dots"></span><span class="price">₹259</span><button class="add" onclick="add('Choice Your Pasta Chicken',259,'non',this)">ADD</button></div>
+      <h3 class="category-title">Italian & Burgers</h3>
+      <div class="item veg" data-name="Margherita Pizza">
+        <div class="item-info"><span class="badge veg"></span><span class="item-name">Margherita Pizza</span></div>
+        <div class="item-action"><span class="price">₹199</span><button class="add-btn" onclick="addToCart('Margherita Pizza', 199)">ADD</button></div>
+      </div>
+      <div class="item nonveg" data-name="BBQ Chicken Pizza">
+        <div class="item-info"><span class="badge nonveg"></span><span class="item-name">BBQ Chicken Pizza</span></div>
+        <div class="item-action"><span class="price">₹259</span><button class="add-btn" onclick="addToCart('BBQ Chicken Pizza', 259)">ADD</button></div>
+      </div>
+      <div class="item veg" data-name="Veg Cheese Burger">
+        <div class="item-info"><span class="badge veg"></span><span class="item-name">Veg Cheese Burger</span></div>
+        <div class="item-action"><span class="price">₹139</span><button class="add-btn" onclick="addToCart('Veg Cheese Burger', 139)">ADD</button></div>
+      </div>
     </div>
 
-    <!-- TANDOOR -->
-    <div class="category" id="tandoor">
-     <h3>Tandoor Starters</h3>
-     <div class="sub">● VEG</div>
-     <div class="item veg" data-name="Tandoori Paneer Tikka"><i class="dot veg"></i><span class="item-name">Tandoori Paneer Tikka</span><span class="dots"></span><span class="price">₹299</span><button class="add" onclick="add('Tandoori Paneer Tikka',299,'veg',this)">ADD</button></div>
-     <div class="item veg" data-name="Dahi Ke Shole"><i class="dot veg"></i><span class="item-name">Dahi Ke Shole</span><span class="dots"></span><span class="price">₹299</span><button class="add" onclick="add('Dahi Ke Shole',299,'veg',this)">ADD</button></div>
-     <div class="sub non">● NON-VEG</div>
-     <div class="item non" data-name="Tandoori Chicken"><i class="dot non"></i><span class="item-name">Tandoori Chicken</span><span class="dots"></span><span class="price">₹279</span><button class="add" onclick="add('Tandoori Chicken',279,'non',this)">ADD</button></div>
-     <div class="item non" data-name="Chicken Malai Tikka"><i class="dot non"></i><span class="item-name">Chicken Malai Tikka</span><span class="dots"></span><span class="price">₹319</span><button class="add" onclick="add('Chicken Malai Tikka',319,'non',this)">ADD</button></div>
-     <div class="item non" data-name="Mutton Seekh Kabab"><i class="dot non"></i><span class="item-name">Mutton Seekh Kabab</span><span class="dots"></span><span class="price">₹449</span><button class="add" onclick="add('Mutton Seekh Kabab',449,'non',this)">ADD</button></div>
+    <!-- TANDOOR & MAIN COURSE -->
+    <div class="category" id="maincourse">
+      <h3 class="category-title">Main Course</h3>
+      <div class="item veg" data-name="Dal Makhani">
+        <div class="item-info"><span class="badge veg"></span><span class="item-name">Dal Makhani</span></div>
+        <div class="item-action"><span class="price">₹259</span><button class="add-btn" onclick="addToCart('Dal Makhani', 259)">ADD</button></div>
+      </div>
+      <div class="item veg" data-name="Paneer Butter Masala">
+        <div class="item-info"><span class="badge veg"></span><span class="item-name">Paneer Butter Masala</span></div>
+        <div class="item-action"><span class="price">₹299</span><button class="add-btn" onclick="addToCart('Paneer Butter Masala', 299)">ADD</button></div>
+      </div>
+      <div class="item nonveg" data-name="Butter Chicken">
+        <div class="item-info"><span class="badge nonveg"></span><span class="item-name">Butter Chicken</span></div>
+        <div class="item-action"><span class="price">₹349</span><button class="add-btn" onclick="addToCart('Butter Chicken', 349)">ADD</button></div>
+      </div>
     </div>
-   </div>
-
-   <!-- RIGHT COLUMN -->
-   <div>
-    <!-- CHINESE -->
-    <div class="category" id="chinese">
-     <h3>Chinese Specialties</h3>
-     <div class="item veg" data-name="Veg Hakka Noodles"><i class="dot veg"></i><span class="item-name">Veg Hakka Noodles</span><span class="dots"></span><span class="price">₹149</span><button class="add" onclick="add('Veg Hakka Noodles',149,'veg',this)">ADD</button></div>
-     <div class="item non" data-name="Chicken Chilli Garlic Noodles"><i class="dot non"></i><span class="item-name">Chicken Chilli Garlic Noodles</span><span class="dots"></span><span class="price">₹219</span><button class="add" onclick="add('Chicken Chilli Garlic Noodles',219,'non',this)">ADD</button></div>
-     <div class="item veg" data-name="Chilli Cottage Cheese"><i class="dot veg"></i><span class="item-name">Chilli Cottage Cheese</span><span class="dots"></span><span class="price">₹279</span><button class="add" onclick="add('Chilli Cottage Cheese',279,'veg',this)">ADD</button></div>
-     <div class="item non" data-name="Dry Chilli Chicken"><i class="dot non"></i><span class="item-name">Dry Chilli Chicken</span><span class="dots"></span><span class="price">₹279</span><button class="add" onclick="add('Dry Chilli Chicken',279,'non',this)">ADD</button></div>
-    </div>
-
-    <!-- MAIN COURSE -->
-    <div class="category" id="indian">
-     <h3>Indian Main Course</h3>
-     <div class="sub">● VEG</div>
-     <div class="item veg" data-name="Dal Makhani"><i class="dot veg"></i><span class="item-name">Dal Makhani</span><span class="dots"></span><span class="price">₹259</span><button class="add" onclick="add('Dal Makhani',259,'veg',this)">ADD</button></div>
-     <div class="item veg" data-name="Kadai Paneer"><i class="dot veg"></i><span class="item-name">Kadai Paneer</span><span class="dots"></span><span class="price">₹299</span><button class="add" onclick="add('Kadai Paneer',299,'veg',this)">ADD</button></div>
-     <div class="sub non">● NON-VEG</div>
-     <div class="item non" data-name="Butter Chicken"><i class="dot non"></i><span class="item-name">Butter Chicken</span><span class="dots"></span><span class="price">₹329</span><button class="add" onclick="add('Butter Chicken',329,'non',this)">ADD</button></div>
-     <div class="item non" data-name="Mutton Rogan Josh"><i class="dot non"></i><span class="item-name">Mutton Rogan Josh</span><span class="dots"></span><span class="price">₹449</span><button class="add" onclick="add('Mutton Rogan Josh',449,'non',this)">ADD</button></div>
-    </div>
-
-    <!-- RICE & BREADS -->
-    <div class="category" id="rice">
-     <h3>Rice & Breads</h3>
-     <div class="item veg" data-name="Butter Naan"><i class="dot veg"></i><span class="item-name">Butter Naan</span><span class="dots"></span><span class="price">₹50</span><button class="add" onclick="add('Butter Naan',50,'veg',this)">ADD</button></div>
-     <div class="item veg" data-name="Garlic Naan"><i class="dot veg"></i><span class="item-name">Garlic Naan</span><span class="dots"></span><span class="price">₹60</span><button class="add" onclick="add('Garlic Naan',60,'veg',this)">ADD</button></div>
-     <div class="item veg" data-name="Veg Dum Biryani"><i class="dot veg"></i><span class="item-name">Veg Dum Biryani</span><span class="dots"></span><span class="price">₹299</span><button class="add" onclick="add('Veg Dum Biryani',299,'veg',this)">ADD</button></div>
-     <div class="item non" data-name="Chicken Dum Biryani"><i class="dot non"></i><span class="item-name">Chicken Dum Biryani</span><span class="dots"></span><span class="price">₹399</span><button class="add" onclick="add('Chicken Dum Biryani',399,'non',this)">ADD</button></div>
-    </div>
-
-    <!-- DESSERTS -->
-    <div class="category" id="desserts">
-     <h3>Desserts</h3>
-     <div class="item veg" data-name="Brownie with Ice Cream"><i class="dot veg"></i><span class="item-name">Brownie with Ice Cream</span><span class="dots"></span><span class="price">₹179</span><button class="add" onclick="add('Brownie with Ice Cream',179,'veg',this)">ADD</button></div>
-     <div class="item veg" data-name="Rasmalai"><i class="dot veg"></i><span class="item-name">Rasmalai</span><span class="dots"></span><span class="price">₹149</span><button class="add" onclick="add('Rasmalai',149,'veg',this)">ADD</button></div>
-    </div>
-   </div>
-
   </div>
-  <div class="no-results" id="noResults">No dishes found matching your search.</div>
- </div>
-</section>
 
-<section id="contact">
- <div class="title"><h2>VISIT US</h2><div class="orn">✦ ✦ ✦</div></div>
- <div class="contact">
-  <h3>LUMORA</h3>
-  <p>FINE DINING • FAMILY RESTAURANT • CAFÉ</p>
-  <a class="phone" href="tel:+917017279963">☎ 7017279963 / 9520951715</a>
-  <div class="location">📍 Raipur Chowk, Dehradun, Uttarakhand</div>
- </div>
-</section>
+  <div class="contact-box" id="contact">
+    <h3>LUMORA</h3>
+    <p style="color:var(--muted); font-size:12px; margin-top:5px;">CAFÉ & RESTAURANT</p>
+    <span class="phone-num">☎ 7017279963 / 9520951715</span>
+    <p style="font-size:12px; color:var(--muted);">Raipur Chowk, Dehradun, Uttarakhand</p>
+  </div>
+</div>
 
 <footer>
- <strong>LUMORA</strong>
- CAFÉ & RESTAURANT<br><br>
- © 2026 LUMORA • All Rights Reserved.
+  © 2026 LUMORA CAFÉ & RESTAURANT. ALL RIGHTS RESERVED.
 </footer>
 
-<button class="cart-btn" onclick="openCart()">🛒 CART <span class="count" id="cartCount">0</span></button>
-<a class="call" href="tel:+917017279963">☎</a>
-<div class="toast" id="toast">Added to cart</div>
-<div class="overlay" id="overlay" onclick="closeCart()"></div>
+<button class="cart-trigger" onclick="toggleCart()">🛒 Cart (<span id="cartCount">0</span>)</button>
 
-<aside class="drawer" id="drawer">
- <button class="close" onclick="closeCart()">×</button>
- <h2>YOUR ORDER</h2>
- <div id="cartItems"></div>
- <div class="total"><span>Total</span><strong>₹<span id="total">0</span></strong></div>
- <div class="form">
-  <input id="customer" placeholder="Customer Name">
-  <input id="table" placeholder="Table Number">
-  <textarea id="notes" placeholder="Special Instructions (Optional)"></textarea>
-  <button class="order-btn" onclick="placeOrder()">PLACE ORDER ON WHATSAPP</button>
- </div>
-</aside>
+<div class="cart-drawer" id="cartDrawer">
+  <button class="close-cart" onclick="toggleCart()">×</button>
+  <h3>YOUR ORDER</h3>
+  <div id="cartContent"></div>
+  <div style="margin-top:20px; font-weight:600; text-align:right;">Total: ₹<span id="cartTotal">0</span></div>
+  <div style="margin-top:20px;">
+    <input type="text" id="custName" class="cart-input" placeholder="Your Name">
+    <input type="text" id="tableNum" class="cart-input" placeholder="Table Number">
+    <button class="order-btn" onclick="sendOrder()">SEND ORDER TO WHATSAPP</button>
+  </div>
+</div>
 
 <script>
-let cart=[];
-let currentFilter='all';
+let cart = [];
+let currentFilter = 'all';
 
-function add(name,price,type,btn){
- const found=cart.find(x=>x.name===name);
- if(found) found.qty++;
- else cart.push({name,price,type,qty:1});
- updateCart();
- showToast(name+' added');
-}
-
-function updateCart(){
- const box=document.getElementById('cartItems');
- let total=0,count=0;
- if(!cart.length){
-  box.innerHTML='<div class="empty">Your cart is empty.</div>';
- }else{
-  box.innerHTML=cart.map((x,i)=>{
-   const sub=x.price*x.qty; total+=sub; count+=x.qty;
-   return `<div class="cart-item">
-    <div class="cart-line"><span class="cart-name">${x.name}</span><b>₹${sub}</b></div>
-    <div class="qty">
-     <button onclick="changeQty(${i},-1)">−</button>
-     <span>${x.qty}</span>
-     <button onclick="changeQty(${i},1)">+</button>
-     <small style="color:var(--muted)">₹${x.price} each</small>
-    </div>
-   </div>`;
-  }).join('');
- }
- document.getElementById('total').textContent=total;
- document.getElementById('cartCount').textContent=count;
+function addToCart(name, price) {
+  let item = cart.find(x => x.name === name);
+  if (item) { item.qty++; } 
+  else { cart.push({ name, price, qty: 1 }); }
+  updateCart();
 }
 
-function changeQty(i,n){
- cart[i].qty+=n;
- if(cart[i].qty<=0)cart.splice(i,1);
- updateCart();
+function updateCart() {
+  let content = document.getElementById('cartContent');
+  let total = 0;
+  let count = 0;
+  content.innerHTML = '';
+  
+  cart.forEach((item, index) => {
+    let sub = item.price * item.qty;
+    total += sub;
+    count += item.qty;
+    content.innerHTML += `
+      <div class="cart-item-row">
+        <div>
+          <div>${item.name}</div>
+          <small style="color:var(--muted)">₹${item.price} x ${item.qty}</small>
+        </div>
+        <div>
+          <b>₹${sub}</b>
+          <button onclick="removeItem(${index})" style="background:none; border:none; color:red; margin-left:8px; cursor:pointer;">✕</button>
+        </div>
+      </div>
+    `;
+  });
+  
+  document.getElementById('cartTotal').innerText = total;
+  document.getElementById('cartCount').innerText = count;
 }
 
-function openCart(){
- document.getElementById('drawer').classList.add('open');
- document.getElementById('overlay').classList.add('show');
-}
-function closeCart(){
- document.getElementById('drawer').classList.remove('open');
- document.getElementById('overlay').classList.remove('show');
-}
-function showToast(text){
- const t=document.getElementById('toast');t.textContent='✓ '+text;t.classList.add('show');
- clearTimeout(window.toastTimer);window.toastTimer=setTimeout(()=>t.classList.remove('show'),1500);
+function removeItem(index) {
+  cart.splice(index, 1);
+  updateCart();
 }
 
-function setFilter(type,btn){
- currentFilter=type;
- document.querySelectorAll('.filter').forEach(x=>x.classList.remove('active'));
- btn.classList.add('active');
- filterMenu();
+function toggleCart() {
+  document.getElementById('cartDrawer').classList.toggle('open');
 }
 
-function filterMenu(){
- const q=document.getElementById('search').value.toLowerCase().trim();
- const items=document.querySelectorAll('.item');
- let shown=0;
- items.forEach(item=>{
-  const matchName=item.dataset.name.toLowerCase().includes(q);
-  const matchType=currentFilter==='all'||item.classList.contains(currentFilter);
-  const show=matchName&&matchType;
-  item.style.display=show?'flex':'none';
-  if(show)shown++;
- });
- document.getElementById('noResults').style.display=shown?'none':'block';
+function setFilter(type, btn) {
+  currentFilter = type;
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  filterDishes();
 }
 
-function placeOrder(){
- if(!cart.length){alert('Please add items to order.');return}
- const customer=document.getElementById('customer').value.trim();
- const table=document.getElementById('table').value.trim();
- const notes=document.getElementById('notes').value.trim();
- if(!customer||!table){alert('Please enter your Name and Table Number.');return}
+function filterDishes() {
+  let q = document.getElementById('searchInput').value.toLowerCase();
+  document.querySelectorAll('.item').forEach(item => {
+    let name = item.getAttribute('data-name').toLowerCase();
+    let isVeg = item.classList.contains('veg');
+    let isNonVeg = item.classList.contains('nonveg');
+    
+    let matchesSearch = name.includes(q);
+    let matchesFilter = (currentFilter === 'all') || 
+                        (currentFilter === 'veg' && isVeg) || 
+                        (currentFilter === 'nonveg' && isNonVeg);
 
- let total=0;
- const lines=cart.map((x,i)=>{
-  const sub=x.price*x.qty;total+=sub;
-  return `${i+1}. ${x.name} x${x.qty} = ₹${sub}`;
- });
- const msg=`*LUMORA CAFÉ & RESTAURANT*\n\n*NEW ORDER*\nName: ${customer}\nTable: ${table}\n\n*ITEMS:*\n${lines.join('\n')}\n\n*TOTAL: ₹${total}*${notes?`\n\nNote: ${notes}`:''}`;
- window.open('https://wa.me/917017279963?text='+encodeURIComponent(msg),'_blank');
+    item.style.display = (matchesSearch && matchesFilter) ? 'flex' : 'none';
+  });
 }
-updateCart();
+
+function sendOrder() {
+  let name = document.getElementById('custName').value.trim();
+  let table = document.getElementById('tableNum').value.trim();
+  if (!cart.length) return alert('Cart is empty!');
+  if (!name || !table) return alert('Please enter Name and Table number.');
+  
+  let msg = `*LUMORA RESTAURANT ORDER*\nName: ${name}\nTable: ${table}\n\n`;
+  let total = 0;
+  cart.forEach(i => {
+    msg += `• ${i.name} x ${i.qty} = ₹${i.price * i.qty}\n`;
+    total += i.price * i.qty;
+  });
+  msg += `\n*Total Amount: ₹${total}*`;
+  
+  window.open(`https://wa.me/917017279963?text=${encodeURIComponent(msg)}`, '_blank');
+}
 </script>
 </body>
 </html>
