@@ -5,199 +5,156 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>LUMORA — Café & Restaurant</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Montserrat:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Montserrat:wght@400;500;600&display=swap');
 
 :root {
-  --bg: #050505;
-  --card: #12100e;
+  --bg: #0a0908;
+  --card: #14120e;
   --gold: #d4af37;
   --gold-light: #f3e5ab;
-  --text: #eae6df;
-  --muted: #a3957d;
-  --border: #332617;
+  --text: #ffffff;
+  --muted: #a0937d;
+  --border: #2a2115;
   --veg: #2ecc71;
   --nonveg: #e74c3c;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
-body { background-color: var(--bg); color: var(--text); font-family: 'Montserrat', sans-serif; }
+body { background: var(--bg); color: var(--text); font-family: 'Montserrat', sans-serif; }
 a { color: inherit; text-decoration: none; }
 
-/* HEADER & LOGO */
-.hero { text-align: center; padding: 50px 20px 30px; background: radial-gradient(circle, #1a140b 0%, #050505 80%); }
-.logo-box { max-width: 380px; margin: 0 auto; }
-.logo-title { font-family: 'Cinzel', serif; font-size: 44px; font-weight: 800; color: var(--gold); letter-spacing: 6px; margin-top: 10px; }
-.logo-subtitle { font-size: 14px; letter-spacing: 4px; color: var(--gold-light); margin-top: 5px; font-weight: 500; }
-.logo-tagline { font-size: 9px; letter-spacing: 2px; color: var(--muted); margin-top: 8px; text-transform: uppercase; }
-.hero-btn { display: inline-block; margin-top: 25px; padding: 12px 30px; border: 1px solid var(--gold); color: var(--gold-light); font-size: 11px; letter-spacing: 2px; font-weight: 600; }
+/* HERO LOGO SECTION */
+.hero { text-align: center; padding: 40px 20px; background: radial-gradient(circle, #1f180e 0%, #0a0908 80%); border-bottom: 1px solid var(--border); }
+.logo-title { font-family: 'Cinzel', serif; font-size: 42px; font-weight: 800; color: var(--gold); letter-spacing: 5px; margin-top: 10px; }
+.logo-sub { font-size: 13px; letter-spacing: 3px; color: var(--gold-light); margin-top: 4px; }
+.logo-desc { font-size: 10px; letter-spacing: 2px; color: var(--muted); margin-top: 6px; text-transform: uppercase; }
 
 /* NAV BAR */
-nav { position: sticky; top: 0; z-index: 100; background: rgba(5,5,5,0.95); border-bottom: 1px solid var(--border); backdrop-filter: blur(8px); }
-.nav-links { display: flex; gap: 20px; overflow-x: auto; padding: 15px 20px; max-width: 1100px; margin: 0 auto; white-space: nowrap; }
-.nav-links a { font-size: 11px; letter-spacing: 1.5px; color: var(--gold-light); font-weight: 500; }
+nav { position: sticky; top: 0; z-index: 100; background: rgba(10,9,8,0.95); border-bottom: 1px solid var(--border); backdrop-filter: blur(5px); }
+.nav-links { display: flex; gap: 15px; overflow-x: auto; padding: 12px 20px; max-width: 1000px; margin: 0 auto; white-space: nowrap; }
+.nav-links a { font-size: 11px; letter-spacing: 1px; color: var(--gold-light); font-weight: 500; }
 
-/* MAIN CONTENT */
-.container { max-width: 1100px; margin: 0 auto; padding: 40px 20px; }
-.section-title { text-align: center; margin-bottom: 40px; }
-.section-title h2 { font-family: 'Cinzel', serif; font-size: 32px; color: var(--gold); letter-spacing: 2px; }
-.divider { color: var(--gold); margin: 8px 0; }
-
-/* SEARCH & FILTERS */
-.controls { display: flex; gap: 15px; margin-bottom: 30px; flex-wrap: wrap; }
-.search-input { flex: 1; min-width: 200px; padding: 12px 16px; background: var(--card); border: 1px solid var(--border); color: #fff; outline: none; border-radius: 4px; }
-.filter-btn { padding: 10px 20px; background: var(--card); border: 1px solid var(--border); color: var(--gold-light); font-size: 11px; cursor: pointer; border-radius: 4px; }
+/* MAIN CONTAINER */
+.container { max-width: 1000px; margin: 0 auto; padding: 30px 15px; }
+.controls { display: flex; gap: 10px; margin-bottom: 25px; flex-wrap: wrap; }
+.search-box { flex: 1; min-width: 180px; padding: 10px; background: var(--card); border: 1px solid var(--border); color: #fff; outline: none; border-radius: 4px; font-size: 12px; }
+.filter-btn { padding: 8px 16px; background: var(--card); border: 1px solid var(--border); color: var(--gold-light); font-size: 11px; cursor: pointer; border-radius: 4px; }
 .filter-btn.active { background: var(--gold); color: #000; font-weight: 600; }
 
 /* MENU LAYOUT */
-.menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; }
-.category { background: var(--card); border: 1px solid var(--border); padding: 25px; border-radius: 6px; }
-.category-title { font-family: 'Cinzel', serif; font-size: 22px; color: var(--gold-light); border-bottom: 1px solid var(--border); padding-bottom: 10px; margin-bottom: 20px; }
-.item { display: flex; align-items: center; justify-content: space-between; padding: 12px 0; border-bottom: 1px dashed rgba(212,175,55,0.15); }
-.item-info { display: flex; align-items: center; gap: 10px; }
-.badge { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+.menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+.category { background: var(--card); border: 1px solid var(--border); padding: 20px; border-radius: 6px; }
+.cat-title { font-family: 'Cinzel', serif; font-size: 20px; color: var(--gold); border-bottom: 1px solid var(--border); padding-bottom: 8px; margin-bottom: 15px; }
+.item { display: flex; align-items: center; justify-content: space-between; padding: 10px 0; border-bottom: 1px dashed rgba(212,175,55,0.15); }
+.item-left { display: flex; align-items: center; gap: 8px; }
+.dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
 .veg { background: var(--veg); }
 .nonveg { background: var(--nonveg); }
-.item-name { font-size: 15px; font-weight: 500; }
-.item-action { display: flex; align-items: center; gap: 15px; }
-.price { color: var(--gold-light); font-weight: 600; font-size: 14px; }
-.add-btn { background: transparent; border: 1px solid var(--gold); color: var(--gold); padding: 5px 12px; font-size: 10px; font-weight: 600; cursor: pointer; border-radius: 3px; }
+.item-name { font-size: 14px; }
+.item-right { display: flex; align-items: center; gap: 10px; }
+.price { color: var(--gold-light); font-size: 13px; font-weight: 600; }
+.add-btn { background: transparent; border: 1px solid var(--gold); color: var(--gold); padding: 4px 10px; font-size: 10px; cursor: pointer; border-radius: 3px; font-weight: 600; }
 .add-btn:hover { background: var(--gold); color: #000; }
 
-/* FOOTER & CONTACT */
-.contact-box { text-align: center; border: 1px solid var(--border); padding: 40px 20px; background: var(--card); margin-top: 50px; }
-.contact-box h3 { font-family: 'Cinzel', serif; font-size: 28px; color: var(--gold); }
-.phone-num { font-size: 18px; color: var(--gold-light); margin: 15px 0 5px; font-weight: 600; display: block; }
-footer { text-align: center; padding: 30px; font-size: 11px; color: var(--muted); border-top: 1px solid var(--border); margin-top: 40px; }
+/* CONTACT & FOOTER */
+.contact-card { text-align: center; border: 1px solid var(--border); padding: 30px 15px; background: var(--card); margin-top: 40px; border-radius: 6px; }
+.contact-card h3 { font-family: 'Cinzel', serif; color: var(--gold); font-size: 24px; }
+.phone-link { font-size: 16px; color: var(--gold-light); margin: 10px 0; display: block; font-weight: 600; }
+footer { text-align: center; padding: 20px; font-size: 10px; color: var(--muted); margin-top: 30px; border-top: 1px solid var(--border); }
 
-/* FLOATING CART & DRAWER */
-.cart-trigger { position: fixed; bottom: 20px; right: 20px; background: var(--gold); color: #000; padding: 12px 22px; font-weight: 700; border-radius: 30px; border: none; cursor: pointer; box-shadow: 0 5px 20px rgba(0,0,0,0.5); }
-.cart-drawer { position: fixed; top: 0; right: -400px; width: min(380px, 90vw); height: 100vh; background: var(--card); border-left: 1px solid var(--border); z-index: 200; padding: 25px; transition: 0.3s; overflow-y: auto; }
+/* FLOATING CART */
+.cart-float { position: fixed; bottom: 20px; right: 20px; background: var(--gold); color: #000; padding: 10px 20px; font-weight: 700; border-radius: 25px; border: none; cursor: pointer; box-shadow: 0 4px 15px rgba(0,0,0,0.5); font-size: 12px; }
+.cart-drawer { position: fixed; top: 0; right: -350px; width: min(320px, 85vw); height: 100vh; background: var(--card); border-left: 1px solid var(--border); z-index: 200; padding: 20px; transition: 0.3s; overflow-y: auto; }
 .cart-drawer.open { right: 0; }
-.close-cart { background: none; border: none; color: var(--gold); font-size: 24px; float: right; cursor: pointer; }
-.cart-drawer h3 { font-family: 'Cinzel', serif; color: var(--gold); font-size: 24px; margin-bottom: 20px; }
-.cart-item-row { display: flex; justify-content: space-between; margin-bottom: 15px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
-.cart-input { width: 100%; padding: 10px; margin: 8px 0; background: var(--bg); border: 1px solid var(--border); color: #fff; font-size: 12px; }
-.order-btn { width: 100%; padding: 12px; background: var(--gold); border: none; color: #000; font-weight: 700; cursor: pointer; margin-top: 10px; }
+.close-btn { background: none; border: none; color: var(--gold); font-size: 22px; float: right; cursor: pointer; }
+.cart-drawer h3 { font-family: 'Cinzel', serif; color: var(--gold); margin-bottom: 15px; }
+.cart-row { display: flex; justify-content: space-between; margin-bottom: 10px; font-size: 13px; border-bottom: 1px solid var(--border); padding-bottom: 5px; }
+.cart-input { width: 100%; padding: 8px; margin: 6px 0; background: var(--bg); border: 1px solid var(--border); color: #fff; font-size: 11px; }
+.send-btn { width: 100%; padding: 10px; background: var(--gold); border: none; color: #000; font-weight: 700; cursor: pointer; margin-top: 8px; font-size: 11px; }
 </style>
 </head>
 <body>
 
 <div class="hero">
-  <div class="logo-box">
-    <!-- SVG Vector Logo Matching Design -->
-    <svg width="80" height="80" viewBox="0 0 100 100">
-      <circle cx="50" cy="50" r="40" fill="none" stroke="#d4af37" stroke-width="3"/>
-      <path d="M 45 25 L 45 65 M 40 25 L 40 40 M 50 25 L 50 40" stroke="#d4af37" stroke-width="2"/>
-      <path d="M 55 25 Q 65 40 55 55 L 55 65" fill="none" stroke="#d4af37" stroke-width="2"/>
-    </svg>
-    <div class="logo-title">LUMORA</div>
-    <div class="logo-subtitle">CAFÉ & RESTAURANT</div>
-    <div class="logo-tagline">Fine Dining • Family Restaurant • Café</div>
-  </div>
-  <a href="#menu" class="hero-btn">VIEW MENU</a>
+  <div class="logo-title">LUMORA</div>
+  <div class="logo-sub">CAFÉ & RESTAURANT</div>
+  <div class="logo-desc">Fine Dining • Family Restaurant • Café</div>
 </div>
 
 <nav>
   <div class="nav-links">
     <a href="#beverages">BEVERAGES</a>
     <a href="#italian">ITALIAN</a>
-    <a href="#tandoor">TANDOOR</a>
-    <a href="#chinese">CHINESE</a>
     <a href="#maincourse">MAIN COURSE</a>
-    <a href="#desserts">DESSERTS</a>
+    <a href="#contact">CONTACT</a>
   </div>
 </nav>
 
-<div class="container" id="menu">
-  <div class="section-title">
-    <h2>OUR MENU</h2>
-    <div class="divider">✦ ✦ ✦</div>
-  </div>
-
+<div class="container">
   <div class="controls">
-    <input type="text" id="searchInput" class="search-input" placeholder="Search dishes..." oninput="filterDishes()">
+    <input type="text" id="searchInput" class="search-box" placeholder="Search dish..." oninput="filterMenu()">
     <button class="filter-btn active" onclick="setFilter('all', this)">ALL</button>
     <button class="filter-btn" onclick="setFilter('veg', this)">VEG</button>
     <button class="filter-btn" onclick="setFilter('nonveg', this)">NON-VEG</button>
   </div>
 
   <div class="menu-grid">
-    <!-- BEVERAGES -->
     <div class="category" id="beverages">
-      <h3 class="category-title">Beverages & Shakes</h3>
+      <h3 class="cat-title">Beverages & Shakes</h3>
       <div class="item veg" data-name="Virgin Mojito">
-        <div class="item-info"><span class="badge veg"></span><span class="item-name">Virgin Mojito</span></div>
-        <div class="item-action"><span class="price">₹149</span><button class="add-btn" onclick="addToCart('Virgin Mojito', 149)">ADD</button></div>
+        <div class="item-left"><span class="dot veg"></span><span class="item-name">Virgin Mojito</span></div>
+        <div class="item-right"><span class="price">₹149</span><button class="add-btn" onclick="addToCart('Virgin Mojito', 149)">ADD</button></div>
       </div>
       <div class="item veg" data-name="Cold Coffee">
-        <div class="item-info"><span class="badge veg"></span><span class="item-name">Cold Coffee</span></div>
-        <div class="item-action"><span class="price">₹139</span><button class="add-btn" onclick="addToCart('Cold Coffee', 139)">ADD</button></div>
-      </div>
-      <div class="item veg" data-name="Oreo Shake">
-        <div class="item-info"><span class="badge veg"></span><span class="item-name">Oreo Shake</span></div>
-        <div class="item-action"><span class="price">₹159</span><button class="add-btn" onclick="addToCart('Oreo Shake', 159)">ADD</button></div>
+        <div class="item-left"><span class="dot veg"></span><span class="item-name">Cold Coffee</span></div>
+        <div class="item-right"><span class="price">₹139</span><button class="add-btn" onclick="addToCart('Cold Coffee', 139)">ADD</button></div>
       </div>
     </div>
 
-    <!-- ITALIAN -->
     <div class="category" id="italian">
-      <h3 class="category-title">Italian & Burgers</h3>
+      <h3 class="cat-title">Italian & Burgers</h3>
       <div class="item veg" data-name="Margherita Pizza">
-        <div class="item-info"><span class="badge veg"></span><span class="item-name">Margherita Pizza</span></div>
-        <div class="item-action"><span class="price">₹199</span><button class="add-btn" onclick="addToCart('Margherita Pizza', 199)">ADD</button></div>
+        <div class="item-left"><span class="dot veg"></span><span class="item-name">Margherita Pizza</span></div>
+        <div class="item-right"><span class="price">₹199</span><button class="add-btn" onclick="addToCart('Margherita Pizza', 199)">ADD</button></div>
       </div>
       <div class="item nonveg" data-name="BBQ Chicken Pizza">
-        <div class="item-info"><span class="badge nonveg"></span><span class="item-name">BBQ Chicken Pizza</span></div>
-        <div class="item-action"><span class="price">₹259</span><button class="add-btn" onclick="addToCart('BBQ Chicken Pizza', 259)">ADD</button></div>
-      </div>
-      <div class="item veg" data-name="Veg Cheese Burger">
-        <div class="item-info"><span class="badge veg"></span><span class="item-name">Veg Cheese Burger</span></div>
-        <div class="item-action"><span class="price">₹139</span><button class="add-btn" onclick="addToCart('Veg Cheese Burger', 139)">ADD</button></div>
+        <div class="item-left"><span class="dot nonveg"></span><span class="item-name">BBQ Chicken Pizza</span></div>
+        <div class="item-right"><span class="price">₹259</span><button class="add-btn" onclick="addToCart('BBQ Chicken Pizza', 259)">ADD</button></div>
       </div>
     </div>
 
-    <!-- TANDOOR & MAIN COURSE -->
     <div class="category" id="maincourse">
-      <h3 class="category-title">Main Course</h3>
+      <h3 class="cat-title">Main Course</h3>
       <div class="item veg" data-name="Dal Makhani">
-        <div class="item-info"><span class="badge veg"></span><span class="item-name">Dal Makhani</span></div>
-        <div class="item-action"><span class="price">₹259</span><button class="add-btn" onclick="addToCart('Dal Makhani', 259)">ADD</button></div>
-      </div>
-      <div class="item veg" data-name="Paneer Butter Masala">
-        <div class="item-info"><span class="badge veg"></span><span class="item-name">Paneer Butter Masala</span></div>
-        <div class="item-action"><span class="price">₹299</span><button class="add-btn" onclick="addToCart('Paneer Butter Masala', 299)">ADD</button></div>
+        <div class="item-left"><span class="dot veg"></span><span class="item-name">Dal Makhani</span></div>
+        <div class="item-right"><span class="price">₹259</span><button class="add-btn" onclick="addToCart('Dal Makhani', 259)">ADD</button></div>
       </div>
       <div class="item nonveg" data-name="Butter Chicken">
-        <div class="item-info"><span class="badge nonveg"></span><span class="item-name">Butter Chicken</span></div>
-        <div class="item-action"><span class="price">₹349</span><button class="add-btn" onclick="addToCart('Butter Chicken', 349)">ADD</button></div>
+        <div class="item-left"><span class="dot nonveg"></span><span class="item-name">Butter Chicken</span></div>
+        <div class="item-right"><span class="price">₹349</span><button class="add-btn" onclick="addToCart('Butter Chicken', 349)">ADD</button></div>
       </div>
     </div>
   </div>
 
-  <div class="contact-box" id="contact">
+  <div class="contact-card" id="contact">
     <h3>LUMORA</h3>
-    <p style="color:var(--muted); font-size:12px; margin-top:5px;">CAFÉ & RESTAURANT</p>
-    <span class="phone-num">☎ 7017279963 / 9520951715</span>
-    <p style="font-size:12px; color:var(--muted);">Raipur Chowk, Dehradun, Uttarakhand</p>
+    <a href="tel:+917017279963" class="phone-link">☎ 7017279963 / 9520951715</a>
+    <p style="font-size:11px; color:var(--muted)">Raipur Chowk, Dehradun, Uttarakhand</p>
   </div>
 </div>
 
-<footer>
-  © 2026 LUMORA CAFÉ & RESTAURANT. ALL RIGHTS RESERVED.
-</footer>
+<footer>© 2026 LUMORA CAFÉ & RESTAURANT</footer>
 
-<button class="cart-trigger" onclick="toggleCart()">🛒 Cart (<span id="cartCount">0</span>)</button>
+<button class="cart-float" onclick="toggleCart()">🛒 Cart (<span id="cartCount">0</span>)</button>
 
 <div class="cart-drawer" id="cartDrawer">
-  <button class="close-cart" onclick="toggleCart()">×</button>
+  <button class="close-btn" onclick="toggleCart()">×</button>
   <h3>YOUR ORDER</h3>
   <div id="cartContent"></div>
-  <div style="margin-top:20px; font-weight:600; text-align:right;">Total: ₹<span id="cartTotal">0</span></div>
-  <div style="margin-top:20px;">
-    <input type="text" id="custName" class="cart-input" placeholder="Your Name">
-    <input type="text" id="tableNum" class="cart-input" placeholder="Table Number">
-    <button class="order-btn" onclick="sendOrder()">SEND ORDER TO WHATSAPP</button>
-  </div>
+  <div style="margin: 15px 0; text-align:right; font-weight:600;">Total: ₹<span id="cartTotal">0</span></div>
+  <input type="text" id="custName" class="cart-input" placeholder="Your Name">
+  <input type="text" id="tableNum" class="cart-input" placeholder="Table Number">
+  <button class="send-btn" onclick="sendOrder()">ORDER ON WHATSAPP</button>
 </div>
 
 <script>
@@ -206,86 +163,56 @@ let currentFilter = 'all';
 
 function addToCart(name, price) {
   let item = cart.find(x => x.name === name);
-  if (item) { item.qty++; } 
-  else { cart.push({ name, price, qty: 1 }); }
-  updateCart();
+  if (item) item.qty++;
+  else cart.push({ name, price, qty: 1 });
+  renderCart();
 }
 
-function updateCart() {
-  let content = document.getElementById('cartContent');
-  let total = 0;
-  let count = 0;
-  content.innerHTML = '';
-  
-  cart.forEach((item, index) => {
+function renderCart() {
+  let box = document.getElementById('cartContent');
+  let total = 0, count = 0;
+  box.innerHTML = '';
+  cart.forEach((item, i) => {
     let sub = item.price * item.qty;
-    total += sub;
-    count += item.qty;
-    content.innerHTML += `
-      <div class="cart-item-row">
-        <div>
-          <div>${item.name}</div>
-          <small style="color:var(--muted)">₹${item.price} x ${item.qty}</small>
-        </div>
-        <div>
-          <b>₹${sub}</b>
-          <button onclick="removeItem(${index})" style="background:none; border:none; color:red; margin-left:8px; cursor:pointer;">✕</button>
-        </div>
-      </div>
-    `;
+    total += sub; count += item.qty;
+    box.innerHTML += `<div class="cart-row">
+      <div>${item.name} (x${item.qty})</div>
+      <div>₹${sub} <button onclick="removeItem(${i})" style="color:red; background:none; border:none; cursor:pointer;">✕</button></div>
+    </div>`;
   });
-  
   document.getElementById('cartTotal').innerText = total;
   document.getElementById('cartCount').innerText = count;
 }
 
-function removeItem(index) {
-  cart.splice(index, 1);
-  updateCart();
-}
-
-function toggleCart() {
-  document.getElementById('cartDrawer').classList.toggle('open');
-}
+function removeItem(i) { cart.splice(i, 1); renderCart(); }
+function toggleCart() { document.getElementById('cartDrawer').classList.toggle('open'); }
 
 function setFilter(type, btn) {
   currentFilter = type;
   document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
-  filterDishes();
+  filterMenu();
 }
 
-function filterDishes() {
+function filterMenu() {
   let q = document.getElementById('searchInput').value.toLowerCase();
   document.querySelectorAll('.item').forEach(item => {
     let name = item.getAttribute('data-name').toLowerCase();
     let isVeg = item.classList.contains('veg');
     let isNonVeg = item.classList.contains('nonveg');
-    
-    let matchesSearch = name.includes(q);
-    let matchesFilter = (currentFilter === 'all') || 
-                        (currentFilter === 'veg' && isVeg) || 
-                        (currentFilter === 'nonveg' && isNonVeg);
-
-    item.style.display = (matchesSearch && matchesFilter) ? 'flex' : 'none';
+    let match = name.includes(q) && (currentFilter === 'all' || (currentFilter === 'veg' && isVeg) || (currentFilter === 'nonveg' && isNonVeg));
+    item.style.display = match ? 'flex' : 'none';
   });
 }
 
 function sendOrder() {
   let name = document.getElementById('custName').value.trim();
   let table = document.getElementById('tableNum').value.trim();
-  if (!cart.length) return alert('Cart is empty!');
-  if (!name || !table) return alert('Please enter Name and Table number.');
-  
-  let msg = `*LUMORA RESTAURANT ORDER*\nName: ${name}\nTable: ${table}\n\n`;
-  let total = 0;
-  cart.forEach(i => {
-    msg += `• ${i.name} x ${i.qty} = ₹${i.price * i.qty}\n`;
-    total += i.price * i.qty;
-  });
-  msg += `\n*Total Amount: ₹${total}*`;
-  
-  window.open(`https://wa.me/917017279963?text=${encodeURIComponent(msg)}`, '_blank');
+  if (!cart.length || !name || !table) return alert('Fill name, table number, and add items.');
+  let text = `*NEW ORDER - LUMORA*\nName: ${name}\nTable: ${table}\n\n`;
+  cart.forEach(i => text += `• ${i.name} x${i.qty} = ₹${i.price * i.qty}\n`);
+  text += `\n*Total: ₹${document.getElementById('cartTotal').innerText}*`;
+  window.open(`https://wa.me/917017279963?text=${encodeURIComponent(text)}`, '_blank');
 }
 </script>
 </body>
