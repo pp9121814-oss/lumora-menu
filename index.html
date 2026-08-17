@@ -12,7 +12,7 @@
 .rule{width:95px;height:1px;background:var(--gold);margin:18px 0}.tag{font:500 23px "Cormorant Garamond",serif;letter-spacing:6px;color:#fff0d2;line-height:1.35}.hero-copy p{font-size:12px;color:#b9aa91;line-height:1.9;max-width:420px;margin:18px 0 27px}
 .cta{display:inline-block;border:1px solid var(--gold);padding:13px 25px;color:#e2c486;text-decoration:none;font-size:10px;letter-spacing:2px}.cta:hover{background:var(--gold);color:#0b0805}
 .slider{position:absolute;right:0;top:0;width:70%;height:100%;overflow:hidden}
-.track{height:100%;display:flex;width:max-content;animation:move 42s linear infinite}.track:hover{animation-play-state:paused}
+.track{height:100%;display:flex;width:max-content;animation:move 42s linear infinite}
 .slide{width:430px;height:100%;padding:24px 6px;flex:0 0 430px}.slide img{width:100%;height:100%;object-fit:cover;border-left:1px solid #785a31;filter:saturate(.82) contrast(1.05)}
 .vignette{position:absolute;inset:0;z-index:4;pointer-events:none;background:linear-gradient(90deg,#080706 0%,#080706d8 22%,transparent 59%),linear-gradient(0deg,#080706cc 0%,transparent 38%)}
 .frame{position:absolute;inset:18px;border:1px solid #c7a46755;z-index:10;pointer-events:none}
@@ -47,81 +47,109 @@ function render(){
   const b=document.createElement("button");b.className="filter";b.textContent=cat.icon+" "+cat.title;
   b.onclick=()=>document.getElementById("c"+i).scrollIntoView({behavior:"smooth"});filters.appendChild(b);
   const sec=document.createElement("section");sec.className="category";sec.id="c"+i;
-  sec.innerHTML=`<div class="category-head"><div class="icon">${cat.icon}</div><div><div class="num">MENU ${String(i+1).padStart(2,"0")}</div><h3>${cat.title}</h3></div></div><div class="subgrid">${cat.subs.map(sub=>`<div class="sub"><h4>${sub.title}</h4>${sub.items.map(x=>`<div class="item" onclick="add('${x.name.replace(/'/g,"\\'")}','${x.price}')">><span class="name">${x.name}</span><span class="dots"></span><span class="price">${money(x.price)}</span></div>`).join("")}</div>`).join("")}</div>`;
+  sec.innerHTML=`<div class="category-head"><div class="icon">${cat.icon}</div><div><div class="num">MENU ${String(i+1).padStart(2,"0")}</div><h3>${cat.title}</h3></div></div><div class="subgrid">${cat.subs.map(sub=>`<div class="sub"><h4>${sub.title}</h4>${sub.items.map(x=>`<div class="item" onclick="add('${x.name.replace(/'/g,"\\'")}','${x.price}')"><span class="name">${x.name}</span><span class="dots"></span><span class="price">${money(x.price)}</span></div>`).join("")}</div>`).join("")}</div>`;
   grid.appendChild(sec);
  });
 }
-function add(name,price){let x=cart.get(name);cart.set(name,{price,qty:x?x.qty+1:1});renderCart();}
+function add(name,price){
+    let x=cart.get(name);
+    cart.set(name,{price:price,qty:x?x.qty+1:1});
+    renderCart();
+}
 function renderCart(){let box=document.getElementById("cartItems");box.innerHTML="";let total=0,count=0;cart.forEach((x,n)=>{let p=parseFloat(String(x.price).split("/")[0])||0;total+=p*x.qty;count+=x.qty;box.innerHTML+=`<div class="cart-row"><span>${n}</span><span class="qty"><button onclick="change('${n.replace(/'/g,"\\'")}',-1)">−</button>${x.qty}<button onclick="change('${n.replace(/'/g,"\\'")}',1)">+</button></span></div>`});document.getElementById("total").textContent="₹"+total;document.getElementById("cartCount").textContent=count}
 function change(n,d){let x=cart.get(n);if(!x)return;x.qty+=d;if(x.qty<=0)cart.delete(n);renderCart()}
 function openCart(){document.getElementById("cart").classList.add("open");document.getElementById("overlay").classList.add("show")}
 function closeCart(){document.getElementById("cart").classList.remove("open");document.getElementById("overlay").classList.remove("show")}
-function orderWA(){let a=["LUMORA — NEW ORDER","Table: "+(tableNo.value||"Not specified"),""];cart.forEach((x,n)=>a.push("• "+n+" x "+x.qty+" — "+x.price));a.push("","Note: "+(orderNote.value||"None"));window.open("https://wa.me/917017279963?text="+encodeURIComponent(a.join("\n")),"_blank")}
+function orderWA(){
+
+    if(!userInsideRange){
+        checkLumoraLocation();
+        return;
+    }
+
+    let a=[
+        "LUMORA — NEW ORDER",
+        "Table: "+(tableNo.value||"Not specified"),
+        ""
+    ];
+
+    cart.forEach((x,n)=>{
+        a.push("• "+n+" x "+x.qty+" — "+x.price);
+    });
+
+    a.push(
+        "",
+        "Note: "+(orderNote.value||"None")
+    );
+
+    window.open(
+        "https://wa.me/917017279963?text="+
+        encodeURIComponent(a.join("\n")),
+        "_blank"
+    );
+}
+
 openCartBtn.onclick=openCart;closeBtn.onclick=closeCart;overlay.onclick=closeCart;sendBtn.onclick=orderWA;render();renderCart();
+
 /* ================= LUMORA 50M GEOFENCE ================= */
 
 const LUMORA_LAT = 30.309069;
 const LUMORA_LNG = 78.0948649;
-
-const ALLOWED_RADIUS = 50; // metres
+const ALLOWED_RADIUS = 50;
 
 let userInsideRange = false;
 
+function getDistance(lat1,lon1,lat2,lon2){
 
-/* Distance calculate karne ka function */
-function getDistance(lat1, lon1, lat2, lon2) {
-
-    const R = 6371000; // Earth radius in metres
+    const R = 6371000;
 
     const dLat =
-        (lat2 - lat1) * Math.PI / 180;
+        (lat2-lat1) * Math.PI / 180;
 
     const dLon =
-        (lon2 - lon1) * Math.PI / 180;
+        (lon2-lon1) * Math.PI / 180;
 
     const a =
-        Math.sin(dLat / 2) *
-        Math.sin(dLat / 2) +
+        Math.sin(dLat/2) *
+        Math.sin(dLat/2) +
 
-        Math.cos(lat1 * Math.PI / 180) *
-        Math.cos(lat2 * Math.PI / 180) *
+        Math.cos(lat1*Math.PI/180) *
+        Math.cos(lat2*Math.PI/180) *
 
-        Math.sin(dLon / 2) *
-        Math.sin(dLon / 2);
+        Math.sin(dLon/2) *
+        Math.sin(dLon/2);
 
     const c =
         2 * Math.atan2(
             Math.sqrt(a),
-            Math.sqrt(1 - a)
+            Math.sqrt(1-a)
         );
 
-    return R * c;
+    return R*c;
 }
 
+function checkLumoraLocation(){
 
-/* Location check */
-function checkLumoraLocation() {
+    if(!navigator.geolocation){
 
-    if (!navigator.geolocation) {
+        userInsideRange=false;
 
-        alert("GPS is not supported on this device.");
-
-        userInsideRange = false;
+        alert(
+            "GPS is not supported on this device."
+        );
 
         return;
     }
 
-
     navigator.geolocation.getCurrentPosition(
 
-        function(position) {
+        function(position){
 
             const userLat =
                 position.coords.latitude;
 
             const userLng =
                 position.coords.longitude;
-
 
             const distance =
                 getDistance(
@@ -131,31 +159,33 @@ function checkLumoraLocation() {
                     LUMORA_LNG
                 );
 
+            console.log(
+                "Distance from LUMORA:",
+                Math.round(distance)+" metres"
+            );
 
-            if (distance <= ALLOWED_RADIUS) {
+            if(distance <= ALLOWED_RADIUS){
 
-                userInsideRange = true;
+                userInsideRange=true;
 
                 console.log(
-                    "LUMORA ordering allowed:",
-                    Math.round(distance) + "m"
+                    "LUMORA ORDERING ALLOWED"
                 );
 
-            } else {
+            }else{
 
-                userInsideRange = false;
+                userInsideRange=false;
 
                 alert(
                     "You are outside LUMORA's 50 metre ordering area."
                 );
-
             }
 
         },
 
-        function(error) {
+        function(){
 
-            userInsideRange = false;
+            userInsideRange=false;
 
             alert(
                 "Please allow location access to place an order."
@@ -164,17 +194,12 @@ function checkLumoraLocation() {
         },
 
         {
-            enableHighAccuracy: true,
-            timeout: 10000,
-            maximumAge: 0
+            enableHighAccuracy:true,
+            timeout:10000,
+            maximumAge:0
         }
-
     );
-
 }
 
-
-/* Check location when page loads */
-checkLumoraLocation();
 </script>
 </body></html>
