@@ -47,7 +47,7 @@ function render(){
   const b=document.createElement("button");b.className="filter";b.textContent=cat.icon+" "+cat.title;
   b.onclick=()=>document.getElementById("c"+i).scrollIntoView({behavior:"smooth"});filters.appendChild(b);
   const sec=document.createElement("section");sec.className="category";sec.id="c"+i;
-  sec.innerHTML=`<div class="category-head"><div class="icon">${cat.icon}</div><div><div class="num">MENU ${String(i+1).padStart(2,"0")}</div><h3>${cat.title}</h3></div></div><div class="subgrid">${cat.subs.map(sub=>`<div class="sub"><h4>${sub.title}</h4>${sub.items.map(x=>`<div class="item""><span class="name">${x.name}</span><span class="dots"></span><span class="price">${money(x.price)}</span></div>`).join("")}</div>`).join("")}</div>`;
+  sec.innerHTML=`<div class="category-head"><div class="icon">${cat.icon}</div><div><div class="num">MENU ${String(i+1).padStart(2,"0")}</div><h3>${cat.title}</h3></div></div><div class="subgrid">${cat.subs.map(sub=>`<div class="sub"><h4>${sub.title}</h4>${sub.items.map(x=>`<div class="item" onclick="add('${x.name.replace(/'/g,"\\'")}','${x.price}')">><span class="name">${x.name}</span><span class="dots"></span><span class="price">${money(x.price)}</span></div>`).join("")}</div>`).join("")}</div>`;
   grid.appendChild(sec);
  });
 }
