@@ -1,84 +1,814 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>LUMORA | Café & Restaurant</title><meta name="theme-color" content="#080706"><style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>LUMORA | Café & Restaurant</title>
+
+<style>
+
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600&display=swap');
-:root{--bg:#080706;--panel:#12100d;--gold:#c7a467;--champ:#efd7a6;--text:#eee5d4;--muted:#a39376;--line:#4c3921}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:Montserrat,Arial,sans-serif}
-.nav{position:fixed;z-index:100;top:0;left:0;right:0;height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 5%;background:#080706ed;border-bottom:1px solid #5a4328;backdrop-filter:blur(15px)}
-.brand{color:var(--champ);font:600 31px "Cormorant Garamond",serif;letter-spacing:8px;text-decoration:none}.links{display:flex;gap:30px}.links a{color:#b9aa8c;text-decoration:none;font-size:10px;letter-spacing:2px;text-transform:uppercase}.links a:hover{color:var(--champ)}
-.cart-btn{background:transparent;border:1px solid var(--gold);color:var(--champ);padding:10px 17px;font-size:10px;letter-spacing:1px;cursor:pointer}
-.hero{height:720px;margin-top:72px;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden;background:linear-gradient(#0706044d,#070604e8),url("images/hero.jpg") center/cover}
-.hero:before{content:"";position:absolute;inset:5%;border:1px solid #c7a46755}.hero-inner{position:relative;z-index:2}.crest{width:88px;height:88px;border:1px solid var(--gold);border-radius:50%;display:grid;place-items:center;margin:0 auto 20px}.crest span{font:600 54px "Cormorant Garamond",serif;color:var(--champ)}
-.lumora{font:600 clamp(70px,12vw,135px) "Cormorant Garamond",serif;letter-spacing:16px;color:#f2d9a7}.rule{height:1px;width:140px;background:var(--gold);margin:18px auto}.kicker{font-size:10px;letter-spacing:5px;color:#ddc38f}.hero h1{font:500 45px "Cormorant Garamond",serif;color:#fff0d1;margin:15px}.hero p{color:#c6b697;font-size:12px;max-width:600px;margin:auto;line-height:1.8}
-.hero-btn{display:inline-block;margin-top:25px;padding:13px 25px;background:var(--champ);color:#120c06;text-decoration:none;font-size:10px;letter-spacing:2px}
-.filters{position:sticky;top:72px;z-index:50;background:#0a0907ef;border-bottom:1px solid var(--line);overflow:auto;backdrop-filter:blur(12px)}.filter-inner{max-width:1250px;margin:auto;padding:11px 18px;display:flex;gap:8px}.filter{flex:0 0 auto;padding:9px 13px;background:#14100c;border:1px solid #4b3820;color:#cbb78e;cursor:pointer;font-size:10px}.filter.active,.filter:hover{background:var(--gold);color:#120c06}
-.menu{max-width:1250px;margin:auto;padding:85px 18px}.heading{text-align:center;margin-bottom:45px}.heading small{font-size:9px;letter-spacing:5px;color:var(--gold)}.heading h2{font:500 64px "Cormorant Garamond",serif;color:var(--champ);margin:8px}.heading p{font-size:11px;color:var(--muted)}
-.category{margin-bottom:70px;scroll-margin-top:120px}.category-head{display:flex;align-items:end;gap:15px;border-bottom:1px solid var(--line);padding-bottom:15px;margin-bottom:20px}.category-icon{font-size:28px}.category-head h3{margin:0;font:600 43px "Cormorant Garamond",serif;color:var(--champ)}.category-head span{color:#6f5834;font:500 20px "Cormorant Garamond",serif}
-.subgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}.sub{background:linear-gradient(145deg,#17130e,#0e0b08);border:1px solid #40301c;padding:18px;box-shadow:0 14px 35px #0007}.sub h4{margin:0 0 12px;color:#d9b878;font:600 24px "Cormorant Garamond",serif}.item{display:flex;gap:9px;padding:9px 0;border-bottom:1px solid #282016;cursor:pointer;font-size:11px}.item:last-child{border:0}.item:hover .name{color:#efd29c}.name{color:#ded2bb}.dots{flex:1;border-bottom:1px dotted #5b4529;margin-bottom:4px}.price{color:#d5b26c}
-.about{text-align:center;padding:85px 20px;border-top:1px solid var(--line);background:#0d0a07}.about h2{font:500 58px "Cormorant Garamond",serif;color:var(--champ);margin:10px}.about p{color:#9e8d72;font-size:11px}.footer{text-align:center;padding:32px;background:#050403;border-top:1px solid #2f2417}.footer b{color:var(--gold);letter-spacing:4px;font-size:12px}.footer small{color:#77664d}
-.overlay{position:fixed;inset:0;background:#000b;z-index:200;display:none}.overlay.show{display:block}.cart{position:fixed;z-index:250;top:0;right:-440px;width:min(440px,100%);height:100vh;background:#130f0b;border-left:1px solid var(--gold);padding:22px;overflow:auto;transition:.35s}.cart.open{right:0}.cart-head{display:flex;justify-content:space-between}.cart-head h2{font:500 35px "Cormorant Garamond",serif;color:var(--champ)}.close{background:none;border:0;color:#cbb68d;font-size:28px;cursor:pointer}.details{padding:15px;border:1px solid #3d2d1b;background:#18120d}.details label{display:block;color:#9e8b69;font-size:9px;margin:8px 0 5px}.details input,.details textarea{width:100%;padding:10px;background:#0b0907;border:1px solid #4a371f;color:#eee0c5}.cart-row{display:flex;justify-content:space-between;gap:10px;padding:12px 0;border-bottom:1px solid #302417;font-size:11px}.qty{display:flex;gap:7px}.qty button{width:26px;height:26px;background:#17110c;border:1px solid #604a2a;color:#d7b56e}.total{display:flex;justify-content:space-between;padding:18px 0;color:var(--champ)}.order{width:100%;padding:14px;background:var(--gold);border:0;color:#110b05;font-weight:700;cursor:pointer}
-.modal-wrap{position:fixed;inset:0;background:#000c;z-index:300;display:none;align-items:center;justify-content:center;padding:18px}.modal-wrap.show{display:flex}.modal{width:min(430px,100%);max-height:90vh;overflow:auto;background:#17120d;border:1px solid #70552c;padding:22px}.modal-head{display:flex;justify-content:space-between}.modal h2{font:500 32px "Cormorant Garamond",serif;color:var(--champ)}.modal-sub{color:#9b896c;font-size:11px}.option{display:flex;gap:8px;padding:11px;margin:6px 0;background:#0e0b08;border:1px solid #3c2e1d;color:#d9c8a7}.custom-add{width:100%;padding:12px;background:var(--gold);border:0;color:#110b05;font-weight:700}
-@media(max-width:800px){.links{display:none}.subgrid{grid-template-columns:1fr}.hero{height:650px}.lumora{letter-spacing:8px}.category-head h3{font-size:36px}}@media(max-width:560px){.nav{height:64px}.hero{margin-top:64px}.filters{top:64px}.menu{padding:60px 11px}.heading h2{font-size:52px}}
-</style></head><body>
-<header class="nav"><a class="brand" href="#home">LUMORA</a><div class="links"><a href="#home">Home</a><a href="#menu">Menu</a><a href="#about">About</a></div><button class="cart-btn" id="openCart">ORDER <span id="cartCount">0</span></button></header>
-<section class="hero" id="home"><div class="hero-inner"><div class="crest"><span>L</span></div><div class="lumora">LUMORA</div><div class="rule"></div><div class="kicker">CAFÉ • RESTAURANT • FINE DINING</div><h1>Where Every Dish Tells a Story</h1><p>Refined flavours, warm hospitality and an atmosphere made for memorable evenings.</p><a class="hero-btn" href="#menu">VIEW COMPLETE MENU</a></div></section>
-<div class="filters"><div class="filter-inner" id="filters"></div></div>
-<main class="menu" id="menu"><div class="heading"><small>THE COMPLETE LUMORA COLLECTION</small><h2>Our Menu</h2><p>Every item from the photographed restaurant menu.</p></div><div id="menuGrid"></div></main>
-<section class="about" id="about"><div style="color:#c7a467">✦</div><h2>LUMORA</h2><p>Café & Restaurant • Fine Dining • Family Restaurant • Café</p><p>Raipur Chowk, Dehradun</p></section>
-<footer class="footer"><b>WEBLYFT</b><div style="margin:7px;color:#75654c;font-size:9px;letter-spacing:2px">WEBSITES & DIGITAL MENUS</div><small>Website & Digital Menu by WEBLYFT</small></footer>
-<div class="overlay" id="overlay"></div><aside class="cart" id="cart"><div class="cart-head"><h2>Your Order</h2><button class="close" id="closeCart">×</button></div><div class="details"><label>TABLE NUMBER</label><input id="tableNo" placeholder="e.g. Table 12"><label>SPECIAL REQUEST</label><textarea id="orderNote" placeholder="Less spicy, no onion, extra sauce..."></textarea></div><div id="cartItems"></div><div class="total"><span>Total</span><span id="total">₹0</span></div><button class="order" id="whatsapp">SEND ORDER ON WHATSAPP</button></aside>
-<script>
-const MENU=[{"title": "Beverages", "icon": "🍸", "subs": [{"title": "Mocktail", "items": [{"name": "Virgin Mojito", "price": 149}, {"name": "Watermelon / Green Apple / Orange", "price": 149}, {"name": "Kiwi Sparkal", "price": 149}, {"name": "Orange Sunshine", "price": 149}, {"name": "Spicy Guava", "price": 159}, {"name": "Aam Pana", "price": 149}, {"name": "Lichi Delight", "price": 159}, {"name": "Fruit Punch", "price": 159}, {"name": "Pineapple Sunrise", "price": 159}, {"name": "Orange Blossom", "price": 149}, {"name": "Ocean Blue", "price": 149}, {"name": "Virgin Merry", "price": 149}, {"name": "Juice", "price": 119}]}, {"title": "Hot Tea / Coffee", "items": [{"name": "Black Tea", "price": 49}, {"name": "Lemon Tea", "price": 59}, {"name": "Normal Tea", "price": 59}, {"name": "Masala Tea", "price": 69}, {"name": "Green Tea", "price": 69}, {"name": "Hot Coffee", "price": 129}, {"name": "Black Coffee", "price": 119}]}, {"title": "Soft Beverage", "items": [{"name": "Soft Drink", "price": 99}, {"name": "Fresh Lime Water", "price": 109}, {"name": "Red Bull", "price": 229}, {"name": "Gingerale", "price": 129}, {"name": "Ice Tea", "price": 119}, {"name": "Lemon Ice Tea", "price": 129}, {"name": "Peach Ice Tea", "price": 129}, {"name": "Passion Fruit Ice Tea", "price": 129}, {"name": "Strawberry Ice Tea", "price": 129}, {"name": "Diet Coke", "price": 129}]}, {"title": "Cold Coffee / Smoothie", "items": [{"name": "Cold Coffee", "price": 139}, {"name": "Bubble Shot Cold Coffee", "price": 149}, {"name": "Cold Coffee With Icecream", "price": 159}, {"name": "Lassi Sweet/Solt", "price": 129}, {"name": "Banana Smoothie", "price": 179}, {"name": "Mango Smoothie", "price": 179}, {"name": "Strawberry Smoothie", "price": 179}, {"name": "Mix Fruit Smoothie", "price": 179}, {"name": "Blueberry Smoothie", "price": 179}]}, {"title": "Shakes", "items": [{"name": "Chocolate Shakes", "price": 159}, {"name": "Mango Shakes", "price": 159}, {"name": "Strawberry Shakes", "price": 149}, {"name": "Banana Shakes", "price": 169}, {"name": "Oreo Shakes", "price": 159}, {"name": "Vanilla Shakes", "price": 159}, {"name": "Kit Kat Shakes", "price": 169}]}, {"title": "Italian Cuisine", "items": [{"name": "French Frice", "price": 129}, {"name": "Veg Sandwich With Fry", "price": 159}, {"name": "Veg & Cheese Sandwich", "price": 169}, {"name": "Corn & Cheese Sandwich", "price": 169}, {"name": "Spicy Grilled Chicken Sandwich", "price": 259}, {"name": "Peri Peri Paneer Sandwich", "price": 259}, {"name": "Avocado & Cheese Sandwich", "price": 289}]}]}, {"title": "Dim Sum", "icon": "🥟", "subs": [{"title": "Veg", "items": [{"name": "Spinach & Corn Dumplings", "price": 179}, {"name": "Mushroom & Veg Dumplings", "price": 179}, {"name": "Assorted Veg & Glass Noodles Dim Sum", "price": 179}]}, {"title": "Non-Veg", "items": [{"name": "Chicken & Spring Onion Steamed Dumplings", "price": 199}, {"name": "Pan-fried Chicken & Roasted Peanut Dim Sum", "price": 219}, {"name": "Lamb Black Pepper Dim Sum", "price": 289}, {"name": "Seafood Dim Sum", "price": 299}]}, {"title": "Tandoori Momos", "items": [{"name": "Tandoori Paneer Momos MALAI / SPICY", "price": 249}, {"name": "Tandoori Chicken Momos MALAI / SPICY", "price": 249}, {"name": "Crumb Fried Momos with Sweet Chilli (Veg / Chicken / Paneer)", "price": "219/249"}]}, {"title": "Chinese Main Course • Veg", "items": [{"name": "Stir-Fried Veg in Hot Garlic Sauce", "price": 259}, {"name": "Veg Dumplings in Beijing Sauce", "price": 259}, {"name": "Chilli Cottage Cheese", "price": 279}, {"name": "Soya Chaap in Chilli Garlic Sauce", "price": 269}, {"name": "Stir-Fried Green Vegetables", "price": 299}]}, {"title": "Chinese Main Course • Non-Veg", "items": [{"name": "Diced Chicken in Schezwan Sauce", "price": 299}, {"name": "Kung Pao Chicken", "price": 299}, {"name": "Lemon Chicken", "price": 299}, {"name": "Sliced Chicken with Vegetables (Cantonese Style)", "price": 299}, {"name": "Chicken in Black Bean Sauce", "price": 299}, {"name": "Chicken in Black Pepper Sauce", "price": 319}, {"name": "Lamb in Chilli Sauce", "price": 399}, {"name": "Sliced Fish in Ginger Garlic Sauce", "price": 319}, {"name": "Prawns in Hot Garlic Sauce", "price": 499}]}, {"title": "Noodles • Veg", "items": [{"name": "Veg Hakka Noodles", "price": 149}, {"name": "Veg Schezwan Noodles", "price": 159}, {"name": "Veg Chilli Garlic Noodles", "price": 159}]}, {"title": "Noodles • Non-Veg", "items": [{"name": "Egg Noodles", "price": 179}, {"name": "Chicken Hakka Noodles", "price": 199}, {"name": "Chicken Chilli Garlic Noodles", "price": 219}, {"name": "Roasted Garlic Chicken Noodles", "price": 219}, {"name": "Seafood Schezwan Noodles", "price": 349}, {"name": "Mix Meat Noodles", "price": 349}]}, {"title": "Chinese Starters • Veg", "items": [{"name": "Veg Salt & Pepper", "price": 249}, {"name": "Honey Chilli Potato", "price": 179}, {"name": "Vegetable & Glass Noodles Spring Roll", "price": 199}, {"name": "Veg Manchurian", "price": 249}, {"name": "Chilli Dry Soya Chaap", "price": 249}, {"name": "Crispy Corn & Spinach", "price": 239}, {"name": "Chilli Paneer with Bell Pepper", "price": 289}, {"name": "Silken Tofu Chef's Special", "price": 289}]}, {"title": "Chinese Starters • Non-Veg", "items": [{"name": "Kung Pao Chicken with Peanuts", "price": 289}, {"name": "Dry Chilli Chicken with Bell Pepper", "price": 279}, {"name": "Crispy Chicken Salt & Five Spice", "price": 279}, {"name": "Chicken Mangolian", "price": 279}, {"name": "Schezwan Chicken Lollipop", "price": 299}, {"name": "Black Pepper Chicken Chef Special", "price": 299}, {"name": "Schezwan Dry Chilli Fish", "price": 339}, {"name": "Cumin Lamb Chef's Special", "price": 399}, {"name": "Crispy Calamari with Roasted", "price": 339}, {"name": "Prawns Dry Chilli", "price": 449}]}, {"title": "Salads", "items": [{"name": "Garden Green Salad", "price": 139}, {"name": "Russian Salad", "price": 229}, {"name": "Caesar Salad (Veg / Chicken)", "price": "249/299"}, {"name": "Chicken Tikka Salad", "price": 299}]}, {"title": "Soups", "items": [{"name": "Tomato Basil Soup", "price": 149}, {"name": "Cream Of Mushroom Soup", "price": 149}, {"name": "Sweet Corn Soup V/n", "price": "119/139"}, {"name": "Manchow Soup V/n", "price": "119/139"}, {"name": "Lemon Coriander Mushroom Soup V/n", "price": "119/139"}, {"name": "Hot & Sour Soup Chef Special V/n", "price": "119/139"}, {"name": "Noodles Soup Bowl With Dumplings V/n", "price": "299/349"}]}]}, {"title": "Indian Main Course", "icon": "🍛", "subs": [{"title": "Veg", "items": [{"name": "Yellow Dal Tadka", "price": 199}, {"name": "Dal Makhani", "price": 259}, {"name": "Mix Veg", "price": 239}, {"name": "Mix Veg Handi", "price": 249}, {"name": "Mutter Mushroom", "price": 249}, {"name": "Mushroom Hara Pyaza", "price": 289}, {"name": "Soya Chaap Masala", "price": 279}, {"name": "Malai Kofta", "price": 299}, {"name": "Kadai Paneer", "price": 299}, {"name": "Paneer Lababdar", "price": 299}, {"name": "Shahi Paneer", "price": 299}, {"name": "Paneer Tikka Masala", "price": 299}]}, {"title": "Non-Veg", "items": [{"name": "Home Style Chicken Curry (half/full)", "price": "299/499"}, {"name": "Butter Chicken (Half / Full)", "price": "299/499"}, {"name": "Kadhai Chicken (Half / Full)", "price": "299/499"}, {"name": "Chicken Handi (Half / Full)", "price": "299/499"}, {"name": "Chicken Lababdar", "price": 349}, {"name": "Chicken Tikka Masala", "price": 349}, {"name": "Chicken Keema Masala", "price": 349}, {"name": "Palak Chicken", "price": 349}, {"name": "Chicken Korma", "price": 349}, {"name": "Mutton Seekh Kebab Masala", "price": 349}, {"name": "Mutton Rogan Josh", "price": 349}, {"name": "Fish Curry", "price": 349}]}, {"title": "Fried Rice", "items": [{"name": "Vegetable Fried Rice", "price": 159}, {"name": "Roasted Garlic & Spring Onion Fried Rice", "price": 169}, {"name": "Chilli Garlic Fried Rice", "price": 169}, {"name": "Egg & Spring Onion Fried Rice", "price": 189}, {"name": "Chicken Fried Rice", "price": 219}, {"name": "Chicken Schezwan Fried Rice", "price": 239}, {"name": "Seafood Fried Rice", "price": 349}, {"name": "Mix Meat Fried Rice", "price": 349}]}, {"title": "Biryani & Rice", "items": [{"name": "Steamed Rice", "price": 139}, {"name": "Jeera Rice", "price": 149}, {"name": "Veg Pulao", "price": 169}, {"name": "Veg Dum Biryani", "price": 299}, {"name": "Chicken Dum Biryani", "price": 399}, {"name": "Mutton Biryani", "price": 449}]}, {"title": "Bread", "items": [{"name": "Plain Roti", "price": 18}, {"name": "Butter Roti", "price": 24}, {"name": "Laccha Paratha", "price": 50}, {"name": "Pudina Paratha", "price": 55}, {"name": "R/G Paratha", "price": 55}, {"name": "Stuffed Paratha", "price": 70}, {"name": "Plain Naan", "price": 40}, {"name": "Butter Naan", "price": 50}, {"name": "Garlic Naan", "price": 60}, {"name": "Cheese Naan", "price": 80}, {"name": "Kulcha (Aloo, Onion, Paneer, Mix)", "price": "60/80"}]}, {"title": "Raita", "items": [{"name": "Mix Raita", "price": 129}, {"name": "Boondi Raita", "price": 119}, {"name": "Pineapple Raita", "price": 149}]}, {"title": "Desserts", "items": [{"name": "Rasmalai", "price": 149}, {"name": "Hot Gulab Jamun with Ice cream", "price": 149}, {"name": "Brownie with Ice Cream", "price": 179}, {"name": "Ice Cream", "price": 99}]}]}, {"title": "Rolls & Wraps", "icon": "🌯", "subs": [{"title": "Rolls & Wraps", "items": [{"name": "Veg Roll", "price": 149}, {"name": "Egg Roll", "price": 169}, {"name": "Peri Peri Paneer Wrap", "price": 179}, {"name": "BBQ Chicken Wrap", "price": 189}, {"name": "Chilli Chicken Wrap", "price": 189}, {"name": "Chicken Tikka Roll", "price": 219}, {"name": "Paneer Tikka Roll", "price": 199}, {"name": "Chicken Malai Tikka Roll", "price": 219}]}]}, {"title": "Burgers", "icon": "🍔", "subs": [{"title": "Burgers", "items": [{"name": "Veg & Cheese Burger with Spicy Mayo", "price": 139}, {"name": "Peri Peri Paneer Burger with Lettuce", "price": 159}, {"name": "Grilled Chicken & Cheese Burger", "price": 189}, {"name": "Calzone Marinated Chicken Burger with Japanese Mayo", "price": 219}, {"name": "Grilled Chicken Sausage Burger", "price": 149}, {"name": "Extra Charge for Extra Cheese & Dip", "price": "50/30"}]}]}, {"title": "Pizza", "icon": "🍕", "subs": [{"title": "Pizza", "items": [{"name": "Margherita Pizza", "price": 199}, {"name": "Chicken Cheese Pizza With Pesto", "price": 219}, {"name": "Mushroom & Grilled Vegetable Pizza", "price": 219}, {"name": "Peri Peri Paneer Tikka Pizza", "price": 229}, {"name": "Grilled Chicken Sausage Pizza", "price": 229}, {"name": "Pepperoni Pizza", "price": 259}, {"name": "BBQ Chicken Pizza", "price": 259}, {"name": "Mediterranean Pizza Sea Food", "price": 369}, {"name": "Extra Cheese", "price": 50}]}]}, {"title": "Mexican", "icon": "🌮", "subs": [{"title": "Mexican", "items": [{"name": "Nachos With Tomato Salsa", "price": 139}, {"name": "Baked Nachos With Tomato Salsa", "price": 159}, {"name": "Mexican Veg Tacos With Salsa", "price": 199}, {"name": "Veg & Cheese Quesadilla", "price": 199}, {"name": "Mexican Chicken Tacos With salsa", "price": 249}, {"name": "Mexican Rice Bowl", "price": 499}]}]}, {"title": "Pasta", "icon": "🍝", "subs": [{"title": "Pasta", "items": [{"name": "Choose Your Pasta Veg / Chicken", "price": "209/259"}, {"name": "Pasta in Tomato Sauce", "price": "209/259"}, {"name": "Pasta in White Sauce", "price": "209/259"}, {"name": "Pasta in Pink Sauce", "price": "209/259"}, {"name": "Pasta in Alfredo Cheese Sauce", "price": "209/259"}, {"name": "Pasta Aglio E Olio", "price": "209/259"}]}]}, {"title": "Thai", "icon": "🥢", "subs": [{"title": "Thai", "items": [{"name": "Veg Green Curry", "price": 399}, {"name": "Chicken Red Curry", "price": 499}, {"name": "Fish Yellow Curry", "price": 549}, {"name": "Khao Sui Curry Noodle V/n", "price": "399/499"}]}]}, {"title": "Tandoor Starters", "icon": "🔥", "subs": [{"title": "Veg", "items": [{"name": "Tandoori Paneer Tikka / Haryali", "price": 299}, {"name": "Tandoori Malai Tikka", "price": 319}, {"name": "Tandoori Stuffed Mushroom", "price": 299}, {"name": "Malai Soya Chaap", "price": 299}, {"name": "Spicy Tandoori Soya Chaap", "price": 289}, {"name": "Dahi Ke Shole", "price": 299}, {"name": "Dahi Ke Kebab", "price": 289}, {"name": "Mushroom Galeti", "price": 319}, {"name": "Veg Kabab Platter", "price": 450}]}, {"title": "Non-Veg", "items": [{"name": "Tandoori Chicken", "price": "279/419"}, {"name": "Afghani Chicken", "price": "299/449"}, {"name": "Chicken Tikka / Basil Tikka", "price": 319}, {"name": "Chicken Malai Tikka", "price": 319}, {"name": "Chicken Tangri Kabab", "price": 449}, {"name": "Chicken Seekh Kabab", "price": 279}, {"name": "Mutton Seekh Kabab", "price": 449}, {"name": "Mutton Galoti Kabab", "price": 439}, {"name": "Ajwaini Fish Tikka", "price": 349}, {"name": "Amritsari Fish", "price": 299}, {"name": "Non Veg Kabab Plater", "price": 599}]}]}];
-const grid=document.getElementById("menuGrid"), filters=document.getElementById("filters");
-const cart=new Map();
 
-const catImages={
-"Beverages":"beverages.jpg","Dim Sum":"dimsum.jpg","Indian Main Course":"indian.jpg",
-"Rolls & Wraps":"wraps.jpg","Burgers":"burgers.jpg","Pizza":"pizza.jpg","Mexican":"pizza.jpg",
-"Pasta":"pasta.jpg","Thai":"thai.jpg","Tandoor Starters":"tandoor.jpg"
-};
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-function money(v){return typeof v==="number"?"₹"+v:v}
-function render(){
-  grid.innerHTML=""; filters.innerHTML="";
-  MENU.forEach((cat,i)=>{
-    const b=document.createElement("button"); b.className="filter"; b.textContent=cat.icon+" "+cat.title;
-    b.onclick=()=>document.getElementById("c"+i).scrollIntoView({behavior:"smooth"});
-    filters.appendChild(b);
-    const sec=document.createElement("section"); sec.className="category"; sec.id="c"+i;
-    sec.innerHTML=`<div class="category-head"><div class="category-icon">${cat.icon}</div><div><span>MENU ${
-      String(i+1).padStart(2,"0")}</span><h3>${cat.title}</h3></div></div>
-      <div class="subgrid">${cat.subs.map(sub=>`<div class="sub"><h4>${sub.title}</h4>${
-        sub.items.map(x=>`<div class="item" data-name="${x.name.replace(/"/g,"&quot;")}" data-price="${x.price}"><span class="name">${x.name}</span><span class="dots"></span><span class="price">${money(x.price)}</span></div>`).join("")
-      }</div>`).join("")}</div>`;
-    grid.appendChild(sec);
-  });
-  document.querySelectorAll(".item").forEach(x=>x.onclick=()=>add(x.dataset.name,x.dataset.price));
+html{
+    scroll-behavior:smooth;
 }
-function add(name,price){
-  price=String(price); let q=cart.get(name); cart.set(name,{price,qty:q?q.qty+1:1});
-  renderCart(); document.getElementById("cart").classList.add("open"); document.getElementById("overlay").classList.add("show");
+
+body{
+    background:#080706;
+    color:#f1dfb8;
+    font-family:Montserrat,Arial,sans-serif;
 }
-function renderCart(){
- const box=document.getElementById("cartItems"); box.innerHTML=""; let total=0,count=0;
- if(!cart.size) box.innerHTML='<div style="text-align:center;color:#817156;padding:30px">Your order is empty.</div>';
- cart.forEach((x,name)=>{
-   const n=parseFloat(String(x.price).split("/")[0])||0; total+=n*x.qty; count+=x.qty;
-   const row=document.createElement("div");row.className="cart-row";
-   row.innerHTML=`<span>${name}</span><span class="qty"><button onclick="change('${name.replace(/'/g,"\\'")}',-1)">−</button>${x.qty}<button onclick="change('${name.replace(/'/g,"\\'")}',1)">+</button></span>`;
-   box.appendChild(row);
- });
- document.getElementById("total").textContent="₹"+total; document.getElementById("cartCount").textContent=count;
+
+
+/* ================= NAVBAR ================= */
+
+nav{
+    height:75px;
+    background:#080706;
+    border-bottom:1px solid #6d512d;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:0 5%;
+
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+
+    z-index:1000;
 }
-function change(name,d){
- const x=cart.get(name); if(!x)return; x.qty+=d;if(x.qty<=0)cart.delete(name);renderCart();
+
+.logo{
+    font-family:"Cormorant Garamond",serif;
+    font-size:38px;
+    letter-spacing:8px;
+    color:#e8c98b;
 }
-function buildMessage(){
- let lines=["LUMORA — NEW ORDER","Table: "+(document.getElementById("tableNo").value||"Not specified"),""];let total=0;
- cart.forEach((x,n)=>{lines.push("• "+n+" x "+x.qty+" — "+x.price);total+=(parseFloat(String(x.price).split("/")[0])||0)*x.qty;});
- lines.push("","Total: ₹"+total,"Note: "+(document.getElementById("orderNote").value||"None"));return encodeURIComponent(lines.join("\n"));
+
+.nav-links{
+    display:flex;
+    gap:35px;
 }
-document.getElementById("openCart").onclick=()=>{document.getElementById("cart").classList.add("open");document.getElementById("overlay").classList.add("show")};
-document.getElementById("closeCart").onclick=()=>{document.getElementById("cart").classList.remove("open");document.getElementById("overlay").classList.remove("show")};
-document.getElementById("overlay").onclick=()=>{document.getElementById("cart").classList.remove("open");document.getElementById("overlay").classList.remove("show")};
-document.getElementById("whatsapp").onclick=()=>window.open("https://wa.me/919520951715?text="+buildMessage(),"_blank");
-render();renderCart();
-</script></body></html>
+
+.nav-links a{
+    color:#cbb58b;
+    text-decoration:none;
+    font-size:11px;
+    letter-spacing:2px;
+}
+
+.nav-links a:hover{
+    color:#f0d39a;
+}
+
+.menu-btn{
+    border:1px solid #c7a467;
+    background:none;
+    color:#e2c487;
+    padding:10px 18px;
+    cursor:pointer;
+}
+
+
+/* ================= HOME ================= */
+
+.home{
+    height:760px;
+    margin-top:75px;
+
+    position:relative;
+    overflow:hidden;
+
+    background:#080706;
+}
+
+.home-content{
+    position:absolute;
+    z-index:10;
+
+    left:7%;
+    top:50%;
+
+    transform:translateY(-50%);
+
+    width:38%;
+}
+
+.welcome{
+    font-family:"Cormorant Garamond",serif;
+    font-size:32px;
+    font-style:italic;
+    color:#d6b36e;
+}
+
+.lumora{
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:clamp(65px,8vw,105px);
+
+    letter-spacing:10px;
+
+    color:#f0d4a0;
+
+    line-height:.9;
+
+    margin:10px 0 25px;
+}
+
+.gold-line{
+    width:100px;
+    height:1px;
+    background:#c7a467;
+
+    margin-bottom:25px;
+}
+
+.tagline{
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:24px;
+
+    letter-spacing:6px;
+
+    color:#fff0d0;
+
+    line-height:1.4;
+}
+
+.description{
+    color:#b8aa92;
+
+    font-size:12px;
+
+    line-height:1.9;
+
+    max-width:420px;
+
+    margin:20px 0 30px;
+}
+
+.explore{
+    display:inline-block;
+
+    border:1px solid #c7a467;
+
+    padding:14px 25px;
+
+    color:#e5c88e;
+
+    text-decoration:none;
+
+    font-size:10px;
+
+    letter-spacing:2px;
+
+    transition:.3s;
+}
+
+.explore:hover{
+    background:#c7a467;
+    color:#080706;
+}
+
+
+/* ================= PHOTO SLIDER ================= */
+
+.photo-slider{
+
+    position:absolute;
+
+    right:0;
+    top:0;
+
+    width:68%;
+    height:100%;
+
+    overflow:hidden;
+}
+
+.photo-track{
+
+    display:flex;
+
+    width:max-content;
+    height:100%;
+
+    animation:slidePhotos 35s linear infinite;
+}
+
+.photo-track:hover{
+    animation-play-state:paused;
+}
+
+.photo{
+
+    width:420px;
+
+    height:100%;
+
+    flex-shrink:0;
+
+    padding:25px 6px;
+
+}
+
+.photo img{
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    display:block;
+
+    border-left:1px solid #795b32;
+
+    filter:saturate(.85) contrast(1.05);
+}
+
+
+/* NON STOP HORIZONTAL MOVEMENT */
+
+@keyframes slidePhotos{
+
+    from{
+        transform:translateX(0);
+    }
+
+    to{
+        transform:translateX(-50%);
+    }
+
+}
+
+
+/* DARK GRADIENT OVER PHOTOS */
+
+.photo-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    pointer-events:none;
+
+    background:
+        linear-gradient(
+            90deg,
+            #080706 0%,
+            #080706d9 18%,
+            transparent 58%
+        ),
+        linear-gradient(
+            0deg,
+            #080706d9,
+            transparent 40%
+        );
+}
+
+
+/* GOLD FRAME */
+
+.home-frame{
+
+    position:absolute;
+
+    inset:20px;
+
+    border:1px solid #c7a46755;
+
+    z-index:20;
+
+    pointer-events:none;
+}
+
+
+/* ================= MENU ================= */
+
+.menu-section{
+
+    padding:100px 7%;
+
+    border-top:1px solid #3c2c19;
+}
+
+.menu-title{
+
+    text-align:center;
+
+    margin-bottom:50px;
+}
+
+.menu-title small{
+
+    color:#c7a467;
+
+    letter-spacing:5px;
+
+    font-size:10px;
+}
+
+.menu-title h2{
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:65px;
+
+    font-weight:500;
+
+    color:#eed5a1;
+
+    margin:8px 0;
+}
+
+.menu-title p{
+
+    color:#998a70;
+
+    font-size:11px;
+}
+
+
+/* MENU CATEGORY */
+
+.category{
+
+    margin-bottom:60px;
+
+}
+
+.category h3{
+
+    font-family:"Cormorant Garamond",serif;
+
+    color:#dfbd79;
+
+    font-size:38px;
+
+    border-bottom:1px solid #49361f;
+
+    padding-bottom:12px;
+
+    margin-bottom:20px;
+}
+
+.items{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:0 40px;
+
+}
+
+.item{
+
+    display:flex;
+
+    padding:12px 0;
+
+    border-bottom:1px solid #282016;
+
+    cursor:pointer;
+
+    font-size:11px;
+}
+
+.item-name{
+    color:#ddd1ba;
+}
+
+.dots{
+
+    flex:1;
+
+    border-bottom:1px dotted #5c4528;
+
+    margin:0 8px 4px;
+}
+
+.price{
+
+    color:#d5b26c;
+}
+
+
+/* ================= FOOTER ================= */
+
+footer{
+
+    text-align:center;
+
+    padding:40px 20px;
+
+    border-top:1px solid #3d2d1a;
+
+    background:#050403;
+}
+
+footer h3{
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:30px;
+
+    color:#d8b878;
+
+    letter-spacing:4px;
+}
+
+footer p{
+
+    color:#78674d;
+
+    font-size:9px;
+
+    letter-spacing:2px;
+
+    margin-top:8px;
+}
+
+
+/* ================= MOBILE ================= */
+
+@media(max-width:850px){
+
+    nav{
+        height:65px;
+    }
+
+    .nav-links{
+        display:none;
+    }
+
+    .home{
+        height:720px;
+        margin-top:65px;
+    }
+
+    .photo-slider{
+
+        width:100%;
+
+        opacity:.55;
+    }
+
+    .home-content{
+
+        width:90%;
+
+        left:5%;
+
+        top:auto;
+
+        bottom:70px;
+
+        transform:none;
+    }
+
+    .lumora{
+        font-size:65px;
+        letter-spacing:6px;
+    }
+
+    .tagline{
+        font-size:20px;
+    }
+
+    .photo{
+        width:300px;
+    }
+
+    .items{
+        grid-template-columns:1fr;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<nav>
+
+    <div class="logo">
+        LUMORA
+    </div>
+
+    <div class="nav-links">
+
+        <a href="#home">HOME</a>
+
+        <a href="#menu">MENU</a>
+
+        <a href="#about">ABOUT</a>
+
+    </div>
+
+    <button class="menu-btn">
+        MENU
+    </button>
+
+</nav>
+
+
+
+<!-- ================= HOME ================= -->
+
+<section class="home" id="home">
+
+
+    <!-- STABLE TEXT -->
+
+    <div class="home-content">
+
+        <div class="welcome">
+            Welcome to
+        </div>
+
+        <div class="lumora">
+            LUMORA
+        </div>
+
+        <div class="gold-line"></div>
+
+        <div class="tagline">
+
+            GOOD FOOD<br>
+            GOOD MOOD
+
+        </div>
+
+        <p class="description">
+
+            Indulge in a refined dining experience
+            with exquisite flavours, warm ambience
+            and memorable moments.
+
+        </p>
+
+        <a href="#menu" class="explore">
+
+            EXPLORE MENU →
+
+        </a>
+
+    </div>
+
+
+
+    <!-- MOVING PHOTOS -->
+
+    <div class="photo-slider">
+
+        <div class="photo-track">
+
+
+            <!-- FIRST SET -->
+
+            <div class="photo">
+                <img src="images/interior1.webp">
+            </div>
+
+            <div class="photo">
+                <img src="images/interior2.webp">
+            </div>
+
+            <div class="photo">
+                <img src="images/food.webp">
+            </div>
+
+            <div class="photo">
+                <img src="images/interior3.webp">
+            </div>
+
+
+            <!-- DUPLICATE SET
+                 FOR NON-STOP LOOP -->
+
+            <div class="photo">
+                <img src="images/interior1.webp">
+            </div>
+
+            <div class="photo">
+                <img src="images/interior2.webp">
+            </div>
+
+            <div class="photo">
+                <img src="images/food.webp">
+            </div>
+
+            <div class="photo">
+                <img src="images/interior3.webp">
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="photo-overlay"></div>
+
+    <div class="home-frame"></div>
+
+
+</section>
+
+
+
+<!-- ================= MENU ================= -->
+
+<section class="menu-section" id="menu">
+
+    <div class="menu-title">
+
+        <small>
+            THE LUMORA COLLECTION
+        </small>
+
+        <h2>
+            Our Menu
+        </h2>
+
+        <p>
+            Crafted with care. Served with elegance.
+        </p>
+
+    </div>
+
+
+
+    <!-- EXAMPLE MENU -->
+
+    <div class="category">
+
+        <h3>
+            Beverages
+        </h3>
+
+        <div class="items">
+
+            <div class="item">
+                <span class="item-name">
+                    Virgin Mojito
+                </span>
+
+                <span class="dots"></span>
+
+                <span class="price">
+                    ₹149
+                </span>
+            </div>
+
+
+            <div class="item">
+                <span class="item-name">
+                    Watermelon / Green Apple / Orange
+                </span>
+
+                <span class="dots"></span>
+
+                <span class="price">
+                    ₹149
+                </span>
+            </div>
+
+
+            <div class="item">
+                <span class="item-name">
+                    Kiwi Sparkal
+                </span>
+
+                <span class="dots"></span>
+
+                <span class="price">
+                    ₹149
+                </span>
+            </div>
+
+
+            <div class="item">
+                <span class="item-name">
+                    Orange Sunshine
+                </span>
+
+                <span class="dots"></span>
+
+                <span class="price">
+                    ₹149
+                </span>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="category">
+
+        <h3>
+            Pizza
+        </h3>
+
+        <div class="items">
+
+            <div class="item">
+                <span class="item-name">
+                    Margherita Pizza
+                </span>
+
+                <span class="dots"></span>
+
+                <span class="price">
+                    ₹199
+                </span>
+            </div>
+
+
+            <div class="item">
+                <span class="item-name">
+                    Mushroom & Grilled Vegetable Pizza
+                </span>
+
+                <span class="dots"></span>
+
+                <span class="price">
+                    ₹219
+                </span>
+            </div>
+
+
+            <div class="item">
+                <span class="item-name">
+                    Peri Peri Paneer Tikka Pizza
+                </span>
+
+                <span class="dots"></span>
+
+                <span class="price">
+                    ₹229
+                </span>
+            </div>
+
+
+            <div class="item">
+                <span class="item-name">
+                    BBQ Chicken Pizza
+                </span>
+
+                <span class="dots"></span>
+
+                <span class="price">
+                    ₹259
+                </span>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+</section>
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer id="about">
+
+    <h3>
+        LUMORA
+    </h3>
+
+    <p>
+        CAFÉ • RESTAURANT • FINE DINING
+    </p>
+
+    <p>
+        Powered by WEBLYFT
+    </p>
+
+</footer>
+
+
+
+</body>
+</html>
