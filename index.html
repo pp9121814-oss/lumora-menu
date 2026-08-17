@@ -51,7 +51,7 @@ function render(){
   grid.appendChild(sec);
  });
 }
-function add(name,price){let x=cart.get(name);cart.set(name,{price,qty:x?x.qty+1:1});renderCart();openCart()}
+function add(name,price){let x=cart.get(name);cart.set(name,{price,qty:x?x.qty+1:1});renderCart();}
 function renderCart(){let box=document.getElementById("cartItems");box.innerHTML="";let total=0,count=0;cart.forEach((x,n)=>{let p=parseFloat(String(x.price).split("/")[0])||0;total+=p*x.qty;count+=x.qty;box.innerHTML+=`<div class="cart-row"><span>${n}</span><span class="qty"><button onclick="change('${n.replace(/'/g,"\\'")}',-1)">−</button>${x.qty}<button onclick="change('${n.replace(/'/g,"\\'")}',1)">+</button></span></div>`});document.getElementById("total").textContent="₹"+total;document.getElementById("cartCount").textContent=count}
 function change(n,d){let x=cart.get(n);if(!x)return;x.qty+=d;if(x.qty<=0)cart.delete(n);renderCart()}
 function openCart(){document.getElementById("cart").classList.add("open");document.getElementById("overlay").classList.add("show")}
