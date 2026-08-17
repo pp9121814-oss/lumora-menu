@@ -58,5 +58,123 @@ function openCart(){document.getElementById("cart").classList.add("open");docume
 function closeCart(){document.getElementById("cart").classList.remove("open");document.getElementById("overlay").classList.remove("show")}
 function orderWA(){let a=["LUMORA — NEW ORDER","Table: "+(tableNo.value||"Not specified"),""];cart.forEach((x,n)=>a.push("• "+n+" x "+x.qty+" — "+x.price));a.push("","Note: "+(orderNote.value||"None"));window.open("https://wa.me/917017279963?text="+encodeURIComponent(a.join("\n")),"_blank")}
 openCartBtn.onclick=openCart;closeBtn.onclick=closeCart;overlay.onclick=closeCart;sendBtn.onclick=orderWA;render();renderCart();
+/* ================= LUMORA 50M GEOFENCE ================= */
+
+const LUMORA_LAT = 30.309069;
+const LUMORA_LNG = 78.0948649;
+
+const ALLOWED_RADIUS = 50; // metres
+
+let userInsideRange = false;
+
+
+/* Distance calculate karne ka function */
+function getDistance(lat1, lon1, lat2, lon2) {
+
+    const R = 6371000; // Earth radius in metres
+
+    const dLat =
+        (lat2 - lat1) * Math.PI / 180;
+
+    const dLon =
+        (lon2 - lon1) * Math.PI / 180;
+
+    const a =
+        Math.sin(dLat / 2) *
+        Math.sin(dLat / 2) +
+
+        Math.cos(lat1 * Math.PI / 180) *
+        Math.cos(lat2 * Math.PI / 180) *
+
+        Math.sin(dLon / 2) *
+        Math.sin(dLon / 2);
+
+    const c =
+        2 * Math.atan2(
+            Math.sqrt(a),
+            Math.sqrt(1 - a)
+        );
+
+    return R * c;
+}
+
+
+/* Location check */
+function checkLumoraLocation() {
+
+    if (!navigator.geolocation) {
+
+        alert("GPS is not supported on this device.");
+
+        userInsideRange = false;
+
+        return;
+    }
+
+
+    navigator.geolocation.getCurrentPosition(
+
+        function(position) {
+
+            const userLat =
+                position.coords.latitude;
+
+            const userLng =
+                position.coords.longitude;
+
+
+            const distance =
+                getDistance(
+                    userLat,
+                    userLng,
+                    LUMORA_LAT,
+                    LUMORA_LNG
+                );
+
+
+            if (distance <= ALLOWED_RADIUS) {
+
+                userInsideRange = true;
+
+                console.log(
+                    "LUMORA ordering allowed:",
+                    Math.round(distance) + "m"
+                );
+
+            } else {
+
+                userInsideRange = false;
+
+                alert(
+                    "You are outside LUMORA's 50 metre ordering area."
+                );
+
+            }
+
+        },
+
+        function(error) {
+
+            userInsideRange = false;
+
+            alert(
+                "Please allow location access to place an order."
+            );
+
+        },
+
+        {
+            enableHighAccuracy: true,
+            timeout: 10000,
+            maximumAge: 0
+        }
+
+    );
+
+}
+
+
+/* Check location when page loads */
+checkLumoraLocation();
 </script>
 </body></html>
